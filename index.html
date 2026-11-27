@@ -5,7 +5,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anirudh R | Personal Portfolio</title>
+<title>Anirudh R | Developer Portfolio</title>
+<meta name="description" content="Anirudh R - BCA Data Science Student, aspiring developer and technology enthusiast.">
+<meta name="theme-color" content="#07111f">
 
 <style>
 :root {
@@ -14,6 +16,8 @@
     --background: #07111f;
     --card: #10243a;
     --white: #eef8ff;
+    --muted: #a9bfd0;
+    --border: #205276;
 }
 
 * {
@@ -35,11 +39,31 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: -2;
     background:
         radial-gradient(circle at 15% 15%, #06466a, transparent 35%),
         radial-gradient(circle at 85% 65%, #073b60, transparent 35%),
         #07111f;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .18;
+    background-image:
+        radial-gradient(#72e3ff 1px, transparent 1px);
+    background-size: 45px 45px;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 #progress {
@@ -49,15 +73,15 @@ body::before {
     height: 4px;
     width: 0;
     background: var(--cyan);
-    z-index: 100;
+    z-index: 200;
     box-shadow: 0 0 15px var(--blue);
 }
 
 header {
     position: sticky;
     top: 0;
-    z-index: 50;
-    padding: 17px 6%;
+    z-index: 100;
+    padding: 17px 5%;
     background: #07111fee;
     backdrop-filter: blur(15px);
     border-bottom: 1px solid #16415b;
@@ -78,13 +102,13 @@ header {
 nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 13px;
 }
 
 nav a {
     text-decoration: none;
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     transition: .3s;
 }
 
@@ -94,13 +118,13 @@ nav a.active {
 }
 
 section {
-    padding: 85px 9%;
-    scroll-margin-top: 75px;
+    padding: 80px 9%;
+    scroll-margin-top: 85px;
 }
 
 .section-title {
     text-align: center;
-    font-size: 36px;
+    font-size: 35px;
     margin-bottom: 35px;
 }
 
@@ -111,12 +135,12 @@ section {
 
 .subtitle {
     text-align: center;
-    color: #a9bfd0;
+    color: var(--muted);
     margin: -20px auto 35px;
 }
 
 .hero {
-    min-height: 88vh;
+    min-height: 85vh;
     display: grid;
     grid-template-columns: 1.2fr .8fr;
     align-items: center;
@@ -127,7 +151,6 @@ section {
     color: var(--cyan);
     letter-spacing: 3px;
     font-size: 13px;
-    text-transform: uppercase;
 }
 
 .hero h1 {
@@ -149,7 +172,7 @@ section {
 }
 
 .intro {
-    color: #a9bfd0;
+    color: var(--muted);
     max-width: 580px;
     margin: 20px 0;
 }
@@ -163,6 +186,7 @@ section {
     text-decoration: none;
     color: var(--cyan);
     transition: .3s;
+    background: transparent;
 }
 
 .btn.primary {
@@ -172,13 +196,11 @@ section {
 }
 
 .btn:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: 0 0 25px #00bfff66;
     background: white;
     color: #07111f;
 }
-
-/* PROFILE PHOTO */
 
 .photo-wrap {
     width: 270px;
@@ -212,19 +234,11 @@ section {
     object-fit: cover;
     border: 5px solid #1b668b;
     box-shadow: 0 0 35px #00bfff66;
-    background: #10243a;
-    transition: .4s;
-}
-
-.profile:hover {
-    transform: scale(1.06);
-    box-shadow: 0 0 55px var(--blue);
+    background: var(--card);
 }
 
 @keyframes rotate {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
 }
 
 .upload {
@@ -240,8 +254,6 @@ section {
     display: none;
 }
 
-/* PANELS */
-
 .panel {
     background: linear-gradient(145deg, #10243a, #0a1929);
     border: 1px solid #1c4561;
@@ -251,7 +263,6 @@ section {
 }
 
 .panel:hover {
-    transform: translateY(-7px);
     border-color: var(--blue);
     box-shadow: 0 12px 30px #00bfff25;
 }
@@ -279,7 +290,7 @@ section {
 
 .info-item {
     background: #0a1b2d;
-    border: 1px solid #205276;
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 15px;
 }
@@ -299,74 +310,46 @@ section {
     font-size: 17px;
 }
 
-/* SKILLS */
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-.skill {
-    padding: 22px;
+.skill, .strength {
+    padding: 23px;
     text-align: center;
     background: var(--card);
-    border: 1px solid #205276;
+    border: 1px solid var(--border);
     border-radius: 12px;
     transition: .3s;
 }
 
-.skill:hover {
-    transform: scale(1.06);
+.skill:hover, .strength:hover {
+    transform: translateY(-5px);
     background: #123d5c;
     box-shadow: 0 0 20px #00bfff44;
 }
 
-.skill-icon {
-    font-size: 35px;
+.skill-icon, .strength span {
+    font-size: 32px;
+    display: block;
     margin-bottom: 10px;
 }
 
-.skill strong {
+.skill strong, .strength h3 {
     color: var(--cyan);
 }
 
 .skill small {
     display: block;
-    color: #a9bfd0;
+    color: var(--muted);
     margin-top: 5px;
-}
-
-/* SOFT SKILLS AND INTERESTS */
-
-.strength {
-    text-align: center;
-    padding: 24px;
-    border-radius: 12px;
-    background: var(--card);
-    border: 1px solid #205276;
-    transition: .3s;
-}
-
-.strength:hover {
-    background: #123d5c;
-    transform: scale(1.04);
-}
-
-.strength span {
-    font-size: 30px;
-}
-
-.strength h3 {
-    color: var(--cyan);
-    margin-top: 10px;
 }
 
 .strength p {
     color: #b6c7d8;
 }
-
-/* EDUCATION */
 
 .college {
     display: inline-block;
@@ -377,12 +360,6 @@ section {
 
 .college:hover {
     text-decoration: underline;
-}
-
-/* PROJECTS */
-
-.project-card {
-    min-height: 210px;
 }
 
 .project-number {
@@ -398,11 +375,9 @@ section {
     border: 1px solid #176083;
     border-radius: 20px;
     padding: 4px 12px;
-    margin-top: 10px;
+    margin: 5px 3px 0 0;
     font-size: 12px;
 }
-
-/* CERTIFICATES */
 
 .certificate-section {
     background: #0a1b2d;
@@ -416,13 +391,12 @@ section {
 
 .certificate-card {
     background: linear-gradient(145deg, #102c45, #0b1c2d);
-    border: 1px solid #205276;
+    border: 1px solid var(--border);
     border-radius: 15px;
     padding: 28px;
-    min-height: 230px;
+    min-height: 220px;
     transition: .35s;
     position: relative;
-    overflow: hidden;
 }
 
 .certificate-card::before {
@@ -436,25 +410,23 @@ section {
 }
 
 .certificate-card:hover {
-    transform: translateY(-9px);
+    transform: translateY(-7px);
     border-color: var(--cyan);
-    box-shadow: 0 12px 30px #00bfff30;
 }
 
 .certificate-icon {
     font-size: 38px;
-    margin-bottom: 10px;
 }
 
 .certificate-card h3 {
     color: var(--cyan);
-    font-size: 20px;
+    font-size: 19px;
     margin-bottom: 8px;
 }
 
 .certificate-card p {
     color: #91b3c9;
-    margin-bottom: 17px;
+    margin-bottom: 15px;
 }
 
 .cert-btn {
@@ -464,13 +436,287 @@ section {
     color: #07111f;
     border-radius: 7px;
     font-weight: bold;
-    cursor: pointer;
-    transition: .3s;
 }
 
-.cert-btn:hover {
+/* LEARNING JOURNEY */
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    padding-left: 35px;
+    border-left: 2px solid var(--blue);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -43px;
+    top: 25px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--blue);
+}
+
+.timeline-item h3 {
+    color: var(--cyan);
+}
+
+.timeline-item p {
+    color: var(--muted);
+}
+
+.timeline-date {
+    color: var(--blue);
+    font-size: 12px;
+}
+
+/* SKILLS VISUALIZATION */
+
+.skill-chart {
+    max-width: 800px;
+    margin: auto;
+}
+
+.skill-row {
+    margin-bottom: 22px;
+}
+
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    color: var(--cyan);
+    margin-bottom: 7px;
+}
+
+.skill-track {
+    height: 12px;
+    background: #19344b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #087eb5, var(--cyan));
+    transition: width 1.5s ease;
+}
+
+/* INTERACTIVE PROJECTS */
+
+.project-card {
+    cursor: pointer;
+    min-height: 230px;
+}
+
+.project-card:hover {
+    border-color: var(--cyan);
+    transform: translateY(-7px);
+}
+
+.project-detail {
+    margin-top: 12px;
+    color: var(--cyan);
+    font-size: 13px;
+}
+
+/* DEVELOPER TERMINAL */
+
+.terminal {
+    max-width: 850px;
+    margin: auto;
+    background: #030b13;
+    border: 1px solid #1b789d;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 30px #00bfff22;
+}
+
+.terminal-header {
+    padding: 12px 18px;
+    background: #10243a;
+    color: var(--cyan);
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-dots {
+    color: #72e3ff;
+    float: right;
+}
+
+.terminal-output {
+    min-height: 180px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 18px;
+    font-family: Consolas, monospace;
+    color: #9beaff;
+    white-space: pre-wrap;
+    font-size: 14px;
+}
+
+.terminal-form {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #17425e;
+    gap: 10px;
+}
+
+.terminal-form span {
+    color: var(--cyan);
+    padding: 8px 0;
+}
+
+.terminal-form input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px;
+}
+
+/* AI ASSISTANT */
+
+.assistant-box {
+    max-width: 650px;
+    margin: auto;
+    background: linear-gradient(145deg, #10243a, #071a2b);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.assistant-header {
+    padding: 18px;
+    background: #12334c;
+    color: var(--cyan);
+}
+
+.assistant-header small {
+    display: block;
+    color: #a9bfd0;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 18px;
+}
+
+.message {
+    max-width: 90%;
+    padding: 11px 14px;
+    border-radius: 12px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+.bot-message {
+    background: #15364e;
+    border: 1px solid #205276;
+    color: white;
+}
+
+.user-message {
+    background: #087ca7;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-form {
+    display: flex;
+    padding: 12px;
+    gap: 10px;
+    border-top: 1px solid var(--border);
+}
+
+.chat-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border-radius: 8px;
+    background: #071a2b;
+    border: 1px solid var(--border);
+    color: white;
+    outline: none;
+}
+
+.chat-form button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--blue);
+    color: #07111f;
+    font-weight: bold;
+}
+
+.quick-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 15px 15px;
+}
+
+.quick-questions button {
+    padding: 7px 11px;
+    border: 1px solid var(--border);
+    color: var(--cyan);
+    background: #0b2438;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* RESUME AND BUSINESS CARD */
+
+.special-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.special-card {
+    text-align: center;
+    background: linear-gradient(145deg, #102c45, #091a2b);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 28px;
+}
+
+.special-card h3 {
+    color: var(--cyan);
+    margin-bottom: 10px;
+}
+
+.special-card p {
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.qr-image {
+    width: 170px;
+    height: 170px;
+    max-width: 100%;
+    padding: 8px;
     background: white;
-    box-shadow: 0 0 20px #19c7ff66;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: block;
 }
 
 /* CONTACT */
@@ -480,7 +726,7 @@ section {
 }
 
 .contact p {
-    color: #a9bfd0;
+    color: var(--muted);
     margin-bottom: 20px;
 }
 
@@ -489,22 +735,47 @@ section {
     text-decoration: none;
 }
 
-/* FOOTER */
-
-footer {
-    text-align: center;
-    padding: 25px;
-    border-top: 1px solid #16415b;
-    color: #91aabd;
+.contact form {
+    max-width: 600px;
+    margin: 25px auto;
 }
 
-/* CERTIFICATE POPUP */
+.contact input,
+.contact textarea {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    background: #071a2b;
+    color: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px #19c7ff44;
+}
+
+.contact textarea {
+    resize: vertical;
+}
+
+.contact form button {
+    cursor: pointer;
+}
+
+/* MODAL */
 
 #modal {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 300;
     background: #000e;
     justify-content: center;
     align-items: center;
@@ -521,7 +792,6 @@ footer {
     max-height: 90vh;
     overflow: auto;
     text-align: center;
-    box-shadow: 0 0 35px #00bfff55;
 }
 
 .modal-box h2 {
@@ -531,7 +801,7 @@ footer {
 
 .modal-box img {
     max-width: 100%;
-    max-height: 70vh;
+    max-height: 65vh;
     object-fit: contain;
     background: white;
 }
@@ -542,10 +812,9 @@ footer {
     font-size: 30px;
     border: none;
     background: none;
-    cursor: pointer;
 }
 
-/* ANIMATIONS */
+/* REVEAL */
 
 .reveal {
     opacity: 0;
@@ -558,7 +827,7 @@ footer {
     transform: translateY(0);
 }
 
-/* BACK TO TOP */
+/* BACK TO TOP AND EASTER EGG */
 
 #topButton {
     position: fixed;
@@ -571,10 +840,8 @@ footer {
     background: #10243a;
     color: var(--cyan);
     font-size: 24px;
-    cursor: pointer;
     display: none;
-    z-index: 60;
-    transition: .3s;
+    z-index: 150;
 }
 
 #topButton:hover {
@@ -582,10 +849,43 @@ footer {
     color: #07111f;
 }
 
+#secretToast {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+    background: #102c45;
+    border: 1px solid var(--cyan);
+    color: var(--cyan);
+    padding: 15px 24px;
+    border-radius: 12px;
+    z-index: 500;
+    text-align: center;
+    transition: .4s;
+    width: max-content;
+    max-width: 90%;
+}
+
+#secretToast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #16415b;
+    color: #91aabd;
+}
+
+footer p {
+    margin: 5px;
+}
+
 /* RESPONSIVE */
 
-@media(max-width: 800px) {
-
+@media(max-width: 850px) {
     header {
         flex-direction: column;
     }
@@ -604,7 +904,8 @@ footer {
         margin-right: auto;
     }
 
-    .certificate-grid {
+    .certificate-grid,
+    .special-grid {
         grid-template-columns: 1fr;
     }
 
@@ -614,7 +915,6 @@ footer {
 }
 
 @media(max-width: 480px) {
-
     .photo-wrap {
         width: 220px;
         height: 220px;
@@ -633,17 +933,33 @@ footer {
     }
 
     nav a {
+        font-size: 11px;
+    }
+
+    .terminal-output {
         font-size: 12px;
     }
 }
 
+@media(prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
 </style>
-    <script>
-  window.va = window.va || function () {
+
+<!-- VERCEL ANALYTICS -->
+
+<script>
+window.va = window.va || function () {
     (window.vaq = window.vaq || []).push(arguments);
-  };
+};
 </script>
+
 <script defer src="/_vercel/insights/script.js"></script>
+
 </head>
 
 <body>
@@ -665,6 +981,7 @@ footer {
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#certificates">Certificates</a>
+        <a href="#journey">Journey</a>
         <a href="#contact">Contact</a>
     </nav>
 
@@ -676,7 +993,7 @@ footer {
 
     <div class="hero-copy reveal">
 
-        <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+        <p class="eyebrow">WELCOME TO MY DIGITAL WORLD</p>
 
         <h1>Hello, I'm <span>Anirudh R</span></h1>
 
@@ -696,13 +1013,15 @@ footer {
             LinkedIn Profile
         </a>
 
+        <a href="resume.pdf" download class="btn">
+            Download Resume
+        </a>
+
     </div>
 
     <div class="reveal">
 
         <div class="photo-wrap">
-
-            <!-- PROFILE IMAGE -->
 
             <img src="./profile.jpeg"
                  alt="Anirudh Profile Photo"
@@ -776,7 +1095,7 @@ footer {
 
 </section>
 
-<!-- CAREER OBJECTIVE -->
+<!-- OBJECTIVE -->
 
 <section id="objective">
 
@@ -864,6 +1183,78 @@ footer {
 
 </section>
 
+<!-- SKILLS VISUALIZATION -->
+
+<section id="skillchart">
+
+    <h2 class="section-title reveal">
+        Skills <span>Visualization</span>
+    </h2>
+
+    <p class="subtitle reveal">
+        My current learning areas
+    </p>
+
+    <div class="panel skill-chart reveal" id="skillBars">
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>Python</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="65"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>Java</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="55"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>HTML & CSS</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="70"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>JavaScript</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="45"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>SQL / DBMS</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="60"></div>
+            </div>
+        </div>
+
+        <p style="color:#91aabd;font-size:12px;margin-top:20px;">
+            These are editable self-assessment values, not test results.
+        </p>
+
+    </div>
+
+</section>
+
 <!-- SOFT SKILLS -->
 
 <section id="softskills">
@@ -927,11 +1318,8 @@ footer {
         <h3>Bachelor of Computer Applications</h3>
 
         <p><strong>Specialisation:</strong> Data Science</p>
-
         <p><strong>Institution:</strong> Amrita Vishwa Vidyapeetham</p>
-
         <p><strong>Campus:</strong> Mysuru Campus</p>
-
         <p><strong>Course:</strong> BCA Data Science</p>
 
         <a class="college"
@@ -955,75 +1343,147 @@ footer {
     </h2>
 
     <p class="subtitle reveal">
-        Academic and practical learning projects
+        Click a project to explore its details
     </p>
 
     <div class="grid">
 
-        <div class="panel project-card reveal">
+        <div class="panel project-card reveal"
+             onclick="showProject('Personal Portfolio Website',
+             'A responsive personal portfolio created to present my profile, education, technical skills, certificates and projects.',
+             'HTML, CSS, JavaScript')">
 
             <div class="project-number">01</div>
-
             <h3>Personal Portfolio Website</h3>
 
             <p>
-                A personal website created to present my profile,
-                education, technical skills, projects and certificates.
+                A personal website to showcase my profile and technical journey.
             </p>
 
             <span class="tech">HTML</span>
             <span class="tech">CSS</span>
             <span class="tech">JavaScript</span>
 
+            <div class="project-detail">Click to explore →</div>
+
         </div>
 
-        <div class="panel project-card reveal">
+        <div class="panel project-card reveal"
+             onclick="showProject('Student Information System',
+             'A programming practice project focused on storing and displaying student information.',
+             'Java, OOP')">
 
             <div class="project-number">02</div>
-
             <h3>Student Information System</h3>
 
             <p>
-                A programming practice project focused on storing
-                and displaying student information.
+                A programming project focused on student information management.
             </p>
 
             <span class="tech">Java</span>
             <span class="tech">OOP</span>
 
+            <div class="project-detail">Click to explore →</div>
+
         </div>
 
-        <div class="panel project-card reveal">
+        <div class="panel project-card reveal"
+             onclick="showProject('Database Management Practice',
+             'Academic exercises involving database tables, SQL queries and basic data management.',
+             'SQL, DBMS')">
 
             <div class="project-number">03</div>
-
             <h3>Database Management Practice</h3>
 
             <p>
-                Academic exercises involving database tables,
-                SQL queries and basic data management.
+                Practice with database tables, SQL queries and data management.
             </p>
 
             <span class="tech">SQL</span>
             <span class="tech">DBMS</span>
 
+            <div class="project-detail">Click to explore →</div>
+
         </div>
 
-        <div class="panel project-card reveal">
+        <div class="panel project-card reveal"
+             onclick="showProject('Python Programming Practice',
+             'Small programs created to practise Python fundamentals, logic and problem solving.',
+             'Python, Programming')">
 
             <div class="project-number">04</div>
-
             <h3>Python Programming Practice</h3>
 
             <p>
-                Small programs created to practise Python
-                fundamentals, logic and problem solving.
+                Small Python programs for improving coding and logical thinking.
             </p>
 
             <span class="tech">Python</span>
             <span class="tech">Programming</span>
 
+            <div class="project-detail">Click to explore →</div>
+
         </div>
+
+        <div class="panel project-card reveal"
+             onclick="showProject('Blood Bank Management System',
+             'A database-based academic project concept for registering donors, managing blood stock and handling blood requests.',
+             'Python, MySQL')">
+
+            <div class="project-number">05</div>
+            <h3>Blood Bank Management System</h3>
+
+            <p>
+                A project concept for donor records, blood stock and requests.
+            </p>
+
+            <span class="tech">Python</span>
+            <span class="tech">MySQL</span>
+
+            <div class="project-detail">Click to explore →</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DEVELOPER TERMINAL -->
+
+<section id="terminal">
+
+    <h2 class="section-title reveal">
+        Developer <span>Terminal</span>
+    </h2>
+
+    <p class="subtitle reveal">
+        Explore my portfolio using commands
+    </p>
+
+    <div class="terminal reveal">
+
+        <div class="terminal-header">
+            ANIRUDH TERMINAL
+            <span class="terminal-dots">● ● ●</span>
+        </div>
+
+        <div class="terminal-output" id="terminalOutput">Welcome to Anirudh's Developer Terminal!
+
+Type 'help' to see available commands.
+
+</div>
+
+        <form class="terminal-form" id="terminalForm">
+
+            <span>visitor@anirudh:~$</span>
+
+            <input type="text"
+                   id="terminalInput"
+                   placeholder="Enter a command..."
+                   autocomplete="off"
+                   aria-label="Terminal command">
+
+        </form>
 
     </div>
 
@@ -1043,88 +1503,115 @@ footer {
 
     <div class="certificate-grid">
 
-        <!-- CYBER SECURITY -->
-
         <div class="certificate-card reveal">
-
             <div class="certificate-icon">🔐</div>
-
             <h3>Introduction to Cyber Security</h3>
-
             <p>Simplilearn SkillUp</p>
 
             <button class="cert-btn"
-                onclick="showCertificate(
-                './cyber-certificate.jpeg',
+                onclick="showCertificate('./cyber-certificate.jpeg',
                 'Introduction to Cyber Security')">
-
                 View Certificate
-
             </button>
-
         </div>
 
-        <!-- JAVA -->
-
         <div class="certificate-card reveal">
-
             <div class="certificate-icon">☕</div>
-
             <h3>Java Course – Mastering the Fundamentals</h3>
-
             <p>Scaler Topics</p>
 
             <button class="cert-btn"
-                onclick="showCertificate(
-                './java-certificate.jpeg',
+                onclick="showCertificate('./java-certificate.jpeg',
                 'Java Course – Mastering the Fundamentals')">
-
                 View Certificate
-
             </button>
-
         </div>
 
-        <!-- PYTHON 1 -->
-
         <div class="certificate-card reveal">
-
             <div class="certificate-icon">🐍</div>
-
             <h3>Python Essentials 1</h3>
-
             <p>Cisco Networking Academy</p>
 
             <button class="cert-btn"
-                onclick="showCertificate(
-                './python-essentials-1.jpeg',
+                onclick="showCertificate('./python-essentials-1.jpeg',
                 'Python Essentials 1')">
-
                 View Certificate
-
             </button>
-
         </div>
 
-        <!-- PYTHON 2 -->
-
         <div class="certificate-card reveal">
-
             <div class="certificate-icon">🐍</div>
-
             <h3>Python Essentials 2</h3>
-
             <p>Cisco Networking Academy</p>
 
             <button class="cert-btn"
-                onclick="showCertificate(
-                './python-essentials-2.jpeg',
+                onclick="showCertificate('./python-essentials-2.jpeg',
                 'Python Essentials 2')">
-
                 View Certificate
-
             </button>
+        </div>
 
+    </div>
+
+</section>
+
+<!-- LEARNING JOURNEY -->
+
+<section id="journey">
+
+    <h2 class="section-title reveal">
+        My Learning <span>Journey</span>
+    </h2>
+
+    <p class="subtitle reveal">
+        Every step is an opportunity to grow
+    </p>
+
+    <div class="timeline reveal">
+
+        <div class="timeline-item">
+            <span class="timeline-date">FOUNDATION</span>
+            <h3>Started Learning Programming</h3>
+            <p>
+                Building programming fundamentals and understanding
+                computer applications.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">ACADEMIC JOURNEY</span>
+            <h3>BCA Data Science</h3>
+            <p>
+                Studying computer applications, mathematics,
+                databases and data science.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">PRACTICAL LEARNING</span>
+            <h3>Developing Projects</h3>
+            <p>
+                Practising Python, Java, HTML, CSS, JavaScript
+                and MySQL through academic projects.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">CONTINUOUS LEARNING</span>
+            <h3>Exploring New Technologies</h3>
+            <p>
+                Improving technical knowledge, communication,
+                teamwork and problem-solving skills.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <span class="timeline-date">FUTURE GOAL</span>
+            <h3>Aspiring IT Professional</h3>
+            <p>
+                Working towards a successful career in technology
+                and software development.
+            </p>
         </div>
 
     </div>
@@ -1169,6 +1656,183 @@ footer {
 
 </section>
 
+<!-- AI PORTFOLIO ASSISTANT -->
+
+<section id="assistant">
+
+    <h2 class="section-title reveal">
+        AI Portfolio <span>Assistant</span>
+    </h2>
+
+    <p class="subtitle reveal">
+        Ask questions about my portfolio
+    </p>
+
+    <div class="assistant-box reveal">
+
+        <div class="assistant-header">
+            🤖 Anirudh's Portfolio Assistant
+            <small>Interactive portfolio information assistant</small>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+
+            <div class="message bot-message">
+                Hello! Welcome to my portfolio.
+
+                Ask me about my education, skills, projects,
+                certificates or contact information.
+            </div>
+
+        </div>
+
+        <div class="quick-questions">
+
+            <button onclick="quickAsk('Who is Anirudh?')">
+                About Anirudh
+            </button>
+
+            <button onclick="quickAsk('What are your skills?')">
+                Skills
+            </button>
+
+            <button onclick="quickAsk('Tell me about your projects')">
+                Projects
+            </button>
+
+            <button onclick="quickAsk('How can I contact you?')">
+                Contact
+            </button>
+
+        </div>
+
+        <form class="chat-form" id="chatForm">
+
+            <input type="text"
+                   id="chatInput"
+                   placeholder="Ask something..."
+                   autocomplete="off"
+                   required>
+
+            <button type="submit">Send</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- INTERACTIVE RESUME AND DIGITAL BUSINESS CARD -->
+
+<section id="digital">
+
+    <h2 class="section-title reveal">
+        My Digital <span>Profile</span>
+    </h2>
+
+    <div class="special-grid">
+
+        <div class="special-card reveal">
+
+            <div style="font-size:45px;">📄</div>
+
+            <h3>Interactive Resume</h3>
+
+            <p>
+                Download my resume to explore my education,
+                technical skills and projects.
+            </p>
+
+            <a href="./resume.pdf"
+               class="btn primary"
+               download="Anirudh_R_Resume.pdf">
+
+                Download Resume
+
+            </a>
+
+            <p style="font-size:12px;">
+                Place your resume.pdf file in the website folder.
+            </p>
+
+        </div>
+
+        <div class="special-card reveal">
+
+            <div style="font-size:45px;">📇</div>
+
+            <h3>Digital Business Card</h3>
+
+            <p>
+                Scan the QR code to open my portfolio website.
+            </p>
+
+            <img id="qrCode"
+                 class="qr-image"
+                 alt="Portfolio QR Code">
+
+            <button class="btn"
+                    onclick="downloadQR()">
+
+                Download QR Code
+
+            </button>
+
+            <button class="btn"
+                    onclick="copyPortfolioLink()">
+
+                Copy Portfolio Link
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- VISITOR ANALYTICS -->
+
+<section id="analytics">
+
+    <h2 class="section-title reveal">
+        Website <span>Analytics</span>
+    </h2>
+
+    <div class="panel reveal" style="text-align:center;max-width:750px;margin:auto;">
+
+        <div style="font-size:45px;">📊</div>
+
+        <h3>Visitor Analytics Dashboard</h3>
+
+        <p>
+            My portfolio uses Vercel Web Analytics to measure
+            website traffic and understand visitor activity.
+        </p>
+
+        <p>
+            Analytics can help track page views, visitors
+            and popular pages.
+        </p>
+
+        <a href="https://vercel.com/dashboard"
+           class="btn primary"
+           target="_blank"
+           rel="noopener">
+
+            Open Vercel Dashboard
+
+        </a>
+
+        <p style="font-size:12px;margin-top:15px;">
+            Detailed statistics are available to the project owner
+            through the Vercel dashboard.
+        </p>
+
+    </div>
+
+</section>
+
 <!-- CONTACT -->
 
 <section id="contact">
@@ -1183,23 +1847,83 @@ footer {
 
         <p>
             Thank you for visiting my portfolio.
-            Feel free to connect with me through LinkedIn.
+            Feel free to contact me using the form below.
         </p>
+
+        <p>
+            <strong>Gmail:</strong><br>
+
+            <a href="mailto:anirudhr682@gmail.com">
+                anirudhr682@gmail.com
+            </a>
+        </p>
+
+        <form action="https://formsubmit.co/anirudhr682@gmail.com"
+              method="POST">
+
+            <input type="hidden"
+                   name="_subject"
+                   value="New Portfolio Contact Message">
+
+            <input type="hidden"
+                   name="_captcha"
+                   value="true">
+
+            <input type="hidden"
+                   name="_template"
+                   value="table">
+
+            <!-- REPLACE WITH YOUR ACTUAL VERCEL URL -->
+
+            <input type="hidden"
+                   name="_next"
+                   value="https://YOUR-WEBSITE-URL.vercel.app/">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Enter Your Name"
+                   maxlength="100"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Your Email"
+                   maxlength="150"
+                   required>
+
+            <input type="text"
+                   name="subject"
+                   placeholder="Enter Subject"
+                   maxlength="150"
+                   required>
+
+            <textarea name="message"
+                      placeholder="Write Your Message Here..."
+                      rows="6"
+                      maxlength="5000"
+                      required></textarea>
+
+            <button type="submit" class="btn primary">
+                Send Message
+            </button>
+
+        </form>
 
         <p>
             <strong>LinkedIn:</strong><br>
 
             <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-               target="_blank" rel="noopener">
+               target="_blank"
+               rel="noopener">
 
                 Visit My LinkedIn Profile
 
             </a>
-
         </p>
 
         <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-           target="_blank" rel="noopener"
+           target="_blank"
+           rel="noopener"
            class="btn primary">
 
             Connect on LinkedIn
@@ -1218,27 +1942,33 @@ footer {
 
     <p>Designed with HTML, CSS and JavaScript</p>
 
+    <p style="color:var(--cyan);">
+        Keep Learning. Keep Building. Keep Growing.
+    </p>
+
 </footer>
 
-<!-- CERTIFICATE POPUP -->
+<!-- MODAL -->
 
 <div id="modal" onclick="closeOutside(event)">
 
     <div class="modal-box">
 
         <button class="close"
-                onclick="closeCertificate()">
-
+                onclick="closeModal()">
             &times;
-
         </button>
 
-        <h2 id="modalTitle">Certificate</h2>
+        <h2 id="modalTitle">Preview</h2>
 
         <img id="certificateImage"
              src=""
-             alt="Certificate Preview"
-             onerror="this.alt='Certificate image not found. Check filename.';">
+             alt="Preview"
+             style="display:none;">
+
+        <p id="modalDescription"
+           style="color:#b6c7d8;margin:15px;">
+        </p>
 
     </div>
 
@@ -1246,11 +1976,19 @@ footer {
 
 <!-- BACK TO TOP -->
 
-<button id="topButton" onclick="goTop()">↑</button>
+<button id="topButton"
+        onclick="goTop()"
+        aria-label="Back to top">
+    ↑
+</button>
+
+<div id="secretToast" role="status" aria-live="polite"></div>
 
 <script>
 
+// ======================================
 // TYPING EFFECT
+// ======================================
 
 const words = [
     "BCA Data Science Student",
@@ -1274,22 +2012,18 @@ function typeEffect() {
         charIndex++;
     }
 
-    typing.textContent =
-        currentWord.substring(0, charIndex);
+    typing.textContent = currentWord.substring(0, charIndex);
 
     let speed = deleting ? 50 : 100;
 
     if (!deleting && charIndex === currentWord.length) {
-
         deleting = true;
         speed = 1300;
-
-    } else if (deleting && charIndex === 0) {
-
+    }
+    else if (deleting && charIndex === 0) {
         deleting = false;
         wordIndex = (wordIndex + 1) % words.length;
         speed = 400;
-
     }
 
     setTimeout(typeEffect, speed);
@@ -1298,77 +2032,87 @@ function typeEffect() {
 typeEffect();
 
 
+// ======================================
 // PROFILE PHOTO UPLOAD
+// ======================================
 
 document.getElementById("photoUpload")
 .addEventListener("change", function(event) {
 
     const file = event.target.files[0];
 
-    if (file) {
+    if (!file) return;
 
-        if (!file.type.startsWith("image/")) {
-            alert("Please select an image file.");
-            return;
-        }
-
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-
-            document.getElementById("profilePhoto").src =
-                e.target.result;
-
-        };
-
-        reader.readAsDataURL(file);
-
+    if (!file.type.startsWith("image/")) {
+        alert("Please select an image file.");
+        return;
     }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        document.getElementById("profilePhoto").src =
+            e.target.result;
+    };
+
+    reader.readAsDataURL(file);
 
 });
 
 
-// CERTIFICATE POPUP
+// ======================================
+// CERTIFICATE AND PROJECT MODAL
+// ======================================
 
 function showCertificate(image, title) {
 
     document.getElementById("certificateImage").src = image;
+    document.getElementById("certificateImage").style.display = "block";
+
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalDescription").textContent = "";
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+function showProject(title, description, technologies) {
+
+    document.getElementById("certificateImage").style.display = "none";
 
     document.getElementById("modalTitle").textContent = title;
 
-    document.getElementById("modal").style.display = "flex";
+    document.getElementById("modalDescription").textContent =
+        description + "\n\nTechnologies: " + technologies;
 
+    document.getElementById("modal").style.display = "flex";
 }
 
-function closeCertificate() {
+function closeModal() {
 
     document.getElementById("modal").style.display = "none";
 
     document.getElementById("certificateImage").src = "";
-
 }
 
 function closeOutside(event) {
 
     if (event.target.id === "modal") {
-        closeCertificate();
+        closeModal();
     }
-
 }
-
-
-// CLOSE POPUP WITH ESCAPE KEY
 
 document.addEventListener("keydown", function(event) {
 
     if (event.key === "Escape") {
-        closeCertificate();
+        closeModal();
     }
 
 });
 
 
-// SCROLL PROGRESS BAR
+// ======================================
+// SCROLL PROGRESS
+// ======================================
 
 window.addEventListener("scroll", function() {
 
@@ -1385,25 +2129,12 @@ window.addEventListener("scroll", function() {
     document.getElementById("progress").style.width =
         progress + "%";
 
-
-    // BACK TO TOP BUTTON
-
     const topButton = document.getElementById("topButton");
 
-    if (scrollTop > 300) {
-
-        topButton.style.display = "block";
-
-    } else {
-
-        topButton.style.display = "none";
-
-    }
+    topButton.style.display =
+        scrollTop > 300 ? "block" : "none";
 
 });
-
-
-// BACK TO TOP
 
 function goTop() {
 
@@ -1415,7 +2146,9 @@ function goTop() {
 }
 
 
+// ======================================
 // REVEAL ANIMATION
+// ======================================
 
 const observer = new IntersectionObserver(
 function(entries) {
@@ -1433,22 +2166,51 @@ function(entries) {
     });
 
 }, {
-
     threshold: 0.12
-
 });
 
 document.querySelectorAll(".reveal").forEach(function(element) {
-
     observer.observe(element);
-
 });
 
 
-// ACTIVE NAVIGATION LINK
+// ======================================
+// SKILLS ANIMATION
+// ======================================
+
+const skillObserver = new IntersectionObserver(
+function(entries) {
+
+    entries.forEach(function(entry) {
+
+        if (entry.isIntersecting) {
+
+            entry.target.querySelectorAll(".skill-fill")
+            .forEach(function(bar) {
+
+                const level = Number(bar.dataset.level);
+
+                bar.style.width = Math.min(100, Math.max(0, level)) + "%";
+
+            });
+
+            skillObserver.unobserve(entry.target);
+        }
+
+    });
+
+}, {
+    threshold: 0.2
+});
+
+skillObserver.observe(document.getElementById("skillBars"));
+
+
+// ======================================
+// ACTIVE NAVIGATION
+// ======================================
 
 const sections = document.querySelectorAll("section[id]");
-
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", function() {
@@ -1460,9 +2222,7 @@ window.addEventListener("scroll", function() {
         const sectionTop = section.offsetTop - 150;
 
         if (window.scrollY >= sectionTop) {
-
             current = section.getAttribute("id");
-
         }
 
     });
@@ -1472,12 +2232,364 @@ window.addEventListener("scroll", function() {
         link.classList.remove("active");
 
         if (link.getAttribute("href") === "#" + current) {
-
             link.classList.add("active");
-
         }
 
     });
+
+});
+
+
+// ======================================
+// DEVELOPER TERMINAL
+// ======================================
+
+const terminalForm = document.getElementById("terminalForm");
+const terminalInput = document.getElementById("terminalInput");
+const terminalOutput = document.getElementById("terminalOutput");
+
+function terminalPrint(text) {
+
+    terminalOutput.textContent += "\n" + text + "\n";
+
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+}
+
+const terminalCommands = {
+
+    help:
+`Available Commands:
+
+help       - Show commands
+about      - About Anirudh
+skills     - View technical skills
+projects   - View projects
+education  - Education details
+certificates - Certificate information
+contact    - Contact details
+journey    - Learning journey
+clear      - Clear terminal
+date       - Current date
+social     - LinkedIn profile`,
+
+    about:
+`Name: Anirudh R
+Course: BCA Data Science
+Interest: Programming and Technology
+Goal: Become an IT Professional`,
+
+    skills:
+`Python
+Java
+HTML
+CSS
+JavaScript
+C Programming
+SQL / DBMS
+Data Science`,
+
+    projects:
+`1. Personal Portfolio Website
+2. Student Information System
+3. Database Management Practice
+4. Python Programming Practice
+5. Blood Bank Management System`,
+
+    education:
+`Bachelor of Computer Applications
+Specialisation: Data Science
+Amrita Vishwa Vidyapeetham
+Mysuru Campus`,
+
+    certificates:
+`Introduction to Cyber Security
+Java – Mastering the Fundamentals
+Python Essentials 1
+Python Essentials 2`,
+
+    contact:
+`Email: anirudhr682@gmail.com
+LinkedIn: linkedin.com/in/anirudh-r-869953381/`,
+
+    journey:
+`Learning programming
+Studying BCA Data Science
+Building practical projects
+Exploring new technologies
+Aspiring IT Professional`,
+
+    date: new Date().toDateString(),
+
+    social:
+`LinkedIn:
+https://www.linkedin.com/in/anirudh-r-869953381/`
+};
+
+terminalForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const command = terminalInput.value.trim().toLowerCase();
+
+    if (!command) return;
+
+    terminalPrint("visitor@anirudh:~$ " + command);
+
+    if (command === "clear") {
+
+        terminalOutput.textContent = "Terminal cleared.\n";
+    }
+    else if (terminalCommands[command]) {
+
+        terminalPrint(terminalCommands[command]);
+
+    }
+    else {
+
+        terminalPrint(
+            "Command not found. Type 'help' to see available commands."
+        );
+
+    }
+
+    terminalInput.value = "";
+
+});
+
+
+// ======================================
+// PORTFOLIO ASSISTANT
+// ======================================
+
+const chatForm = document.getElementById("chatForm");
+const chatInput = document.getElementById("chatInput");
+const chatMessages = document.getElementById("chatMessages");
+
+function addMessage(text, type) {
+
+    const message = document.createElement("div");
+
+    message.className = "message " +
+        (type === "user" ? "user-message" : "bot-message");
+
+    message.textContent = text;
+
+    chatMessages.appendChild(message);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function assistantAnswer(question) {
+
+    const q = question.toLowerCase();
+
+    if (q.includes("who") || q.includes("about") ||
+        q.includes("anirudh")) {
+
+        return "Anirudh R is a BCA Data Science student at Amrita Vishwa Vidyapeetham, Mysuru Campus. He is interested in programming and technology.";
+
+    }
+
+    if (q.includes("skill") || q.includes("programming")) {
+
+        return "Technical skills include Python, Java, HTML, CSS, JavaScript, C Programming, SQL and DBMS. Data Science is also an area of learning.";
+
+    }
+
+    if (q.includes("project")) {
+
+        return "Projects include Personal Portfolio Website, Student Information System, Database Management Practice, Python Programming Practice and Blood Bank Management System.";
+
+    }
+
+    if (q.includes("education") || q.includes("college") ||
+        q.includes("study") || q.includes("course")) {
+
+        return "Anirudh is pursuing Bachelor of Computer Applications (BCA), specialising in Data Science, at Amrita Vishwa Vidyapeetham, Mysuru Campus.";
+
+    }
+
+    if (q.includes("certificate")) {
+
+        return "Certificates include Introduction to Cyber Security from Simplilearn SkillUp, Java Mastering the Fundamentals from Scaler, Python Essentials 1 and Python Essentials 2 from Cisco Networking Academy.";
+
+    }
+
+    if (q.includes("contact") || q.includes("email") ||
+        q.includes("gmail")) {
+
+        return "You can contact Anirudh at anirudhr682@gmail.com or through his LinkedIn profile.";
+
+    }
+
+    if (q.includes("linkedin")) {
+
+        return "LinkedIn profile: https://www.linkedin.com/in/anirudh-r-869953381/";
+
+    }
+
+    if (q.includes("goal") || q.includes("career") ||
+        q.includes("future")) {
+
+        return "Anirudh aims to build a successful career in the IT field by improving programming, technical and problem-solving skills.";
+
+    }
+
+    if (q.includes("hello") || q.includes("hi") ||
+        q.includes("hey")) {
+
+        return "Hello! Welcome to Anirudh's portfolio. What would you like to know?";
+
+    }
+
+    if (q.includes("thank")) {
+
+        return "You're welcome! Thank you for visiting the portfolio.";
+
+    }
+
+    return "I can help with information about Anirudh's education, skills, projects, certificates, career goals and contact details. Try asking one of these questions.";
+
+}
+
+function sendChat(question) {
+
+    const text = question.trim();
+
+    if (!text) return;
+
+    addMessage(text, "user");
+
+    const reply = assistantAnswer(text);
+
+    setTimeout(function() {
+        addMessage(reply, "bot");
+    }, 350);
+}
+
+chatForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    sendChat(chatInput.value);
+
+    chatInput.value = "";
+
+});
+
+function quickAsk(question) {
+    sendChat(question);
+}
+
+
+// ======================================
+// DIGITAL BUSINESS CARD QR CODE
+// ======================================
+
+// Automatically uses the current website address.
+
+const portfolioURL = window.location.origin +
+    window.location.pathname;
+
+const qrCode = document.getElementById("qrCode");
+
+qrCode.src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+    encodeURIComponent(portfolioURL);
+
+function downloadQR() {
+
+    const link = document.createElement("a");
+
+    link.href = qrCode.src;
+    link.download = "Anirudh-Portfolio-QR.png";
+
+    link.target = "_blank";
+
+    link.click();
+
+}
+
+function copyPortfolioLink() {
+
+    if (navigator.clipboard && window.isSecureContext) {
+
+        navigator.clipboard.writeText(portfolioURL)
+        .then(function() {
+            showToast("Portfolio link copied!");
+        })
+        .catch(function() {
+            showToast("Copy failed. Please copy the website address manually.");
+        });
+
+    } else {
+
+        showToast("Copy is unavailable. Please copy the website address manually.");
+
+    }
+
+}
+
+
+// ======================================
+// HIDDEN EASTER EGGS
+// ======================================
+
+let secretTimer = null;
+
+function showToast(message) {
+
+    const toast = document.getElementById("secretToast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(secretTimer);
+
+    secretTimer = setTimeout(function() {
+        toast.classList.remove("show");
+    }, 3000);
+
+}
+
+// Keyboard secret: type ANIRUDH
+
+let secretWord = "";
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key.length !== 1) return;
+
+    secretWord += event.key.toLowerCase();
+
+    secretWord = secretWord.slice(-7);
+
+    if (secretWord === "anirudh") {
+
+        showToast("🎉 Secret unlocked! Keep learning and building!");
+
+        secretWord = "";
+
+    }
+
+});
+
+// Hidden click surprise on logo
+
+let logoClicks = 0;
+
+document.querySelector(".logo").addEventListener("click", function() {
+
+    logoClicks++;
+
+    if (logoClicks >= 5) {
+
+        showToast("🚀 You discovered the hidden developer secret!");
+
+        logoClicks = 0;
+
+    }
 
 });
 
