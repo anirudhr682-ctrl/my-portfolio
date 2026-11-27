@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +52,7 @@ body::after {
     z-index: -1;
     pointer-events: none;
     opacity: .18;
-    background-image:
-        radial-gradient(#72e3ff 1px, transparent 1px);
+    background-image: radial-gradient(#72e3ff 1px, transparent 1px);
     background-size: 45px 45px;
 }
 
@@ -439,7 +437,6 @@ section {
 }
 
 /* LEARNING JOURNEY */
-
 .timeline {
     max-width: 800px;
     margin: auto;
@@ -483,7 +480,6 @@ section {
 }
 
 /* SKILLS VISUALIZATION */
-
 .skill-chart {
     max-width: 800px;
     margin: auto;
@@ -516,7 +512,6 @@ section {
 }
 
 /* INTERACTIVE PROJECTS */
-
 .project-card {
     cursor: pointer;
     min-height: 230px;
@@ -534,7 +529,6 @@ section {
 }
 
 /* DEVELOPER TERMINAL */
-
 .terminal {
     max-width: 850px;
     margin: auto;
@@ -590,231 +584,181 @@ section {
     padding: 8px;
 }
 
-/* AI ASSISTANT */
-
-.assistant-box {
-    max-width: 650px;
-    margin: auto;
-    background: linear-gradient(145deg, #10243a, #071a2b);
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.assistant-header {
-    padding: 18px;
-    background: #12334c;
-    color: var(--cyan);
-}
-
-.assistant-header small {
-    display: block;
-    color: #a9bfd0;
-}
-
-.chat-messages {
-    height: 300px;
-    overflow-y: auto;
-    padding: 18px;
-}
-
-.message {
-    max-width: 90%;
-    padding: 11px 14px;
-    border-radius: 12px;
-    margin-bottom: 13px;
-    font-size: 14px;
-    white-space: pre-wrap;
-}
-
-.bot-message {
-    background: #15364e;
-    border: 1px solid #205276;
-    color: white;
-}
-
-.user-message {
-    background: #087ca7;
-    color: white;
-    margin-left: auto;
-}
-
-.chat-form {
-    display: flex;
-    padding: 12px;
-    gap: 10px;
-    border-top: 1px solid var(--border);
-}
-
-.chat-form input {
-    flex: 1;
-    min-width: 0;
-    padding: 12px;
-    border-radius: 8px;
-    background: #071a2b;
-    border: 1px solid var(--border);
-    color: white;
-    outline: none;
-}
-
-.chat-form button {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
-    background: var(--blue);
-    color: #07111f;
-    font-weight: bold;
-}
-
-.quick-questions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 0 15px 15px;
-}
-
-.quick-questions button {
-    padding: 7px 11px;
-    border: 1px solid var(--border);
-    color: var(--cyan);
-    background: #0b2438;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
 /* RESUME AND BUSINESS CARD */
+.resume-card {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
 
-.special-grid {
+.business-card {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.business-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 20px auto;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.analytics-item {
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.analytics-item strong {
+    display: block;
+    color: var(--cyan);
+    font-size: 30px;
+}
+
+.analytics-item span {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* CONTACT */
+.contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
-.special-card {
-    text-align: center;
-    background: linear-gradient(145deg, #102c45, #091a2b);
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 28px;
-}
-
-.special-card h3 {
-    color: var(--cyan);
-    margin-bottom: 10px;
-}
-
-.special-card p {
-    color: var(--muted);
-    margin-bottom: 15px;
-}
-
-.qr-image {
-    width: 170px;
-    height: 170px;
-    max-width: 100%;
-    padding: 8px;
-    background: white;
-    border-radius: 10px;
-    margin: 10px auto;
-    display: block;
-}
-
-/* CONTACT */
-
-.contact {
-    text-align: center;
-}
-
-.contact p {
-    color: var(--muted);
-    margin-bottom: 20px;
-}
-
-.contact a:not(.btn) {
-    color: var(--cyan);
-    text-decoration: none;
-}
-
-.contact form {
-    max-width: 600px;
-    margin: 25px auto;
-}
-
-.contact input,
-.contact textarea {
-    display: block;
+.contact-form input,
+.contact-form textarea {
     width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    background: #071a2b;
-    color: white;
+    padding: 13px;
+    margin: 8px 0;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
+    background: #071827;
+    color: white;
+    border-radius: 7px;
     outline: none;
 }
 
-.contact input:focus,
-.contact textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: var(--cyan);
-    box-shadow: 0 0 12px #19c7ff44;
 }
 
-.contact textarea {
-    resize: vertical;
+.contact-form button {
+    padding: 12px 25px;
+    background: var(--blue);
+    color: #07111f;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
 }
 
-.contact form button {
-    cursor: pointer;
+.social-links a {
+    display: inline-block;
+    color: var(--cyan);
+    text-decoration: none;
+    margin: 8px 12px 8px 0;
 }
 
-/* MODAL */
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #030b13;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+}
 
-#modal {
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    border: none;
+    background: var(--blue);
+    color: #07111f;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 100;
+}
+
+.modal {
     display: none;
     position: fixed;
     inset: 0;
     z-index: 300;
-    background: #000e;
+    background: #000c;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-.modal-box {
-    background: #10243a;
-    border: 1px solid var(--blue);
-    border-radius: 15px;
-    padding: 20px;
+.modal-content {
+    max-width: 700px;
     width: 100%;
-    max-width: 800px;
     max-height: 90vh;
-    overflow: auto;
+    overflow-y: auto;
+    background: #10243a;
+    border: 1px solid var(--cyan);
+    border-radius: 15px;
+    padding: 25px;
     text-align: center;
+    position: relative;
 }
 
-.modal-box h2 {
-    color: var(--cyan);
-    margin: 10px;
-}
-
-.modal-box img {
+.modal-content img {
     max-width: 100%;
     max-height: 65vh;
-    object-fit: contain;
-    background: white;
+    margin-top: 15px;
+    border-radius: 8px;
 }
 
-.close {
-    float: right;
+.modal-content h2 {
     color: var(--cyan);
-    font-size: 30px;
-    border: none;
-    background: none;
 }
 
-/* REVEAL */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
+
+#secretToast {
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%) translateY(100px);
+    background: #123d5c;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 12px 22px;
+    border-radius: 10px;
+    z-index: 500;
+    transition: .3s;
+    opacity: 0;
+}
+
+#secretToast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
 
 .reveal {
     opacity: 0;
@@ -827,73 +771,7 @@ section {
     transform: translateY(0);
 }
 
-/* BACK TO TOP AND EASTER EGG */
-
-#topButton {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 1px solid var(--blue);
-    background: #10243a;
-    color: var(--cyan);
-    font-size: 24px;
-    display: none;
-    z-index: 150;
-}
-
-#topButton:hover {
-    background: var(--blue);
-    color: #07111f;
-}
-
-#secretToast {
-    position: fixed;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%) translateY(100px);
-    opacity: 0;
-    background: #102c45;
-    border: 1px solid var(--cyan);
-    color: var(--cyan);
-    padding: 15px 24px;
-    border-radius: 12px;
-    z-index: 500;
-    text-align: center;
-    transition: .4s;
-    width: max-content;
-    max-width: 90%;
-}
-
-#secretToast.show {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    border-top: 1px solid #16415b;
-    color: #91aabd;
-}
-
-footer p {
-    margin: 5px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width: 850px) {
-    header {
-        flex-direction: column;
-    }
-
-    nav {
-        justify-content: center;
-    }
-
+@media (max-width: 850px) {
     .hero {
         grid-template-columns: 1fr;
         text-align: center;
@@ -905,51 +783,429 @@ footer p {
     }
 
     .certificate-grid,
-    .special-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    section {
-        padding: 65px 6%;
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
     }
 }
 
-@media(max-width: 480px) {
-    .photo-wrap {
-        width: 220px;
-        height: 220px;
+@media (max-width: 500px) {
+    section {
+        padding: 60px 6%;
+    }
+
+    .section-title {
+        font-size: 28px;
     }
 
     .info-grid {
         grid-template-columns: 1fr;
     }
 
-    .section-title {
-        font-size: 29px;
+    .photo-wrap {
+        width: 220px;
+        height: 220px;
     }
 
     nav {
-        gap: 10px;
+        gap: 9px;
     }
 
     nav a {
         font-size: 11px;
     }
-
-    .terminal-output {
-        font-size: 12px;
-    }
-}
-
-@media(prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-    }
 }
 </style>
+<!-- VERCEL ANALYTICS -->
 
+<script>
+window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+};
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</head>
+
+<body>
+
+<div id="progress"></div>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">ANIRUDH.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#objective">Objective</a>
+        <a href="#skills">Skills</a>
+        <a href="#softskills">Soft Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-copy reveal">
+
+        <p class="eyebrow">WELCOME TO MY DIGITAL WORLD</p>
+
+        <h1>Hello, I'm <span>Anirudh R</span></h1>
+
+        <div class="role" id="typing"></div>
+
+        <p class="intro">
+            I am a BCA Data Science student interested in programming,
+            technology and computer applications. I enjoy learning new
+            skills, exploring ideas and building my knowledge through
+            practical projects.
+        </p>
+
+        <a href="#about" class="btn primary">Explore More</a>
+
+        <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
+           target="_blank" rel="noopener" class="btn">
+            LinkedIn Profile
+        </a>
+
+        <section id="resume">
+
+    <h2 class="section-title reveal">
+        My <span>Profile</span>
+    </h2>
+
+    <div class="panel resume-card reveal">
+
+        <h3 style="font-size:28px;">Anirudh R</h3>
+
+        <p>BCA Data Science Student</p>
+
+        <p>
+            Interested in programming, software development,
+            data science and modern technologies.
+        </p>
+
+        <a href="#education" class="btn primary">
+            View Education
+        </a>
+
+        <a href="#skills" class="btn">
+            Explore Skills
+        </a>
+
+        <a href="#projects" class="btn">
+            View Projects
+        </a>
+
+    </div>
+
+</section>
+
+    </div>
+
+    <div class="reveal">
+
+        <div class="photo-wrap">
+
+            <img src="./profile.jpeg"
+                 alt="Anirudh Profile Photo"
+                 class="profile"
+                 id="profilePhoto"
+                 onerror="this.alt='Profile image not found';">
+
+        </div>
+
+        <label class="upload">
+            Change Profile Photo
+
+            <input type="file"
+                   id="photoUpload"
+                   accept="image/*">
+        </label>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title reveal">
+        About <span>Me</span>
+    </h2>
+
+    <div class="panel about-text reveal">
+
+        <p>
+            My name is Anirudh R. I am currently pursuing a Bachelor of
+            Computer Applications (BCA) in Data Science at Amrita Vishwa
+            Vidyapeetham, Mysuru Campus.
+        </p>
+
+        <p>
+            I have an interest in programming, computer science,
+            data science and modern technologies. I am continuously
+            improving my technical and communication skills.
+        </p>
+
+        <p>
+            I believe in learning through practice, accepting challenges
+            and improving myself step by step. My aim is to develop useful
+            technical knowledge and become a skilled professional.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <strong>Name:</strong> Anirudh R
+            </div>
+
+            <div class="info-item">
+                <strong>Course:</strong> BCA Data Science
+            </div>
+
+            <div class="info-item">
+                <strong>College:</strong> Amrita Vishwa Vidyapeetham
+            </div>
+
+            <div class="info-item">
+                <strong>Location:</strong> Mysuru, Karnataka
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OBJECTIVE -->
+
+<section id="objective">
+
+    <h2 class="section-title reveal">
+        Career <span>Objective</span>
+    </h2>
+
+    <div class="panel objective reveal">
+
+        <p>
+            To complete my education with strong technical knowledge,
+            improve my programming and problem-solving abilities, and
+            build a successful career in the IT field. I want to gain
+            practical experience, contribute to meaningful projects
+            and continue learning new technologies.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- TECHNICAL SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title reveal">
+        My <span>Skills</span>
+    </h2>
+
+    <p class="subtitle reveal">
+        Technologies and abilities I am learning
+    </p>
+
+    <div class="grid">
+
+        <div class="skill reveal">
+            <div class="skill-icon">🐍</div>
+            <strong>Python</strong>
+            <small>Programming Fundamentals</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">☕</div>
+            <strong>Java</strong>
+            <small>Object-Oriented Programming</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">🌐</div>
+            <strong>HTML</strong>
+            <small>Web Page Development</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">🎨</div>
+            <strong>CSS</strong>
+            <small>Web Page Styling</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">⚡</div>
+            <strong>JavaScript</strong>
+            <small>Basic Web Interactivity</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">🗄️</div>
+            <strong>DBMS / SQL</strong>
+            <small>Database Fundamentals</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">💻</div>
+            <strong>C Programming</strong>
+            <small>Programming Fundamentals</small>
+        </div>
+
+        <div class="skill reveal">
+            <div class="skill-icon">📊</div>
+            <strong>Data Science</strong>
+            <small>Learning and Exploration</small>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS VISUALIZATION -->
+
+<section id="skillchart">
+
+    <h2 class="section-title reveal">
+        Skills <span>Visualization</span>
+    </h2>
+
+    <p class="subtitle reveal">
+        My current learning areas
+    </p>
+
+    <div class="panel skill-chart reveal" id="skillBars">
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>Python</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="65"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>Java</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="55"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>HTML & CSS</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="70"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>JavaScript</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="45"></div>
+            </div>
+        </div>
+
+        <div class="skill-row">
+            <div class="skill-label">
+                <span>SQL / DBMS</span>
+                <span>Learning</span>
+            </div>
+            <div class="skill-track">
+                <div class="skill-fill" data-level="60"></div>
+            </div>
+        </div>
+
+        <p style="color:#91aabd;font-size:12px;margin-top:20px;">
+            These are editable self-assessment values, not test results.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SOFT SKILLS -->
+
+<section id="softskills">
+
+    <h2 class="section-title reveal">
+        Soft <span>Skills</span>
+    </h2>
+
+    <div class="grid">
+
+        <div class="strength reveal">
+            <span>🗣️</span>
+            <h3>Communication</h3>
+            <p>Sharing ideas and expressing thoughts clearly.</p>
+        </div>
+
+        <div class="strength reveal">
+            <span>🤝</span>
+            <h3>Teamwork</h3>
+            <p>Working together and learning from others.</p>
+        </div>
+
+        <div class="strength reveal">
+            <span>🧩</span>
+            <h3>Problem Solving</h3>
+            <p>Understanding problems and finding solutions.</p>
+        </div>
+
+        <div class="strength reveal">
+            <span>⏰</span>
+            <h3>Time Management</h3>
+            <p>Organising tasks and completing work on time.</p>
+        </div>
+
+        <div class="strength reveal">
+            <span>📚</span>
+            <h3>Continuous Learning</h3>
+            <p>Learning new skills and improving knowledge.</p>
+        </div>
+
+        <div class="strength reveal">
+            <span>🔄</span>
+            <h3>Adaptability</h3>
+            <p>Adjusting to new ideas and technologies.</p>
+        </div>
+
+    </div>
+
+</section>
 <!-- VERCEL ANALYTICS -->
 
 <script>
@@ -1278,7 +1534,7 @@ window.va = window.va || function () {
         </div>
 
         <div class="strength reveal">
-            <span>🧠</span>
+            <span>🧩</span>
             <h3>Problem Solving</h3>
             <p>Understanding problems and finding solutions.</p>
         </div>
@@ -1292,162 +1548,18 @@ window.va = window.va || function () {
         <div class="strength reveal">
             <span>📚</span>
             <h3>Continuous Learning</h3>
-            <p>Developing knowledge and learning new skills.</p>
+            <p>Learning new skills and improving knowledge.</p>
         </div>
 
         <div class="strength reveal">
-            <span>🎯</span>
+            <span>🔄</span>
             <h3>Adaptability</h3>
-            <p>Adjusting to new situations and challenges.</p>
+            <p>Adjusting to new ideas and technologies.</p>
         </div>
 
     </div>
 
 </section>
-
-<!-- EDUCATION -->
-
-<section id="education">
-
-    <h2 class="section-title reveal">
-        My <span>Education</span>
-    </h2>
-
-    <div class="panel reveal">
-
-        <h3>Bachelor of Computer Applications</h3>
-
-        <p><strong>Specialisation:</strong> Data Science</p>
-        <p><strong>Institution:</strong> Amrita Vishwa Vidyapeetham</p>
-        <p><strong>Campus:</strong> Mysuru Campus</p>
-        <p><strong>Course:</strong> BCA Data Science</p>
-
-        <a class="college"
-           href="https://www.google.com/maps/search/?api=1&query=Amrita+Vishwa+Vidyapeetham+Mysuru+Campus"
-           target="_blank" rel="noopener">
-
-            📍 View College Location on Google Maps →
-
-        </a>
-
-    </div>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-    <h2 class="section-title reveal">
-        My <span>Projects</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        Click a project to explore its details
-    </p>
-
-    <div class="grid">
-
-        <div class="panel project-card reveal"
-             onclick="showProject('Personal Portfolio Website',
-             'A responsive personal portfolio created to present my profile, education, technical skills, certificates and projects.',
-             'HTML, CSS, JavaScript')">
-
-            <div class="project-number">01</div>
-            <h3>Personal Portfolio Website</h3>
-
-            <p>
-                A personal website to showcase my profile and technical journey.
-            </p>
-
-            <span class="tech">HTML</span>
-            <span class="tech">CSS</span>
-            <span class="tech">JavaScript</span>
-
-            <div class="project-detail">Click to explore →</div>
-
-        </div>
-
-        <div class="panel project-card reveal"
-             onclick="showProject('Student Information System',
-             'A programming practice project focused on storing and displaying student information.',
-             'Java, OOP')">
-
-            <div class="project-number">02</div>
-            <h3>Student Information System</h3>
-
-            <p>
-                A programming project focused on student information management.
-            </p>
-
-            <span class="tech">Java</span>
-            <span class="tech">OOP</span>
-
-            <div class="project-detail">Click to explore →</div>
-
-        </div>
-
-        <div class="panel project-card reveal"
-             onclick="showProject('Database Management Practice',
-             'Academic exercises involving database tables, SQL queries and basic data management.',
-             'SQL, DBMS')">
-
-            <div class="project-number">03</div>
-            <h3>Database Management Practice</h3>
-
-            <p>
-                Practice with database tables, SQL queries and data management.
-            </p>
-
-            <span class="tech">SQL</span>
-            <span class="tech">DBMS</span>
-
-            <div class="project-detail">Click to explore →</div>
-
-        </div>
-
-        <div class="panel project-card reveal"
-             onclick="showProject('Python Programming Practice',
-             'Small programs created to practise Python fundamentals, logic and problem solving.',
-             'Python, Programming')">
-
-            <div class="project-number">04</div>
-            <h3>Python Programming Practice</h3>
-
-            <p>
-                Small Python programs for improving coding and logical thinking.
-            </p>
-
-            <span class="tech">Python</span>
-            <span class="tech">Programming</span>
-
-            <div class="project-detail">Click to explore →</div>
-
-        </div>
-
-        <div class="panel project-card reveal"
-             onclick="showProject('Blood Bank Management System',
-             'A database-based academic project concept for registering donors, managing blood stock and handling blood requests.',
-             'Python, MySQL')">
-
-            <div class="project-number">05</div>
-            <h3>Blood Bank Management System</h3>
-
-            <p>
-                A project concept for donor records, blood stock and requests.
-            </p>
-
-            <span class="tech">Python</span>
-            <span class="tech">MySQL</span>
-
-            <div class="project-detail">Click to explore →</div>
-
-        </div>
-
-    </div>
-
-</section>
-
 <!-- DEVELOPER TERMINAL -->
 
 <section id="terminal">
@@ -1457,21 +1569,21 @@ window.va = window.va || function () {
     </h2>
 
     <p class="subtitle reveal">
-        Explore my portfolio using commands
+        Explore my portfolio using simple commands
     </p>
 
     <div class="terminal reveal">
 
         <div class="terminal-header">
-            ANIRUDH TERMINAL
+            ANIRUDH@PORTFOLIO:~
             <span class="terminal-dots">● ● ●</span>
         </div>
 
-        <div class="terminal-output" id="terminalOutput">Welcome to Anirudh's Developer Terminal!
+        <div class="terminal-output" id="terminalOutput">
+Welcome to Anirudh's Developer Terminal!
 
-Type 'help' to see available commands.
-
-</div>
+Type "help" to see available commands.
+        </div>
 
         <form class="terminal-form" id="terminalForm">
 
@@ -1479,9 +1591,8 @@ Type 'help' to see available commands.
 
             <input type="text"
                    id="terminalInput"
-                   placeholder="Enter a command..."
-                   autocomplete="off"
-                   aria-label="Terminal command">
+                   placeholder="Type a command..."
+                   autocomplete="off">
 
         </form>
 
@@ -1489,349 +1600,155 @@ Type 'help' to see available commands.
 
 </section>
 
-<!-- CERTIFICATES -->
 
-<section id="certificates" class="certificate-section">
+<!-- INTERACTIVE RESUME -->
 
-    <h2 class="section-title reveal">
-        My <span>Certificates</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        Click the button to view your certificate
-    </p>
-
-    <div class="certificate-grid">
-
-        <div class="certificate-card reveal">
-            <div class="certificate-icon">🔐</div>
-            <h3>Introduction to Cyber Security</h3>
-            <p>Simplilearn SkillUp</p>
-
-            <button class="cert-btn"
-                onclick="showCertificate('./cyber-certificate.jpeg',
-                'Introduction to Cyber Security')">
-                View Certificate
-            </button>
-        </div>
-
-        <div class="certificate-card reveal">
-            <div class="certificate-icon">☕</div>
-            <h3>Java Course – Mastering the Fundamentals</h3>
-            <p>Scaler Topics</p>
-
-            <button class="cert-btn"
-                onclick="showCertificate('./java-certificate.jpeg',
-                'Java Course – Mastering the Fundamentals')">
-                View Certificate
-            </button>
-        </div>
-
-        <div class="certificate-card reveal">
-            <div class="certificate-icon">🐍</div>
-            <h3>Python Essentials 1</h3>
-            <p>Cisco Networking Academy</p>
-
-            <button class="cert-btn"
-                onclick="showCertificate('./python-essentials-1.jpeg',
-                'Python Essentials 1')">
-                View Certificate
-            </button>
-        </div>
-
-        <div class="certificate-card reveal">
-            <div class="certificate-icon">🐍</div>
-            <h3>Python Essentials 2</h3>
-            <p>Cisco Networking Academy</p>
-
-            <button class="cert-btn"
-                onclick="showCertificate('./python-essentials-2.jpeg',
-                'Python Essentials 2')">
-                View Certificate
-            </button>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- LEARNING JOURNEY -->
-
-<section id="journey">
+<section id="resume">
 
     <h2 class="section-title reveal">
-        My Learning <span>Journey</span>
+        Interactive <span>Resume</span>
     </h2>
 
-    <p class="subtitle reveal">
-        Every step is an opportunity to grow
-    </p>
+    <div class="panel resume-card reveal">
 
-    <div class="timeline reveal">
+        <h3 style="font-size:28px;">
+            Anirudh R
+        </h3>
 
-        <div class="timeline-item">
-            <span class="timeline-date">FOUNDATION</span>
-            <h3>Started Learning Programming</h3>
-            <p>
-                Building programming fundamentals and understanding
-                computer applications.
-            </p>
-        </div>
+        <p>
+            BCA Data Science Student
+        </p>
 
-        <div class="timeline-item">
-            <span class="timeline-date">ACADEMIC JOURNEY</span>
-            <h3>BCA Data Science</h3>
-            <p>
-                Studying computer applications, mathematics,
-                databases and data science.
-            </p>
-        </div>
+        <p>
+            Interested in programming, computer applications
+            and modern technologies.
+        </p>
 
-        <div class="timeline-item">
-            <span class="timeline-date">PRACTICAL LEARNING</span>
-            <h3>Developing Projects</h3>
-            <p>
-                Practising Python, Java, HTML, CSS, JavaScript
-                and MySQL through academic projects.
-            </p>
-        </div>
+        <div class="info-grid">
 
-        <div class="timeline-item">
-            <span class="timeline-date">CONTINUOUS LEARNING</span>
-            <h3>Exploring New Technologies</h3>
-            <p>
-                Improving technical knowledge, communication,
-                teamwork and problem-solving skills.
-            </p>
-        </div>
+            <div class="info-item">
+                <strong>Education</strong>
+                <p>BCA Data Science</p>
+            </div>
 
-        <div class="timeline-item">
-            <span class="timeline-date">FUTURE GOAL</span>
-            <h3>Aspiring IT Professional</h3>
-            <p>
-                Working towards a successful career in technology
-                and software development.
-            </p>
-        </div>
+            <div class="info-item">
+                <strong>Technical Skills</strong>
+                <p>Python, Java, HTML, CSS, JavaScript, SQL, C</p>
+            </div>
 
-    </div>
+            <div class="info-item">
+                <strong>Soft Skills</strong>
+                <p>Communication, Teamwork, Problem Solving</p>
+            </div>
 
-</section>
-
-<!-- INTERESTS -->
-
-<section id="interests">
-
-    <h2 class="section-title reveal">
-        My <span>Interests</span>
-    </h2>
-
-    <div class="grid">
-
-        <div class="strength reveal">
-            <span>💻</span>
-            <h3>Technology</h3>
-            <p>Exploring new developments in technology.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>📈</span>
-            <h3>Data Science</h3>
-            <p>Learning about data and its applications.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🌐</span>
-            <h3>Web Development</h3>
-            <p>Creating and designing websites.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🧩</span>
-            <h3>Programming</h3>
-            <p>Practising coding and logical thinking.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- AI PORTFOLIO ASSISTANT -->
-
-<section id="assistant">
-
-    <h2 class="section-title reveal">
-        AI Portfolio <span>Assistant</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        Ask questions about my portfolio
-    </p>
-
-    <div class="assistant-box reveal">
-
-        <div class="assistant-header">
-            🤖 Anirudh's Portfolio Assistant
-            <small>Interactive portfolio information assistant</small>
-        </div>
-
-        <div class="chat-messages" id="chatMessages">
-
-            <div class="message bot-message">
-                Hello! Welcome to my portfolio.
-
-                Ask me about my education, skills, projects,
-                certificates or contact information.
+            <div class="info-item">
+                <strong>Career Interest</strong>
+                <p>Software Development and Technology</p>
             </div>
 
         </div>
 
-        <div class="quick-questions">
-
-            <button onclick="quickAsk('Who is Anirudh?')">
-                About Anirudh
-            </button>
-
-            <button onclick="quickAsk('What are your skills?')">
-                Skills
-            </button>
-
-            <button onclick="quickAsk('Tell me about your projects')">
-                Projects
-            </button>
-
-            <button onclick="quickAsk('How can I contact you?')">
-                Contact
-            </button>
-
-        </div>
-
-        <form class="chat-form" id="chatForm">
-
-            <input type="text"
-                   id="chatInput"
-                   placeholder="Ask something..."
-                   autocomplete="off"
-                   required>
-
-            <button type="submit">Send</button>
-
-        </form>
+        <a href="resume.pdf"
+           class="btn primary"
+           download>
+            Download Full Resume
+        </a>
 
     </div>
 
 </section>
 
-<!-- INTERACTIVE RESUME AND DIGITAL BUSINESS CARD -->
 
-<section id="digital">
+<!-- DIGITAL BUSINESS CARD -->
+
+<section id="businesscard">
 
     <h2 class="section-title reveal">
-        My Digital <span>Profile</span>
+        Digital Business <span>Card</span>
     </h2>
 
-    <div class="special-grid">
+    <div class="panel business-card reveal">
 
-        <div class="special-card reveal">
+        <h3 style="font-size:27px;">
+            ANIRUDH R
+        </h3>
 
-            <div style="font-size:45px;">📄</div>
+        <p>
+            BCA Data Science Student
+        </p>
 
-            <h3>Interactive Resume</h3>
+        <p>
+            Amrita Vishwa Vidyapeetham
+        </p>
 
-            <p>
-                Download my resume to explore my education,
-                technical skills and projects.
-            </p>
+        <p>
+            Mysuru, Karnataka
+        </p>
 
-            <a href="./resume.pdf"
-               class="btn primary"
-               download="Anirudh_R_Resume.pdf">
+        <div class="social-links">
 
-                Download Resume
-
+            <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
+               target="_blank"
+               rel="noopener">
+                LinkedIn
             </a>
 
-            <p style="font-size:12px;">
-                Place your resume.pdf file in the website folder.
-            </p>
-
         </div>
 
-        <div class="special-card reveal">
+        <button class="btn primary"
+                onclick="downloadBusinessCard()">
+            Download Business Card
+        </button>
 
-            <div style="font-size:45px;">📇</div>
-
-            <h3>Digital Business Card</h3>
-
-            <p>
-                Scan the QR code to open my portfolio website.
-            </p>
-
-            <img id="qrCode"
-                 class="qr-image"
-                 alt="Portfolio QR Code">
-
-            <button class="btn"
-                    onclick="downloadQR()">
-
-                Download QR Code
-
-            </button>
-
-            <button class="btn"
-                    onclick="copyPortfolioLink()">
-
-                Copy Portfolio Link
-
-            </button>
-
-        </div>
+        <button class="btn"
+                onclick="copyEmail()">
+            Copy Email
+        </button>
 
     </div>
 
 </section>
+
 
 <!-- VISITOR ANALYTICS -->
 
 <section id="analytics">
 
     <h2 class="section-title reveal">
-        Website <span>Analytics</span>
+        Visitor <span>Analytics</span>
     </h2>
 
-    <div class="panel reveal" style="text-align:center;max-width:750px;margin:auto;">
+    <p class="subtitle reveal">
+        A simple local counter for this browser
+    </p>
 
-        <div style="font-size:45px;">📊</div>
+    <div class="analytics-grid reveal">
 
-        <h3>Visitor Analytics Dashboard</h3>
+        <div class="analytics-item">
+            <strong id="visitCount">0</strong>
+            <span>Visits on this browser</span>
+        </div>
 
-        <p>
-            My portfolio uses Vercel Web Analytics to measure
-            website traffic and understand visitor activity.
-        </p>
+        <div class="analytics-item">
+            <strong id="todayCount">0</strong>
+            <span>Current session</span>
+        </div>
 
-        <p>
-            Analytics can help track page views, visitors
-            and popular pages.
-        </p>
-
-        <a href="https://vercel.com/dashboard"
-           class="btn primary"
-           target="_blank"
-           rel="noopener">
-
-            Open Vercel Dashboard
-
-        </a>
-
-        <p style="font-size:12px;margin-top:15px;">
-            Detailed statistics are available to the project owner
-            through the Vercel dashboard.
-        </p>
+        <div class="analytics-item">
+            <strong id="portfolioStatus">Online</strong>
+            <span>Portfolio status</span>
+        </div>
 
     </div>
 
+    <p style="color:#91aabd;text-align:center;font-size:12px;margin-top:20px;">
+        These counters are stored locally in your browser.
+        For real visitor analytics, enable Vercel Analytics
+        in your Vercel project dashboard.
+    </p>
+
 </section>
+
 
 <!-- CONTACT -->
 
@@ -1841,388 +1758,766 @@ Type 'help' to see available commands.
         Contact <span>Me</span>
     </h2>
 
-    <div class="panel contact reveal">
+    <p class="subtitle reveal">
+        Feel free to connect with me
+    </p>
 
-        <h3>Let's Connect!</h3>
+    <div class="contact-grid">
 
-        <p>
-            Thank you for visiting my portfolio.
-            Feel free to contact me using the form below.
-        </p>
+        <div class="panel reveal">
 
-        <p>
-            <strong>Gmail:</strong><br>
+            <h3>Let's Connect</h3>
 
-            <a href="mailto:anirudhr682@gmail.com">
-                anirudhr682@gmail.com
-            </a>
-        </p>
+            <p>
+                I am interested in learning new technologies,
+                exploring opportunities and connecting with
+                people who share an interest in technology.
+            </p>
 
-        <form action="https://formsubmit.co/anirudhr682@gmail.com"
-              method="POST">
+            <div class="social-links">
 
-            <input type="hidden"
-                   name="_subject"
-                   value="New Portfolio Contact Message">
+                <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
+                   target="_blank"
+                   rel="noopener">
+                    LinkedIn Profile
+                </a>
 
-            <input type="hidden"
-                   name="_captcha"
-                   value="true">
+            </div>
 
-            <input type="hidden"
-                   name="_template"
-                   value="table">
+        </div>
 
-            <!-- REPLACE WITH YOUR ACTUAL VERCEL URL -->
 
-            <input type="hidden"
-                   name="_next"
-                   value="https://YOUR-WEBSITE-URL.vercel.app/">
+        <div class="panel contact-form reveal">
 
-            <input type="text"
-                   name="name"
-                   placeholder="Enter Your Name"
-                   maxlength="100"
-                   required>
+            <h3>Send a Message</h3>
 
-            <input type="email"
-                   name="email"
-                   placeholder="Enter Your Email"
-                   maxlength="150"
-                   required>
+            <form action="https://formsubmit.co/YOUR_EMAIL@example.com"
+                  method="POST">
 
-            <input type="text"
-                   name="subject"
-                   placeholder="Enter Subject"
-                   maxlength="150"
-                   required>
+                <input type="hidden"
+                       name="_subject"
+                       value="New Portfolio Contact Message">
 
-            <textarea name="message"
-                      placeholder="Write Your Message Here..."
-                      rows="6"
-                      maxlength="5000"
-                      required></textarea>
+                <input type="hidden"
+                       name="_captcha"
+                       value="true">
 
-            <button type="submit" class="btn primary">
-                Send Message
-            </button>
+                <input type="hidden"
+                       name="_template"
+                       value="table">
 
-        </form>
+                <input type="text"
+                       name="name"
+                       placeholder="Your Name"
+                       required>
 
-        <p>
-            <strong>LinkedIn:</strong><br>
+                <input type="email"
+                       name="email"
+                       placeholder="Your Email"
+                       required>
 
-            <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-               target="_blank"
-               rel="noopener">
+                <textarea name="message"
+                          rows="5"
+                          placeholder="Your Message"
+                          required></textarea>
 
-                Visit My LinkedIn Profile
+                <button type="submit">
+                    Send Message
+                </button>
 
-            </a>
-        </p>
+            </form>
 
-        <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-           target="_blank"
-           rel="noopener"
-           class="btn primary">
+            <p style="font-size:12px;margin-top:12px;">
+                Replace YOUR_EMAIL@example.com with your email
+                address before publishing.
+            </p>
 
-            Connect on LinkedIn
-
-        </a>
+        </div>
 
     </div>
 
 </section>
 
+
 <!-- FOOTER -->
 
 <footer>
 
-    <p>© 2026 Anirudh R | Personal Portfolio</p>
+    <p>
+        © <span id="year"></span> Anirudh R.
+        All Rights Reserved.
+    </p>
 
-    <p>Designed with HTML, CSS and JavaScript</p>
-
-    <p style="color:var(--cyan);">
-        Keep Learning. Keep Building. Keep Growing.
+    <p>
+        Designed and Developed with HTML, CSS and JavaScript.
     </p>
 
 </footer>
 
-<!-- MODAL -->
 
-<div id="modal" onclick="closeOutside(event)">
-
-    <div class="modal-box">
-
-        <button class="close"
-                onclick="closeModal()">
-            &times;
-        </button>
-
-        <h2 id="modalTitle">Preview</h2>
-
-        <img id="certificateImage"
-             src=""
-             alt="Preview"
-             style="display:none;">
-
-        <p id="modalDescription"
-           style="color:#b6c7d8;margin:15px;">
-        </p>
-
-    </div>
-
-</div>
-
-<!-- BACK TO TOP -->
+<!-- BACK TO TOP BUTTON -->
 
 <button id="topButton"
-        onclick="goTop()"
-        aria-label="Back to top">
+        title="Back to top"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">
     ↑
 </button>
 
-<div id="secretToast" role="status" aria-live="polite"></div>
 
+<!-- EASTER EGG MESSAGE -->
+
+<div id="secretToast">
+    You discovered a hidden feature!
+</div>
 <script>
 
-// ======================================
-// TYPING EFFECT
-// ======================================
+// ========================================
+// 1. TYPING ANIMATION
+// ========================================
 
-const words = [
+const roles = [
     "BCA Data Science Student",
     "Aspiring Developer",
     "Technology Enthusiast",
     "Future IT Professional"
 ];
 
-let wordIndex = 0;
-let charIndex = 0;
+let roleIndex = 0;
+let characterIndex = 0;
 let deleting = false;
 
 function typeEffect() {
 
     const typing = document.getElementById("typing");
-    const currentWord = words[wordIndex];
 
-    if (deleting) {
-        charIndex--;
+    if (!typing) return;
+
+    const currentRole = roles[roleIndex];
+
+    if (!deleting) {
+
+        typing.textContent =
+            currentRole.substring(0, characterIndex + 1);
+
+        characterIndex++;
+
+        if (characterIndex === currentRole.length) {
+
+            deleting = true;
+
+            setTimeout(typeEffect, 1500);
+
+            return;
+        }
+
     } else {
-        charIndex++;
+
+        typing.textContent =
+            currentRole.substring(0, characterIndex - 1);
+
+        characterIndex--;
+
+        if (characterIndex === 0) {
+
+            deleting = false;
+
+            roleIndex = (roleIndex + 1) % roles.length;
+
+        }
+
     }
 
-    typing.textContent = currentWord.substring(0, charIndex);
-
-    let speed = deleting ? 50 : 100;
-
-    if (!deleting && charIndex === currentWord.length) {
-        deleting = true;
-        speed = 1300;
-    }
-    else if (deleting && charIndex === 0) {
-        deleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        speed = 400;
-    }
-
-    setTimeout(typeEffect, speed);
+    setTimeout(typeEffect, deleting ? 50 : 100);
 }
 
 typeEffect();
 
 
-// ======================================
-// PROFILE PHOTO UPLOAD
-// ======================================
+// ========================================
+// 2. PROFILE PHOTO UPLOAD
+// ========================================
 
-document.getElementById("photoUpload")
-.addEventListener("change", function(event) {
+const photoUpload = document.getElementById("photoUpload");
 
-    const file = event.target.files[0];
+if (photoUpload) {
 
-    if (!file) return;
+    photoUpload.addEventListener("change", function(event) {
 
-    if (!file.type.startsWith("image/")) {
-        alert("Please select an image file.");
-        return;
-    }
+        const file = event.target.files[0];
 
-    const reader = new FileReader();
+        if (!file) return;
 
-    reader.onload = function(e) {
-        document.getElementById("profilePhoto").src =
-            e.target.result;
-    };
+        if (!file.type.startsWith("image/")) {
 
-    reader.readAsDataURL(file);
+            alert("Please select an image file.");
 
-});
+            return;
+        }
 
+        const reader = new FileReader();
 
-// ======================================
-// CERTIFICATE AND PROJECT MODAL
-// ======================================
+        reader.onload = function(e) {
 
-function showCertificate(image, title) {
+            document.getElementById("profilePhoto").src =
+                e.target.result;
 
-    document.getElementById("certificateImage").src = image;
-    document.getElementById("certificateImage").style.display = "block";
+        };
 
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("modalDescription").textContent = "";
+        reader.readAsDataURL(file);
 
-    document.getElementById("modal").style.display = "flex";
+    });
+
 }
 
-function showProject(title, description, technologies) {
 
-    document.getElementById("certificateImage").style.display = "none";
-
-    document.getElementById("modalTitle").textContent = title;
-
-    document.getElementById("modalDescription").textContent =
-        description + "\n\nTechnologies: " + technologies;
-
-    document.getElementById("modal").style.display = "flex";
-}
-
-function closeModal() {
-
-    document.getElementById("modal").style.display = "none";
-
-    document.getElementById("certificateImage").src = "";
-}
-
-function closeOutside(event) {
-
-    if (event.target.id === "modal") {
-        closeModal();
-    }
-}
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        closeModal();
-    }
-
-});
-
-
-// ======================================
-// SCROLL PROGRESS
-// ======================================
+// ========================================
+// 3. SCROLL PROGRESS
+// ========================================
 
 window.addEventListener("scroll", function() {
 
-    const scrollTop = document.documentElement.scrollTop;
+    const scrollTop =
+        document.documentElement.scrollTop;
 
     const scrollHeight =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-    const progress = scrollHeight > 0
+    const progress =
+        scrollHeight > 0
         ? (scrollTop / scrollHeight) * 100
         : 0;
 
     document.getElementById("progress").style.width =
         progress + "%";
 
+
+    // Back to top button
+
     const topButton = document.getElementById("topButton");
 
-    topButton.style.display =
-        scrollTop > 300 ? "block" : "none";
+    if (scrollTop > 300) {
+
+        topButton.style.display = "block";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
 
 });
 
-function goTop() {
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+// ========================================
+// 4. REVEAL ANIMATIONS
+// ========================================
+
+const revealObserver = new IntersectionObserver(
+    function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+document.querySelectorAll(".reveal").forEach(function(element) {
+
+    revealObserver.observe(element);
+
+});
+
+
+// ========================================
+// 5. SKILLS BAR ANIMATION
+// ========================================
+
+const skillObserver = new IntersectionObserver(
+    function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                const bars =
+                    entry.target.querySelectorAll(".skill-fill");
+
+                bars.forEach(function(bar) {
+
+                    const level = bar.getAttribute("data-level");
+
+                    bar.style.width = level + "%";
+
+                });
+
+                skillObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.3
+    }
+);
+
+const skillBars = document.getElementById("skillBars");
+
+if (skillBars) {
+
+    skillObserver.observe(skillBars);
+
+}
+
+
+// ========================================
+// 6. PROJECT DETAILS
+// ========================================
+
+const projectData = {
+
+    1: {
+        title: "Personal Portfolio Website",
+
+        description:
+            "A responsive personal portfolio website created to showcase education, technical skills, projects and certificates. It includes animations, interactive sections and a developer terminal.",
+
+        technologies:
+            ["HTML", "CSS", "JavaScript"]
+    },
+
+    2: {
+        title: "Student Information System",
+
+        description:
+            "A Python project designed to store and manage student information. It demonstrates basic programming concepts and data management.",
+
+        technologies:
+            ["Python", "Database"]
+    },
+
+    3: {
+        title: "Database Management Practice",
+
+        description:
+            "A database practice project involving creating tables, inserting records, updating information and retrieving data using SQL.",
+
+        technologies:
+            ["MySQL", "SQL"]
+    },
+
+    4: {
+        title: "Blood Bank Management System",
+
+        description:
+            "A project designed to manage donor registration, blood stock information and blood requests. It aims to make blood bank record management easier.",
+
+        technologies:
+            ["Python", "MySQL"]
+    }
+
+};
+
+
+function showProject(id) {
+
+    const project = projectData[id];
+
+    if (!project) return;
+
+    document.getElementById("projectTitle").textContent =
+        project.title;
+
+    document.getElementById("projectDescription").textContent =
+        project.description;
+
+    document.getElementById("projectTechnologies").innerHTML = "";
+
+    project.technologies.forEach(function(technology) {
+
+        const span = document.createElement("span");
+
+        span.className = "tech";
+
+        span.textContent = technology;
+
+        document.getElementById("projectTechnologies")
+            .appendChild(span);
+
+    });
+
+    document.getElementById("projectModal").style.display =
+        "flex";
+
+}
+
+
+// ========================================
+// 7. CERTIFICATE VIEWER
+// ========================================
+
+function openCertificate(imagePath) {
+
+    const modal =
+        document.getElementById("certificateModal");
+
+    const image =
+        document.getElementById("certificateImage");
+
+    const error =
+        document.getElementById("certificateError");
+
+    error.style.display = "none";
+
+    image.src = imagePath;
+
+    image.onerror = function() {
+
+        error.style.display = "block";
+
+    };
+
+    image.onload = function() {
+
+        error.style.display = "none";
+
+    };
+
+    modal.style.display = "flex";
+
+}
+
+
+// ========================================
+// 8. CLOSE MODALS
+// ========================================
+
+function closeModal(id) {
+
+    document.getElementById(id).style.display =
+        "none";
+
+}
+
+window.addEventListener("click", function(event) {
+
+    const projectModal =
+        document.getElementById("projectModal");
+
+    const certificateModal =
+        document.getElementById("certificateModal");
+
+    if (event.target === projectModal) {
+
+        projectModal.style.display = "none";
+
+    }
+
+    if (event.target === certificateModal) {
+
+        certificateModal.style.display = "none";
+
+    }
+
+});
+
+
+// ========================================
+// 9. DEVELOPER TERMINAL
+// ========================================
+
+const terminalForm =
+    document.getElementById("terminalForm");
+
+const terminalInput =
+    document.getElementById("terminalInput");
+
+const terminalOutput =
+    document.getElementById("terminalOutput");
+
+
+function terminalPrint(text) {
+
+    terminalOutput.textContent += "\n" + text;
+
+    terminalOutput.scrollTop =
+        terminalOutput.scrollHeight;
+
+}
+
+
+if (terminalForm) {
+
+    terminalForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const command =
+            terminalInput.value.trim().toLowerCase();
+
+        if (!command) return;
+
+        terminalPrint("\nvisitor@anirudh:~$ " + command);
+
+        switch (command) {
+
+            case "help":
+
+                terminalPrint(
+                    "Available commands:\n" +
+                    "help       - Show commands\n" +
+                    "about      - About Anirudh\n" +
+                    "skills     - Technical skills\n" +
+                    "education  - Education details\n" +
+                    "projects   - Project information\n" +
+                    "certificates - Certificates\n" +
+                    "contact    - Contact information\n" +
+                    "clear      - Clear terminal"
+                );
+
+                break;
+
+
+            case "about":
+
+                terminalPrint(
+                    "Name: Anirudh R\n" +
+                    "Course: BCA Data Science\n" +
+                    "Interest: Programming and Technology"
+                );
+
+                break;
+
+
+            case "skills":
+
+                terminalPrint(
+                    "Python, Java, HTML, CSS, JavaScript, SQL and C."
+                );
+
+                break;
+
+
+            case "education":
+
+                terminalPrint(
+                    "BCA Data Science\n" +
+                    "Amrita Vishwa Vidyapeetham\n" +
+                    "Mysuru Campus"
+                );
+
+                break;
+
+
+            case "projects":
+
+                terminalPrint(
+                    "1. Personal Portfolio Website\n" +
+                    "2. Student Information System\n" +
+                    "3. Database Management Practice\n" +
+                    "4. Blood Bank Management System"
+                );
+
+                break;
+
+
+            case "certificates":
+
+                terminalPrint(
+                    "Java - Scaler\n" +
+                    "Cyber Security - Simplilearn\n" +
+                    "Python Essentials 1 - Cisco\n" +
+                    "Python Essentials 2 - Cisco"
+                );
+
+                break;
+
+
+            case "contact":
+
+                terminalPrint(
+                    "LinkedIn:\n" +
+                    "linkedin.com/in/anirudh-r-869953381/"
+                );
+
+                break;
+
+
+            case "clear":
+
+                terminalOutput.textContent =
+                    "Terminal cleared.\nType help to continue.";
+
+                break;
+
+
+            case "whoami":
+
+                terminalPrint(
+                    "You are exploring Anirudh's portfolio!"
+                );
+
+                break;
+
+
+            case "hello":
+
+                terminalPrint(
+                    "Hello! Welcome to my portfolio."
+                );
+
+                break;
+
+
+            case "date":
+
+                terminalPrint(
+                    new Date().toDateString()
+                );
+
+                break;
+
+
+            default:
+
+                terminalPrint(
+                    "Command not found. Type help to see available commands."
+                );
+
+        }
+
+        terminalInput.value = "";
+
     });
 
 }
 
 
-// ======================================
-// REVEAL ANIMATION
-// ======================================
+// ========================================
+// 10. DIGITAL BUSINESS CARD DOWNLOAD
+// ========================================
 
-const observer = new IntersectionObserver(
-function(entries) {
+function downloadBusinessCard() {
 
-    entries.forEach(function(entry) {
+    const cardText =
+`ANIRUDH R
 
-        if (entry.isIntersecting) {
+BCA Data Science Student
 
-            entry.target.classList.add("show");
+Amrita Vishwa Vidyapeetham
+Mysuru, Karnataka
 
-            observer.unobserve(entry.target);
+LinkedIn:
+https://www.linkedin.com/in/anirudh-r-869953381/
+`;
 
-        }
+    const blob = new Blob(
+        [cardText],
+        { type: "text/plain" }
+    );
 
-    });
+    const url = URL.createObjectURL(blob);
 
-}, {
-    threshold: 0.12
-});
+    const link = document.createElement("a");
 
-document.querySelectorAll(".reveal").forEach(function(element) {
-    observer.observe(element);
-});
+    link.href = url;
 
+    link.download = "Anirudh_Business_Card.txt";
 
-// ======================================
-// SKILLS ANIMATION
-// ======================================
+    link.click();
 
-const skillObserver = new IntersectionObserver(
-function(entries) {
+    URL.revokeObjectURL(url);
 
-    entries.forEach(function(entry) {
-
-        if (entry.isIntersecting) {
-
-            entry.target.querySelectorAll(".skill-fill")
-            .forEach(function(bar) {
-
-                const level = Number(bar.dataset.level);
-
-                bar.style.width = Math.min(100, Math.max(0, level)) + "%";
-
-            });
-
-            skillObserver.unobserve(entry.target);
-        }
-
-    });
-
-}, {
-    threshold: 0.2
-});
-
-skillObserver.observe(document.getElementById("skillBars"));
+}
 
 
-// ======================================
-// ACTIVE NAVIGATION
-// ======================================
+// ========================================
+// 11. COPY EMAIL
+// ========================================
 
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll("nav a");
+function copyEmail() {
+
+    const email = "YOUR_EMAIL@example.com";
+
+    navigator.clipboard.writeText(email)
+        .then(function() {
+
+            alert("Email copied: " + email);
+
+        })
+        .catch(function() {
+
+            alert("Please update your email address in the code.");
+
+        });
+
+}
+
+
+// ========================================
+// 12. VISITOR COUNTER
+// ========================================
+
+let visits = Number(
+    localStorage.getItem("anirudhVisits") || 0
+);
+
+visits++;
+
+localStorage.setItem(
+    "anirudhVisits",
+    visits
+);
+
+document.getElementById("visitCount").textContent =
+    visits;
+
+document.getElementById("todayCount").textContent =
+    "1";
+
+
+// ========================================
+// 13. CURRENT YEAR
+// ========================================
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+// ========================================
+// 14. NAVIGATION ACTIVE LINK
+// ========================================
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navLinks =
+    document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", function() {
 
-    let current = "";
+    let currentSection = "";
 
     sections.forEach(function(section) {
 
         const sectionTop = section.offsetTop - 150;
 
         if (window.scrollY >= sectionTop) {
-            current = section.getAttribute("id");
+
+            currentSection = section.getAttribute("id");
+
         }
 
     });
@@ -2231,8 +2526,10 @@ window.addEventListener("scroll", function() {
 
         link.classList.remove("active");
 
-        if (link.getAttribute("href") === "#" + current) {
+        if (link.getAttribute("href") === "#" + currentSection) {
+
             link.classList.add("active");
+
         }
 
     });
@@ -2240,358 +2537,63 @@ window.addEventListener("scroll", function() {
 });
 
 
-// ======================================
-// DEVELOPER TERMINAL
-// ======================================
-
-const terminalForm = document.getElementById("terminalForm");
-const terminalInput = document.getElementById("terminalInput");
-const terminalOutput = document.getElementById("terminalOutput");
-
-function terminalPrint(text) {
-
-    terminalOutput.textContent += "\n" + text + "\n";
-
-    terminalOutput.scrollTop = terminalOutput.scrollHeight;
-}
-
-const terminalCommands = {
-
-    help:
-`Available Commands:
-
-help       - Show commands
-about      - About Anirudh
-skills     - View technical skills
-projects   - View projects
-education  - Education details
-certificates - Certificate information
-contact    - Contact details
-journey    - Learning journey
-clear      - Clear terminal
-date       - Current date
-social     - LinkedIn profile`,
-
-    about:
-`Name: Anirudh R
-Course: BCA Data Science
-Interest: Programming and Technology
-Goal: Become an IT Professional`,
-
-    skills:
-`Python
-Java
-HTML
-CSS
-JavaScript
-C Programming
-SQL / DBMS
-Data Science`,
-
-    projects:
-`1. Personal Portfolio Website
-2. Student Information System
-3. Database Management Practice
-4. Python Programming Practice
-5. Blood Bank Management System`,
-
-    education:
-`Bachelor of Computer Applications
-Specialisation: Data Science
-Amrita Vishwa Vidyapeetham
-Mysuru Campus`,
-
-    certificates:
-`Introduction to Cyber Security
-Java – Mastering the Fundamentals
-Python Essentials 1
-Python Essentials 2`,
-
-    contact:
-`Email: anirudhr682@gmail.com
-LinkedIn: linkedin.com/in/anirudh-r-869953381/`,
-
-    journey:
-`Learning programming
-Studying BCA Data Science
-Building practical projects
-Exploring new technologies
-Aspiring IT Professional`,
-
-    date: new Date().toDateString(),
-
-    social:
-`LinkedIn:
-https://www.linkedin.com/in/anirudh-r-869953381/`
-};
-
-terminalForm.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const command = terminalInput.value.trim().toLowerCase();
-
-    if (!command) return;
-
-    terminalPrint("visitor@anirudh:~$ " + command);
-
-    if (command === "clear") {
-
-        terminalOutput.textContent = "Terminal cleared.\n";
-    }
-    else if (terminalCommands[command]) {
-
-        terminalPrint(terminalCommands[command]);
-
-    }
-    else {
-
-        terminalPrint(
-            "Command not found. Type 'help' to see available commands."
-        );
-
-    }
-
-    terminalInput.value = "";
-
-});
-
-
-// ======================================
-// PORTFOLIO ASSISTANT
-// ======================================
-
-const chatForm = document.getElementById("chatForm");
-const chatInput = document.getElementById("chatInput");
-const chatMessages = document.getElementById("chatMessages");
-
-function addMessage(text, type) {
-
-    const message = document.createElement("div");
-
-    message.className = "message " +
-        (type === "user" ? "user-message" : "bot-message");
-
-    message.textContent = text;
-
-    chatMessages.appendChild(message);
-
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-
-function assistantAnswer(question) {
-
-    const q = question.toLowerCase();
-
-    if (q.includes("who") || q.includes("about") ||
-        q.includes("anirudh")) {
-
-        return "Anirudh R is a BCA Data Science student at Amrita Vishwa Vidyapeetham, Mysuru Campus. He is interested in programming and technology.";
-
-    }
-
-    if (q.includes("skill") || q.includes("programming")) {
-
-        return "Technical skills include Python, Java, HTML, CSS, JavaScript, C Programming, SQL and DBMS. Data Science is also an area of learning.";
-
-    }
-
-    if (q.includes("project")) {
-
-        return "Projects include Personal Portfolio Website, Student Information System, Database Management Practice, Python Programming Practice and Blood Bank Management System.";
-
-    }
-
-    if (q.includes("education") || q.includes("college") ||
-        q.includes("study") || q.includes("course")) {
-
-        return "Anirudh is pursuing Bachelor of Computer Applications (BCA), specialising in Data Science, at Amrita Vishwa Vidyapeetham, Mysuru Campus.";
-
-    }
-
-    if (q.includes("certificate")) {
-
-        return "Certificates include Introduction to Cyber Security from Simplilearn SkillUp, Java Mastering the Fundamentals from Scaler, Python Essentials 1 and Python Essentials 2 from Cisco Networking Academy.";
-
-    }
-
-    if (q.includes("contact") || q.includes("email") ||
-        q.includes("gmail")) {
-
-        return "You can contact Anirudh at anirudhr682@gmail.com or through his LinkedIn profile.";
-
-    }
-
-    if (q.includes("linkedin")) {
-
-        return "LinkedIn profile: https://www.linkedin.com/in/anirudh-r-869953381/";
-
-    }
-
-    if (q.includes("goal") || q.includes("career") ||
-        q.includes("future")) {
-
-        return "Anirudh aims to build a successful career in the IT field by improving programming, technical and problem-solving skills.";
-
-    }
-
-    if (q.includes("hello") || q.includes("hi") ||
-        q.includes("hey")) {
-
-        return "Hello! Welcome to Anirudh's portfolio. What would you like to know?";
-
-    }
-
-    if (q.includes("thank")) {
-
-        return "You're welcome! Thank you for visiting the portfolio.";
-
-    }
-
-    return "I can help with information about Anirudh's education, skills, projects, certificates, career goals and contact details. Try asking one of these questions.";
-
-}
-
-function sendChat(question) {
-
-    const text = question.trim();
-
-    if (!text) return;
-
-    addMessage(text, "user");
-
-    const reply = assistantAnswer(text);
-
-    setTimeout(function() {
-        addMessage(reply, "bot");
-    }, 350);
-}
-
-chatForm.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    sendChat(chatInput.value);
-
-    chatInput.value = "";
-
-});
-
-function quickAsk(question) {
-    sendChat(question);
-}
-
-
-// ======================================
-// DIGITAL BUSINESS CARD QR CODE
-// ======================================
-
-// Automatically uses the current website address.
-
-const portfolioURL = window.location.origin +
-    window.location.pathname;
-
-const qrCode = document.getElementById("qrCode");
-
-qrCode.src =
-    "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
-    encodeURIComponent(portfolioURL);
-
-function downloadQR() {
-
-    const link = document.createElement("a");
-
-    link.href = qrCode.src;
-    link.download = "Anirudh-Portfolio-QR.png";
-
-    link.target = "_blank";
-
-    link.click();
-
-}
-
-function copyPortfolioLink() {
-
-    if (navigator.clipboard && window.isSecureContext) {
-
-        navigator.clipboard.writeText(portfolioURL)
-        .then(function() {
-            showToast("Portfolio link copied!");
-        })
-        .catch(function() {
-            showToast("Copy failed. Please copy the website address manually.");
-        });
-
-    } else {
-
-        showToast("Copy is unavailable. Please copy the website address manually.");
-
-    }
-
-}
-
-
-// ======================================
-// HIDDEN EASTER EGGS
-// ======================================
-
-let secretTimer = null;
-
-function showToast(message) {
-
-    const toast = document.getElementById("secretToast");
-
-    toast.textContent = message;
-
-    toast.classList.add("show");
-
-    clearTimeout(secretTimer);
-
-    secretTimer = setTimeout(function() {
-        toast.classList.remove("show");
-    }, 3000);
-
-}
-
-// Keyboard secret: type ANIRUDH
-
-let secretWord = "";
+// ========================================
+// 15. HIDDEN EASTER EGG
+// ========================================
+
+let secretKeys = [];
+
+const secretCode = [
+    "a", "n", "i", "r", "u", "d", "h"
+];
 
 document.addEventListener("keydown", function(event) {
 
     if (event.key.length !== 1) return;
 
-    secretWord += event.key.toLowerCase();
+    secretKeys.push(event.key.toLowerCase());
 
-    secretWord = secretWord.slice(-7);
+    if (secretKeys.length > secretCode.length) {
 
-    if (secretWord === "anirudh") {
+        secretKeys.shift();
 
-        showToast("🎉 Secret unlocked! Keep learning and building!");
+    }
 
-        secretWord = "";
+    if (secretKeys.join("") === secretCode.join("")) {
+
+        const toast =
+            document.getElementById("secretToast");
+
+        toast.textContent =
+            "🎉 You discovered Anirudh's secret Easter Egg!";
+
+        toast.classList.add("show");
+
+        setTimeout(function() {
+
+            toast.classList.remove("show");
+
+        }, 3000);
+
+        secretKeys = [];
 
     }
 
 });
 
-// Hidden click surprise on logo
 
-let logoClicks = 0;
+// ========================================
+// 16. CONSOLE WELCOME MESSAGE
+// ========================================
 
-document.querySelector(".logo").addEventListener("click", function() {
+console.log(
+    "%c Welcome to Anirudh's Portfolio! ",
+    "background:#07111f;color:#72e3ff;font-size:18px;padding:10px;"
+);
 
-    logoClicks++;
-
-    if (logoClicks >= 5) {
-
-        showToast("🚀 You discovered the hidden developer secret!");
-
-        logoClicks = 0;
-
-    }
-
-});
+console.log(
+    "Thanks for exploring my website."
+);
 
 </script>
 
