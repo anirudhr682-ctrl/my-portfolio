@@ -1,24 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Anirudh R | Developer Portfolio</title>
-<meta name="description" content="Anirudh R - BCA Data Science Student, aspiring developer and technology enthusiast.">
-<meta name="theme-color" content="#07111f">
+<title>Anirudh R | Portfolio</title>
 
 <style>
-:root {
-    --blue: #19c7ff;
-    --cyan: #72e3ff;
-    --background: #07111f;
-    --card: #10243a;
-    --white: #eef8ff;
-    --muted: #a9bfd0;
-    --border: #205276;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -26,738 +14,233 @@
     scroll-behavior: smooth;
 }
 
+:root {
+    --bg: #07111f;
+    --panel: #101f33;
+    --cyan: #45dcff;
+    --blue: #168cff;
+    --white: #f4f8ff;
+    --muted: #aabbd0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background: var(--background);
+    background: var(--bg);
     color: var(--white);
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background:
-        radial-gradient(circle at 15% 15%, #06466a, transparent 35%),
-        radial-gradient(circle at 85% 65%, #073b60, transparent 35%),
-        #07111f;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    opacity: .18;
-    background-image: radial-gradient(#72e3ff 1px, transparent 1px);
-    background-size: 45px 45px;
-}
-
-button, input, textarea {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-#progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 0;
-    background: var(--cyan);
-    z-index: 200;
-    box-shadow: 0 0 15px var(--blue);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 17px 5%;
-    background: #07111fee;
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid #16415b;
+    background: rgba(7,17,31,.95);
+    border-bottom: 1px solid #20334b;
+    padding: 17px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
 }
 
 .logo {
-    color: var(--cyan);
     font-size: 25px;
     font-weight: bold;
-    letter-spacing: 2px;
+    color: var(--cyan);
 }
 
 nav {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 13px;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
-    font-size: 12px;
+    font-size: 14px;
+    color: var(--muted);
     transition: .3s;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover {
     color: var(--cyan);
 }
 
 section {
-    padding: 80px 9%;
-    scroll-margin-top: 85px;
+    padding: 85px 8%;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h1 span,
+.section-title span {
+    color: var(--cyan);
+}
+
+.hero p {
+    color: var(--muted);
+    margin: 18px 0;
+    font-size: 17px;
+}
+
+.hello {
+    color: var(--cyan);
+    letter-spacing: 3px;
+}
+
+.hero-image {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 4px solid var(--cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    color: var(--cyan);
+    background: var(--panel);
+    box-shadow: 0 0 35px rgba(69,220,255,.25);
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid var(--cyan);
+    border-radius: 7px;
+    color: var(--cyan);
+    margin: 7px 7px 7px 0;
+    cursor: pointer;
+    background: transparent;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn.primary {
+    background: var(--cyan);
+    color: #06111f;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(69,220,255,.3);
 }
 
 .section-title {
     text-align: center;
     font-size: 35px;
-    margin-bottom: 35px;
-}
-
-.section-title span {
-    color: var(--blue);
-    text-shadow: 0 0 20px #19c7ff55;
-}
-
-.subtitle {
-    text-align: center;
-    color: var(--muted);
-    margin: -20px auto 35px;
-}
-
-.hero {
-    min-height: 85vh;
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    align-items: center;
-    gap: 40px;
-}
-
-.eyebrow {
-    color: var(--cyan);
-    letter-spacing: 3px;
-    font-size: 13px;
-}
-
-.hero h1 {
-    font-size: clamp(40px, 6vw, 68px);
-    line-height: 1.15;
-    margin: 18px 0;
-}
-
-.hero h1 span {
-    color: var(--blue);
-    text-shadow: 0 0 20px #19c7ff55;
-}
-
-.role {
-    color: var(--cyan);
-    font-size: 23px;
-    font-weight: bold;
-    min-height: 40px;
-}
-
-.intro {
-    color: var(--muted);
-    max-width: 580px;
-    margin: 20px 0;
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 22px;
-    margin: 8px 8px 8px 0;
-    border: 1px solid var(--blue);
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--cyan);
-    transition: .3s;
-    background: transparent;
-}
-
-.btn.primary {
-    background: var(--blue);
-    color: #061421;
-    font-weight: bold;
-}
-
-.btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 25px #00bfff66;
-    background: white;
-    color: #07111f;
-}
-
-.photo-wrap {
-    width: 270px;
-    height: 270px;
-    margin: auto;
-    position: relative;
-}
-
-.photo-wrap::before {
-    content: "";
-    position: absolute;
-    inset: -15px;
-    border-radius: 50%;
-    border: 2px dashed var(--cyan);
-    animation: rotate 12s linear infinite;
-}
-
-.photo-wrap::after {
-    content: "";
-    position: absolute;
-    inset: -25px;
-    border-radius: 50%;
-    border: 1px solid #19c7ff66;
-    animation: rotate 18s linear infinite reverse;
-}
-
-.profile {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #1b668b;
-    box-shadow: 0 0 35px #00bfff66;
-    background: var(--card);
-}
-
-@keyframes rotate {
-    to { transform: rotate(360deg); }
-}
-
-.upload {
-    display: block;
-    text-align: center;
-    color: var(--cyan);
-    font-size: 12px;
-    margin-top: 35px;
-    cursor: pointer;
-}
-
-.upload input {
-    display: none;
+    margin-bottom: 40px;
 }
 
 .panel {
-    background: linear-gradient(145deg, #10243a, #0a1929);
-    border: 1px solid #1c4561;
-    border-radius: 15px;
+    background: var(--panel);
+    border: 1px solid #243c58;
+    border-radius: 14px;
     padding: 25px;
-    transition: .35s;
+    margin-bottom: 20px;
+    transition: .3s;
 }
 
 .panel:hover {
-    border-color: var(--blue);
-    box-shadow: 0 12px 30px #00bfff25;
+    border-color: var(--cyan);
+    transform: translateY(-4px);
 }
 
 .panel h3 {
     color: var(--cyan);
-    margin-bottom: 10px;
-}
-
-.panel p {
-    color: #b6c7d8;
     margin-bottom: 12px;
 }
 
-.about-text p {
-    margin-bottom: 17px;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.info-item {
-    background: #0a1b2d;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 15px;
-}
-
-.info-item strong {
-    color: var(--cyan);
-}
-
-.objective {
-    text-align: center;
-    max-width: 900px;
-    margin: auto;
-}
-
-.objective p {
-    color: #b6c7d8;
-    font-size: 17px;
+.panel p {
+    color: var(--muted);
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
 }
 
-.skill, .strength {
-    padding: 23px;
-    text-align: center;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: .3s;
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-.skill:hover, .strength:hover {
-    transform: translateY(-5px);
-    background: #123d5c;
-    box-shadow: 0 0 20px #00bfff44;
+.skill {
+    background: var(--panel);
+    padding: 17px;
+    border-radius: 9px;
+    border: 1px solid #243c58;
 }
 
-.skill-icon, .strength span {
-    font-size: 32px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.skill strong, .strength h3 {
+.skill span {
     color: var(--cyan);
+    font-weight: bold;
 }
 
-.skill small {
-    display: block;
+.skill-bar {
+    height: 7px;
+    background: #263b54;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.skill-bar div {
+    height: 100%;
+    background: var(--cyan);
+    border-radius: 10px;
+}
+
+ul {
+    padding-left: 20px;
     color: var(--muted);
-    margin-top: 5px;
 }
 
-.strength p {
-    color: #b6c7d8;
-}
-
-.college {
-    display: inline-block;
-    margin-top: 12px;
+.certificate-link {
     color: var(--cyan);
-    text-decoration: none;
-}
-
-.college:hover {
     text-decoration: underline;
 }
 
-.project-number {
-    font-size: 30px;
-    color: var(--blue);
-    font-weight: bold;
-}
-
-.tech {
-    display: inline-block;
-    color: var(--cyan);
-    background: #07344e;
-    border: 1px solid #176083;
-    border-radius: 20px;
-    padding: 4px 12px;
-    margin: 5px 3px 0 0;
-    font-size: 12px;
-}
-
-.certificate-section {
-    background: #0a1b2d;
-}
-
-.certificate-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.certificate-card {
-    background: linear-gradient(145deg, #102c45, #0b1c2d);
-    border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 28px;
-    min-height: 220px;
-    transition: .35s;
-    position: relative;
-}
-
-.certificate-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background: linear-gradient(90deg, var(--blue), var(--cyan));
-}
-
-.certificate-card:hover {
-    transform: translateY(-7px);
-    border-color: var(--cyan);
-}
-
-.certificate-icon {
-    font-size: 38px;
-}
-
-.certificate-card h3 {
-    color: var(--cyan);
-    font-size: 19px;
-    margin-bottom: 8px;
-}
-
-.certificate-card p {
-    color: #91b3c9;
-    margin-bottom: 15px;
-}
-
-.cert-btn {
-    padding: 10px 20px;
-    border: 1px solid var(--blue);
-    background: var(--blue);
-    color: #07111f;
-    border-radius: 7px;
-    font-weight: bold;
-}
-
-/* LEARNING JOURNEY */
-.timeline {
-    max-width: 800px;
-    margin: auto;
-    position: relative;
-    padding-left: 35px;
-    border-left: 2px solid var(--blue);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -43px;
-    top: 25px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--cyan);
-    box-shadow: 0 0 15px var(--blue);
-}
-
-.timeline-item h3 {
-    color: var(--cyan);
-}
-
-.timeline-item p {
-    color: var(--muted);
-}
-
-.timeline-date {
-    color: var(--blue);
-    font-size: 12px;
-}
-
-/* SKILLS VISUALIZATION */
-.skill-chart {
-    max-width: 800px;
-    margin: auto;
-}
-
-.skill-row {
-    margin-bottom: 22px;
-}
-
-.skill-label {
-    display: flex;
-    justify-content: space-between;
-    color: var(--cyan);
-    margin-bottom: 7px;
-}
-
-.skill-track {
-    height: 12px;
-    background: #19344b;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.skill-fill {
-    width: 0;
-    height: 100%;
-    border-radius: 20px;
-    background: linear-gradient(90deg, #087eb5, var(--cyan));
-    transition: width 1.5s ease;
-}
-
-/* INTERACTIVE PROJECTS */
-.project-card {
-    cursor: pointer;
-    min-height: 230px;
-}
-
-.project-card:hover {
-    border-color: var(--cyan);
-    transform: translateY(-7px);
-}
-
-.project-detail {
-    margin-top: 12px;
-    color: var(--cyan);
-    font-size: 13px;
-}
-
-/* DEVELOPER TERMINAL */
-.terminal {
-    max-width: 850px;
-    margin: auto;
-    background: #030b13;
-    border: 1px solid #1b789d;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 30px #00bfff22;
-}
-
-.terminal-header {
-    padding: 12px 18px;
-    background: #10243a;
-    color: var(--cyan);
-    border-bottom: 1px solid var(--border);
-}
-
-.terminal-dots {
-    color: #72e3ff;
-    float: right;
-}
-
-.terminal-output {
-    min-height: 180px;
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 18px;
-    font-family: Consolas, monospace;
-    color: #9beaff;
-    white-space: pre-wrap;
-    font-size: 14px;
-}
-
-.terminal-form {
-    display: flex;
-    padding: 12px;
-    border-top: 1px solid #17425e;
-    gap: 10px;
-}
-
-.terminal-form span {
-    color: var(--cyan);
-    padding: 8px 0;
-}
-
-.terminal-form input {
-    flex: 1;
-    min-width: 0;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 8px;
-}
-
-/* RESUME AND BUSINESS CARD */
-.resume-card {
-    max-width: 800px;
-    margin: auto;
+.contact {
     text-align: center;
-}
-
-.business-card {
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-}
-
-.business-card img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    background: white;
-    padding: 10px;
-    border-radius: 12px;
-    margin: 20px auto;
-}
-
-.analytics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-}
-
-.analytics-item {
-    text-align: center;
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 25px;
-    border-radius: 12px;
-}
-
-.analytics-item strong {
-    display: block;
-    color: var(--cyan);
-    font-size: 30px;
-}
-
-.analytics-item span {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-/* CONTACT */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 13px;
-    margin: 8px 0;
-    border: 1px solid var(--border);
-    background: #071827;
-    color: white;
-    border-radius: 7px;
-    outline: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--cyan);
-}
-
-.contact-form button {
-    padding: 12px 25px;
-    background: var(--blue);
-    color: #07111f;
-    border: none;
-    border-radius: 7px;
-    font-weight: bold;
-}
-
-.social-links a {
-    display: inline-block;
-    color: var(--cyan);
-    text-decoration: none;
-    margin: 8px 12px 8px 0;
 }
 
 footer {
-    padding: 25px;
     text-align: center;
-    background: #030b13;
-    border-top: 1px solid var(--border);
+    padding: 25px;
+    background: #050c16;
     color: var(--muted);
-}
-
-#topButton {
-    display: none;
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    border: none;
-    background: var(--blue);
-    color: #07111f;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    font-size: 20px;
-    z-index: 100;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 300;
-    background: #000c;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-content {
-    max-width: 700px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    background: #10243a;
-    border: 1px solid var(--cyan);
-    border-radius: 15px;
-    padding: 25px;
-    text-align: center;
-    position: relative;
-}
-
-.modal-content img {
-    max-width: 100%;
-    max-height: 65vh;
-    margin-top: 15px;
-    border-radius: 8px;
-}
-
-.modal-content h2 {
-    color: var(--cyan);
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 28px;
-}
-
-#secretToast {
-    position: fixed;
-    left: 50%;
-    bottom: 25px;
-    transform: translateX(-50%) translateY(100px);
-    background: #123d5c;
-    color: var(--cyan);
-    border: 1px solid var(--cyan);
-    padding: 12px 22px;
-    border-radius: 10px;
-    z-index: 500;
-    transition: .3s;
-    opacity: 0;
-}
-
-#secretToast.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
+    border-top: 1px solid #20334b;
 }
 
 .reveal {
@@ -771,1829 +254,730 @@ footer {
     transform: translateY(0);
 }
 
-@media (max-width: 850px) {
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
+/* CV DESIGN */
+
+.cv-sheet {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    color: #172337;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.cv-header {
+    border-bottom: 3px solid #168cff;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.cv-header h2 {
+    color: #0878c9;
+    font-size: 32px;
+}
+
+.cv-header p,
+.cv-section p,
+.cv-section li {
+    color: #40516a;
+}
+
+.cv-section {
+    margin: 22px 0;
+}
+
+.cv-section h3 {
+    color: #0878c9;
+    border-bottom: 1px solid #cbd9e8;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.cv-section ul {
+    color: #40516a;
+}
+
+/* BUSINESS CARD DESIGN */
+
+.business-card {
+    max-width: 650px;
+    min-height: 340px;
+    margin: 25px auto;
+    padding: 35px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #07172d, #123b62, #087caa);
+    border: 1px solid #5ce6ff;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.business-card::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 2px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    right: -70px;
+    bottom: -100px;
+}
+
+.card-brand {
+    color: #72eaff;
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.business-card h2 {
+    font-size: 32px;
+    margin-top: 35px;
+}
+
+.business-card .role {
+    color: #72eaff;
+    margin: 5px 0 22px;
+}
+
+.business-card .details {
+    color: #e0efff;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.card-bottom {
+    border-top: 1px solid rgba(255,255,255,.3);
+    padding-top: 15px;
+    margin-top: 20px;
+    color: white;
+    font-size: 13px;
+}
+
+/* PRINT ONLY CV */
+
+@media print {
+    body.print-cv * {
+        visibility: hidden !important;
     }
 
-    .intro {
-        margin-left: auto;
-        margin-right: auto;
+    body.print-cv #cv,
+    body.print-cv #cv * {
+        visibility: visible !important;
     }
 
-    .certificate-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
+    body.print-cv #cv {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0;
+        background: white;
     }
 
+    body.print-cv .cv-sheet {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+    }
+
+    body.print-cv .no-print {
+        display: none !important;
+    }
+}
+
+@media(max-width: 700px) {
     header {
         justify-content: center;
+        gap: 15px;
     }
 
     nav {
         justify-content: center;
+        gap: 12px;
     }
-}
 
-@media (max-width: 500px) {
     section {
         padding: 60px 6%;
     }
 
-    .section-title {
-        font-size: 28px;
+    .hero {
+        text-align: center;
+        justify-content: center;
     }
 
-    .info-grid {
-        grid-template-columns: 1fr;
+    .hero-image {
+        width: 210px;
+        height: 210px;
     }
 
-    .photo-wrap {
-        width: 220px;
-        height: 220px;
+    .cv-sheet {
+        padding: 22px;
     }
 
-    nav {
-        gap: 9px;
-    }
-
-    nav a {
-        font-size: 11px;
+    .business-card {
+        padding: 25px;
     }
 }
 </style>
-<!-- VERCEL ANALYTICS -->
-
-<script>
-window.va = window.va || function () {
-    (window.vaq = window.vaq || []).push(arguments);
-};
-</script>
-
-<script defer src="/_vercel/insights/script.js"></script>
-
 </head>
 
 <body>
 
-<div id="progress"></div>
-
-<!-- HEADER -->
-
 <header>
-
-    <div class="logo">ANIRUDH.</div>
+    <a href="#home" class="logo">ANIRUDH.</a>
 
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#objective">Objective</a>
         <a href="#skills">Skills</a>
-        <a href="#softskills">Soft Skills</a>
         <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#certificates">Certificates</a>
-        <a href="#journey">Journey</a>
+        <a href="#cv">CV</a>
+        <a href="#business-card">Business Card</a>
         <a href="#contact">Contact</a>
     </nav>
-
 </header>
 
 <!-- HOME -->
 
 <section class="hero" id="home">
-
-    <div class="hero-copy reveal">
-
-        <p class="eyebrow">WELCOME TO MY DIGITAL WORLD</p>
+    <div class="hero-content">
+        <div class="hello">WELCOME TO MY PORTFOLIO</div>
 
         <h1>Hello, I'm <span>Anirudh R</span></h1>
 
-        <div class="role" id="typing"></div>
+        <h2 id="typing" style="color:#45dcff;">
+            BCA Data Science Student
+        </h2>
 
-        <p class="intro">
-            I am a BCA Data Science student interested in programming,
-            technology and computer applications. I enjoy learning new
-            skills, exploring ideas and building my knowledge through
+        <p>
+            I am interested in programming, technology,
+            computer applications and data science.
+            I enjoy learning new technologies and building
             practical projects.
         </p>
 
-        <a href="#about" class="btn primary">Explore More</a>
-
-        <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-           target="_blank" rel="noopener" class="btn">
-            LinkedIn Profile
-        </a>
-
-        <section id="resume">
-
-    <h2 class="section-title reveal">
-        My <span>Profile</span>
-    </h2>
-
-    <div class="panel resume-card reveal">
-
-        <h3 style="font-size:28px;">Anirudh R</h3>
-
-        <p>BCA Data Science Student</p>
-
-        <p>
-            Interested in programming, software development,
-            data science and modern technologies.
-        </p>
-
-        <a href="#education" class="btn primary">
-            View Education
-        </a>
-
-        <a href="#skills" class="btn">
-            Explore Skills
-        </a>
-
-        <a href="#projects" class="btn">
-            View Projects
-        </a>
-
+        <a href="#projects" class="btn primary">Explore My Work</a>
+        <a href="#contact" class="btn">Contact Me</a>
     </div>
 
-</section>
-
-    </div>
-
-    <div class="reveal">
-
-        <div class="photo-wrap">
-
-            <img src="./profile.jpeg"
-                 alt="Anirudh Profile Photo"
-                 class="profile"
-                 id="profilePhoto"
-                 onerror="this.alt='Profile image not found';">
-
+    <div>
+        <div class="hero-image" id="profilePreview">
+            AR
         </div>
 
-        <label class="upload">
-            Change Profile Photo
-
-            <input type="file"
-                   id="photoUpload"
-                   accept="image/*">
-        </label>
-
+        <label class="btn" for="photoInput">Change Profile Photo</label>
+        <input type="file" id="photoInput" accept="image/*" hidden>
     </div>
-
 </section>
 
 <!-- ABOUT -->
 
 <section id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
 
-    <h2 class="section-title reveal">
-        About <span>Me</span>
-    </h2>
-
-    <div class="panel about-text reveal">
+    <div class="panel reveal">
+        <h3>Who Am I?</h3>
 
         <p>
-            My name is Anirudh R. I am currently pursuing a Bachelor of
-            Computer Applications (BCA) in Data Science at Amrita Vishwa
-            Vidyapeetham, Mysuru Campus.
-        </p>
+            I am Anirudh R, pursuing Bachelor of Computer
+            Applications with a specialization in Data Science
+            at Amrita Vishwa Vidyapeetham, Mysuru Campus.
 
-        <p>
             I have an interest in programming, computer science,
             data science and modern technologies. I am continuously
-            improving my technical and communication skills.
+            working to improve my technical knowledge,
+            communication skills and problem-solving abilities.
         </p>
-
-        <p>
-            I believe in learning through practice, accepting challenges
-            and improving myself step by step. My aim is to develop useful
-            technical knowledge and become a skilled professional.
-        </p>
-
-        <div class="info-grid">
-
-            <div class="info-item">
-                <strong>Name:</strong> Anirudh R
-            </div>
-
-            <div class="info-item">
-                <strong>Course:</strong> BCA Data Science
-            </div>
-
-            <div class="info-item">
-                <strong>College:</strong> Amrita Vishwa Vidyapeetham
-            </div>
-
-            <div class="info-item">
-                <strong>Location:</strong> Mysuru, Karnataka
-            </div>
-
-        </div>
-
     </div>
-
 </section>
 
 <!-- OBJECTIVE -->
 
 <section id="objective">
+    <h2 class="section-title">Career <span>Objective</span></h2>
 
-    <h2 class="section-title reveal">
-        Career <span>Objective</span>
-    </h2>
-
-    <div class="panel objective reveal">
-
+    <div class="panel reveal">
         <p>
-            To complete my education with strong technical knowledge,
-            improve my programming and problem-solving abilities, and
-            build a successful career in the IT field. I want to gain
-            practical experience, contribute to meaningful projects
-            and continue learning new technologies.
+            To build a successful career in the IT field by
+            developing strong technical skills, gaining practical
+            experience and contributing to innovative projects.
+            I aim to continuously learn and grow as a technology
+            professional.
         </p>
-
     </div>
-
 </section>
 
-<!-- TECHNICAL SKILLS -->
+<!-- SKILLS -->
 
 <section id="skills">
+    <h2 class="section-title">My <span>Skills</span></h2>
 
-    <h2 class="section-title reveal">
-        My <span>Skills</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        Technologies and abilities I am learning
-    </p>
-
-    <div class="grid">
-
-        <div class="skill reveal">
-            <div class="skill-icon">🐍</div>
-            <strong>Python</strong>
-            <small>Programming Fundamentals</small>
+    <div class="skills reveal">
+        <div class="skill">
+            <span>Python</span>
+            <div class="skill-bar"><div style="width:75%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">☕</div>
-            <strong>Java</strong>
-            <small>Object-Oriented Programming</small>
+        <div class="skill">
+            <span>Java</span>
+            <div class="skill-bar"><div style="width:65%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">🌐</div>
-            <strong>HTML</strong>
-            <small>Web Page Development</small>
+        <div class="skill">
+            <span>HTML</span>
+            <div class="skill-bar"><div style="width:80%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">🎨</div>
-            <strong>CSS</strong>
-            <small>Web Page Styling</small>
+        <div class="skill">
+            <span>CSS</span>
+            <div class="skill-bar"><div style="width:70%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">⚡</div>
-            <strong>JavaScript</strong>
-            <small>Basic Web Interactivity</small>
+        <div class="skill">
+            <span>JavaScript</span>
+            <div class="skill-bar"><div style="width:60%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">🗄️</div>
-            <strong>DBMS / SQL</strong>
-            <small>Database Fundamentals</small>
+        <div class="skill">
+            <span>MySQL / DBMS</span>
+            <div class="skill-bar"><div style="width:70%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">💻</div>
-            <strong>C Programming</strong>
-            <small>Programming Fundamentals</small>
+        <div class="skill">
+            <span>C Programming</span>
+            <div class="skill-bar"><div style="width:65%"></div></div>
         </div>
 
-        <div class="skill reveal">
-            <div class="skill-icon">📊</div>
-            <strong>Data Science</strong>
-            <small>Learning and Exploration</small>
+        <div class="skill">
+            <span>Data Science</span>
+            <div class="skill-bar"><div style="width:55%"></div></div>
         </div>
-
     </div>
 
-</section>
-
-<!-- SKILLS VISUALIZATION -->
-
-<section id="skillchart">
-
-    <h2 class="section-title reveal">
-        Skills <span>Visualization</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        My current learning areas
-    </p>
-
-    <div class="panel skill-chart reveal" id="skillBars">
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>Python</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="65"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>Java</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="55"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>HTML & CSS</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="70"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>JavaScript</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="45"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>SQL / DBMS</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="60"></div>
-            </div>
-        </div>
-
-        <p style="color:#91aabd;font-size:12px;margin-top:20px;">
-            These are editable self-assessment values, not test results.
+    <div class="panel reveal" style="margin-top:25px;">
+        <h3>Soft Skills</h3>
+        <p>
+            Communication · Teamwork · Problem Solving ·
+            Time Management · Adaptability · Continuous Learning
         </p>
-
     </div>
-
 </section>
 
-<!-- SOFT SKILLS -->
+<!-- EDUCATION -->
 
-<section id="softskills">
+<section id="education">
+    <h2 class="section-title">My <span>Education</span></h2>
 
-    <h2 class="section-title reveal">
-        Soft <span>Skills</span>
-    </h2>
+    <div class="panel reveal">
+        <h3>Bachelor of Computer Applications (BCA)</h3>
 
-    <div class="grid">
-
-        <div class="strength reveal">
-            <span>🗣️</span>
-            <h3>Communication</h3>
-            <p>Sharing ideas and expressing thoughts clearly.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🤝</span>
-            <h3>Teamwork</h3>
-            <p>Working together and learning from others.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🧩</span>
-            <h3>Problem Solving</h3>
-            <p>Understanding problems and finding solutions.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>⏰</span>
-            <h3>Time Management</h3>
-            <p>Organising tasks and completing work on time.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>📚</span>
-            <h3>Continuous Learning</h3>
-            <p>Learning new skills and improving knowledge.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🔄</span>
-            <h3>Adaptability</h3>
-            <p>Adjusting to new ideas and technologies.</p>
-        </div>
-
-    </div>
-
-</section>
-<!-- VERCEL ANALYTICS -->
-
-<script>
-window.va = window.va || function () {
-    (window.vaq = window.vaq || []).push(arguments);
-};
-</script>
-
-<script defer src="/_vercel/insights/script.js"></script>
-
-</head>
-
-<body>
-
-<div id="progress"></div>
-
-<!-- HEADER -->
-
-<header>
-
-    <div class="logo">ANIRUDH.</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#objective">Objective</a>
-        <a href="#skills">Skills</a>
-        <a href="#softskills">Soft Skills</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#journey">Journey</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-</header>
-
-<!-- HOME -->
-
-<section class="hero" id="home">
-
-    <div class="hero-copy reveal">
-
-        <p class="eyebrow">WELCOME TO MY DIGITAL WORLD</p>
-
-        <h1>Hello, I'm <span>Anirudh R</span></h1>
-
-        <div class="role" id="typing"></div>
-
-        <p class="intro">
-            I am a BCA Data Science student interested in programming,
-            technology and computer applications. I enjoy learning new
-            skills, exploring ideas and building my knowledge through
-            practical projects.
-        </p>
-
-        <a href="#about" class="btn primary">Explore More</a>
-
-        <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-           target="_blank" rel="noopener" class="btn">
-            LinkedIn Profile
-        </a>
-
-        <a href="resume.pdf" download class="btn">
-            Download Resume
-        </a>
-
-    </div>
-
-    <div class="reveal">
-
-        <div class="photo-wrap">
-
-            <img src="./profile.jpeg"
-                 alt="Anirudh Profile Photo"
-                 class="profile"
-                 id="profilePhoto"
-                 onerror="this.alt='Profile image not found';">
-
-        </div>
-
-        <label class="upload">
-            Change Profile Photo
-
-            <input type="file"
-                   id="photoUpload"
-                   accept="image/*">
-        </label>
-
-    </div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about">
-
-    <h2 class="section-title reveal">
-        About <span>Me</span>
-    </h2>
-
-    <div class="panel about-text reveal">
+        <p>Specialization: Data Science</p>
 
         <p>
-            My name is Anirudh R. I am currently pursuing a Bachelor of
-            Computer Applications (BCA) in Data Science at Amrita Vishwa
-            Vidyapeetham, Mysuru Campus.
-        </p>
-
-        <p>
-            I have an interest in programming, computer science,
-            data science and modern technologies. I am continuously
-            improving my technical and communication skills.
-        </p>
-
-        <p>
-            I believe in learning through practice, accepting challenges
-            and improving myself step by step. My aim is to develop useful
-            technical knowledge and become a skilled professional.
-        </p>
-
-        <div class="info-grid">
-
-            <div class="info-item">
-                <strong>Name:</strong> Anirudh R
-            </div>
-
-            <div class="info-item">
-                <strong>Course:</strong> BCA Data Science
-            </div>
-
-            <div class="info-item">
-                <strong>College:</strong> Amrita Vishwa Vidyapeetham
-            </div>
-
-            <div class="info-item">
-                <strong>Location:</strong> Mysuru, Karnataka
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- OBJECTIVE -->
-
-<section id="objective">
-
-    <h2 class="section-title reveal">
-        Career <span>Objective</span>
-    </h2>
-
-    <div class="panel objective reveal">
-
-        <p>
-            To complete my education with strong technical knowledge,
-            improve my programming and problem-solving abilities, and
-            build a successful career in the IT field. I want to gain
-            practical experience, contribute to meaningful projects
-            and continue learning new technologies.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- TECHNICAL SKILLS -->
-
-<section id="skills">
-
-    <h2 class="section-title reveal">
-        My <span>Skills</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        Technologies and abilities I am learning
-    </p>
-
-    <div class="grid">
-
-        <div class="skill reveal">
-            <div class="skill-icon">🐍</div>
-            <strong>Python</strong>
-            <small>Programming Fundamentals</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">☕</div>
-            <strong>Java</strong>
-            <small>Object-Oriented Programming</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">🌐</div>
-            <strong>HTML</strong>
-            <small>Web Page Development</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">🎨</div>
-            <strong>CSS</strong>
-            <small>Web Page Styling</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">⚡</div>
-            <strong>JavaScript</strong>
-            <small>Basic Web Interactivity</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">🗄️</div>
-            <strong>DBMS / SQL</strong>
-            <small>Database Fundamentals</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">💻</div>
-            <strong>C Programming</strong>
-            <small>Programming Fundamentals</small>
-        </div>
-
-        <div class="skill reveal">
-            <div class="skill-icon">📊</div>
-            <strong>Data Science</strong>
-            <small>Learning and Exploration</small>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- SKILLS VISUALIZATION -->
-
-<section id="skillchart">
-
-    <h2 class="section-title reveal">
-        Skills <span>Visualization</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        My current learning areas
-    </p>
-
-    <div class="panel skill-chart reveal" id="skillBars">
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>Python</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="65"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>Java</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="55"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>HTML & CSS</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="70"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>JavaScript</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="45"></div>
-            </div>
-        </div>
-
-        <div class="skill-row">
-            <div class="skill-label">
-                <span>SQL / DBMS</span>
-                <span>Learning</span>
-            </div>
-            <div class="skill-track">
-                <div class="skill-fill" data-level="60"></div>
-            </div>
-        </div>
-
-        <p style="color:#91aabd;font-size:12px;margin-top:20px;">
-            These are editable self-assessment values, not test results.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- SOFT SKILLS -->
-
-<section id="softskills">
-
-    <h2 class="section-title reveal">
-        Soft <span>Skills</span>
-    </h2>
-
-    <div class="grid">
-
-        <div class="strength reveal">
-            <span>🗣️</span>
-            <h3>Communication</h3>
-            <p>Sharing ideas and expressing thoughts clearly.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🤝</span>
-            <h3>Teamwork</h3>
-            <p>Working together and learning from others.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🧩</span>
-            <h3>Problem Solving</h3>
-            <p>Understanding problems and finding solutions.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>⏰</span>
-            <h3>Time Management</h3>
-            <p>Organising tasks and completing work on time.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>📚</span>
-            <h3>Continuous Learning</h3>
-            <p>Learning new skills and improving knowledge.</p>
-        </div>
-
-        <div class="strength reveal">
-            <span>🔄</span>
-            <h3>Adaptability</h3>
-            <p>Adjusting to new ideas and technologies.</p>
-        </div>
-
-    </div>
-
-</section>
-<!-- DEVELOPER TERMINAL -->
-
-<section id="terminal">
-
-    <h2 class="section-title reveal">
-        Developer <span>Terminal</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        Explore my portfolio using simple commands
-    </p>
-
-    <div class="terminal reveal">
-
-        <div class="terminal-header">
-            ANIRUDH@PORTFOLIO:~
-            <span class="terminal-dots">● ● ●</span>
-        </div>
-
-        <div class="terminal-output" id="terminalOutput">
-Welcome to Anirudh's Developer Terminal!
-
-Type "help" to see available commands.
-        </div>
-
-        <form class="terminal-form" id="terminalForm">
-
-            <span>visitor@anirudh:~$</span>
-
-            <input type="text"
-                   id="terminalInput"
-                   placeholder="Type a command..."
-                   autocomplete="off">
-
-        </form>
-
-    </div>
-
-</section>
-
-
-<!-- INTERACTIVE RESUME -->
-
-<section id="resume">
-
-    <h2 class="section-title reveal">
-        Interactive <span>Resume</span>
-    </h2>
-
-    <div class="panel resume-card reveal">
-
-        <h3 style="font-size:28px;">
-            Anirudh R
-        </h3>
-
-        <p>
-            BCA Data Science Student
-        </p>
-
-        <p>
-            Interested in programming, computer applications
-            and modern technologies.
-        </p>
-
-        <div class="info-grid">
-
-            <div class="info-item">
-                <strong>Education</strong>
-                <p>BCA Data Science</p>
-            </div>
-
-            <div class="info-item">
-                <strong>Technical Skills</strong>
-                <p>Python, Java, HTML, CSS, JavaScript, SQL, C</p>
-            </div>
-
-            <div class="info-item">
-                <strong>Soft Skills</strong>
-                <p>Communication, Teamwork, Problem Solving</p>
-            </div>
-
-            <div class="info-item">
-                <strong>Career Interest</strong>
-                <p>Software Development and Technology</p>
-            </div>
-
-        </div>
-
-        <a href="resume.pdf"
-           class="btn primary"
-           download>
-            Download Full Resume
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- DIGITAL BUSINESS CARD -->
-
-<section id="businesscard">
-
-    <h2 class="section-title reveal">
-        Digital Business <span>Card</span>
-    </h2>
-
-    <div class="panel business-card reveal">
-
-        <h3 style="font-size:27px;">
-            ANIRUDH R
-        </h3>
-
-        <p>
-            BCA Data Science Student
-        </p>
-
-        <p>
-            Amrita Vishwa Vidyapeetham
-        </p>
-
-        <p>
-            Mysuru, Karnataka
-        </p>
-
-        <div class="social-links">
-
-            <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-               target="_blank"
-               rel="noopener">
-                LinkedIn
+            <a class="certificate-link"
+               href="https://www.google.com/maps/search/?api=1&query=Amrita+Vishwa+Vidyapeetham+Mysuru+Campus"
+               target="_blank">
+                Amrita Vishwa Vidyapeetham, Mysuru Campus
             </a>
+        </p>
 
+        <p>Currently Pursuing</p>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+    <h2 class="section-title">My <span>Projects</span></h2>
+
+    <div class="grid">
+        <div class="panel reveal">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+                A responsive personal website created using
+                HTML, CSS and JavaScript to showcase my skills,
+                education and projects.
+            </p>
         </div>
 
-        <button class="btn primary"
-                onclick="downloadBusinessCard()">
+        <div class="panel reveal">
+            <h3>Student Information System</h3>
+            <p>
+                A Python-based project designed to manage
+                student information and academic records.
+            </p>
+        </div>
+
+        <div class="panel reveal">
+            <h3>Blood Bank Management System</h3>
+            <p>
+                A Python and MySQL project for managing donors,
+                blood stock and blood requests.
+            </p>
+        </div>
+
+        <div class="panel reveal">
+            <h3>Database Management Practice</h3>
+            <p>
+                Practical exercises involving database
+                creation, SQL queries and data management.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATES -->
+
+<section id="certificates">
+    <h2 class="section-title">My <span>Certificates</span></h2>
+
+    <div class="grid">
+        <div class="panel reveal">
+            <h3>Java – Mastering the Fundamentals</h3>
+            <p>Scaler</p>
+        </div>
+
+        <div class="panel reveal">
+            <h3>Introduction to Cyber Security</h3>
+            <p>Simplilearn SkillUp</p>
+        </div>
+
+        <div class="panel reveal">
+            <h3>Python Essentials 1</h3>
+            <p>Cisco Networking Academy / Python Institute</p>
+        </div>
+
+        <div class="panel reveal">
+            <h3>Python Essentials 2</h3>
+            <p>Cisco Networking Academy / Python Institute</p>
+        </div>
+    </div>
+</section>
+
+<!-- LEARNING JOURNEY -->
+
+<section id="journey">
+    <h2 class="section-title">My Learning <span>Journey</span></h2>
+
+    <div class="panel reveal">
+        <h3>Learning Programming</h3>
+        <p>
+            Building a foundation in Python, Java and C
+            programming through academic exercises and practice.
+        </p>
+    </div>
+
+    <div class="panel reveal">
+        <h3>Exploring Web Development</h3>
+        <p>
+            Learning HTML, CSS and JavaScript by creating
+            interactive and responsive web pages.
+        </p>
+    </div>
+
+    <div class="panel reveal">
+        <h3>Working on Projects</h3>
+        <p>
+            Applying my knowledge through practical projects
+            involving Python, MySQL and web technologies.
+        </p>
+    </div>
+</section>
+
+<!-- CV -->
+
+<section id="cv">
+    <h2 class="section-title">My <span>CV</span></h2>
+
+    <div class="no-print" style="text-align:center;margin-bottom:25px;">
+        <p style="color:#aabbd0;">
+            View my professional profile and save it as a PDF.
+        </p>
+
+        <button class="btn primary" onclick="printCV()">
+            Print / Save CV as PDF
+        </button>
+    </div>
+
+    <div class="cv-sheet" id="cvSheet">
+
+        <div class="cv-header">
+            <h2>Anirudh R</h2>
+            <p>BCA Data Science Student</p>
+            <p>Mysuru, Karnataka, India</p>
+            <p>Email: YOUR_EMAIL@gmail.com</p>
+            <p>LinkedIn: linkedin.com/in/anirudh-r-869953381/</p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Career Objective</h3>
+            <p>
+                To develop a career in the IT industry by improving
+                my programming knowledge, technical skills and
+                practical experience. I am interested in learning
+                new technologies and contributing to useful projects.
+            </p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Education</h3>
+            <p>
+                <strong>Bachelor of Computer Applications</strong><br>
+                Specialization: Data Science<br>
+                Amrita Vishwa Vidyapeetham, Mysuru Campus<br>
+                Currently Pursuing
+            </p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Technical Skills</h3>
+            <p>
+                Python, Java, C Programming, HTML, CSS,
+                JavaScript, MySQL, DBMS and Data Science.
+            </p>
+        </div>
+
+        <div class="cv-section">
+            <h3>Projects</h3>
+            <ul>
+                <li>Personal Portfolio Website</li>
+                <li>Student Information System</li>
+                <li>Blood Bank Management System using Python and MySQL</li>
+                <li>Database Management Practice</li>
+            </ul>
+        </div>
+
+        <div class="cv-section">
+            <h3>Certifications</h3>
+            <ul>
+                <li>Java – Mastering the Fundamentals – Scaler</li>
+                <li>Introduction to Cyber Security – Simplilearn SkillUp</li>
+                <li>Python Essentials 1 – Cisco Networking Academy</li>
+                <li>Python Essentials 2 – Cisco Networking Academy</li>
+            </ul>
+        </div>
+
+        <div class="cv-section">
+            <h3>Soft Skills</h3>
+            <p>
+                Communication, Teamwork, Problem Solving,
+                Time Management, Adaptability and Continuous Learning.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- BUSINESS CARD -->
+
+<section id="business-card">
+    <h2 class="section-title">My Digital <span>Business Card</span></h2>
+
+    <p style="text-align:center;color:#aabbd0;">
+        A professional digital identity you can share.
+    </p>
+
+    <div class="business-card" id="businessCard">
+        <div class="card-brand">ANIRUDH R · PORTFOLIO</div>
+
+        <h2>Anirudh R</h2>
+
+        <div class="role">BCA Data Science Student</div>
+
+        <div class="details">
+            <div>📍 Mysuru, Karnataka, India</div>
+            <div>✉ YOUR_EMAIL@gmail.com</div>
+            <div>💻 Programming & Technology</div>
+            <div>🔗 LinkedIn: Anirudh R</div>
+        </div>
+
+        <div class="card-bottom">
+            PYTHON · JAVA · WEB DEVELOPMENT · DATA SCIENCE
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <button class="btn primary" onclick="downloadCard()">
             Download Business Card
         </button>
-
-        <button class="btn"
-                onclick="copyEmail()">
-            Copy Email
-        </button>
-
     </div>
-
 </section>
-
-
-<!-- VISITOR ANALYTICS -->
-
-<section id="analytics">
-
-    <h2 class="section-title reveal">
-        Visitor <span>Analytics</span>
-    </h2>
-
-    <p class="subtitle reveal">
-        A simple local counter for this browser
-    </p>
-
-    <div class="analytics-grid reveal">
-
-        <div class="analytics-item">
-            <strong id="visitCount">0</strong>
-            <span>Visits on this browser</span>
-        </div>
-
-        <div class="analytics-item">
-            <strong id="todayCount">0</strong>
-            <span>Current session</span>
-        </div>
-
-        <div class="analytics-item">
-            <strong id="portfolioStatus">Online</strong>
-            <span>Portfolio status</span>
-        </div>
-
-    </div>
-
-    <p style="color:#91aabd;text-align:center;font-size:12px;margin-top:20px;">
-        These counters are stored locally in your browser.
-        For real visitor analytics, enable Vercel Analytics
-        in your Vercel project dashboard.
-    </p>
-
-</section>
-
 
 <!-- CONTACT -->
 
 <section id="contact">
+    <h2 class="section-title">Contact <span>Me</span></h2>
 
-    <h2 class="section-title reveal">
-        Contact <span>Me</span>
-    </h2>
+    <div class="panel contact reveal">
+        <h3>Let's Connect!</h3>
 
-    <p class="subtitle reveal">
-        Feel free to connect with me
-    </p>
+        <p>
+            Interested in connecting, discussing technology
+            or learning together? Feel free to email me.
+        </p>
 
-    <div class="contact-grid">
+        <a href="mailto:YOUR_EMAIL@gmail.com"
+           class="btn primary">
+            Send Me an Email
+        </a>
 
-        <div class="panel reveal">
+        <br>
 
-            <h3>Let's Connect</h3>
-
-            <p>
-                I am interested in learning new technologies,
-                exploring opportunities and connecting with
-                people who share an interest in technology.
-            </p>
-
-            <div class="social-links">
-
-                <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-                   target="_blank"
-                   rel="noopener">
-                    LinkedIn Profile
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="panel contact-form reveal">
-
-            <h3>Send a Message</h3>
-
-            <form action="https://formsubmit.co/YOUR_EMAIL@example.com"
-                  method="POST">
-
-                <input type="hidden"
-                       name="_subject"
-                       value="New Portfolio Contact Message">
-
-                <input type="hidden"
-                       name="_captcha"
-                       value="true">
-
-                <input type="hidden"
-                       name="_template"
-                       value="table">
-
-                <input type="text"
-                       name="name"
-                       placeholder="Your Name"
-                       required>
-
-                <input type="email"
-                       name="email"
-                       placeholder="Your Email"
-                       required>
-
-                <textarea name="message"
-                          rows="5"
-                          placeholder="Your Message"
-                          required></textarea>
-
-                <button type="submit">
-                    Send Message
-                </button>
-
-            </form>
-
-            <p style="font-size:12px;margin-top:12px;">
-                Replace YOUR_EMAIL@example.com with your email
-                address before publishing.
-            </p>
-
-        </div>
-
+        <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
+           target="_blank"
+           class="btn">
+            Visit My LinkedIn
+        </a>
     </div>
-
 </section>
 
-
-<!-- FOOTER -->
-
 <footer>
-
-    <p>
-        © <span id="year"></span> Anirudh R.
-        All Rights Reserved.
-    </p>
-
-    <p>
-        Designed and Developed with HTML, CSS and JavaScript.
-    </p>
-
+    <p>© 2026 Anirudh R. All Rights Reserved.</p>
+    <p>Designed with HTML, CSS and JavaScript.</p>
 </footer>
 
-
-<!-- BACK TO TOP BUTTON -->
-
-<button id="topButton"
-        title="Back to top"
-        onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    ↑
-</button>
-
-
-<!-- EASTER EGG MESSAGE -->
-
-<div id="secretToast">
-    You discovered a hidden feature!
-</div>
 <script>
 
-// ========================================
-// 1. TYPING ANIMATION
-// ========================================
+/* TYPING ANIMATION */
 
-const roles = [
+const words = [
     "BCA Data Science Student",
     "Aspiring Developer",
     "Technology Enthusiast",
     "Future IT Professional"
 ];
 
-let roleIndex = 0;
-let characterIndex = 0;
+let wordIndex = 0;
+let letterIndex = 0;
 let deleting = false;
 
-function typeEffect() {
-
-    const typing = document.getElementById("typing");
-
-    if (!typing) return;
-
-    const currentRole = roles[roleIndex];
+function typingEffect() {
+    const element = document.getElementById("typing");
+    const current = words[wordIndex];
 
     if (!deleting) {
+        element.textContent = current.substring(0, letterIndex + 1);
+        letterIndex++;
 
-        typing.textContent =
-            currentRole.substring(0, characterIndex + 1);
-
-        characterIndex++;
-
-        if (characterIndex === currentRole.length) {
-
+        if (letterIndex === current.length) {
             deleting = true;
-
-            setTimeout(typeEffect, 1500);
-
+            setTimeout(typingEffect, 1300);
             return;
         }
-
     } else {
+        element.textContent = current.substring(0, letterIndex - 1);
+        letterIndex--;
 
-        typing.textContent =
-            currentRole.substring(0, characterIndex - 1);
-
-        characterIndex--;
-
-        if (characterIndex === 0) {
-
+        if (letterIndex === 0) {
             deleting = false;
-
-            roleIndex = (roleIndex + 1) % roles.length;
-
+            wordIndex = (wordIndex + 1) % words.length;
         }
-
     }
 
-    setTimeout(typeEffect, deleting ? 50 : 100);
+    setTimeout(typingEffect, deleting ? 45 : 85);
 }
 
-typeEffect();
+typingEffect();
 
+/* PROFILE PHOTO */
 
-// ========================================
-// 2. PROFILE PHOTO UPLOAD
-// ========================================
+document.getElementById("photoInput").addEventListener("change", function(event) {
+    const file = event.target.files[0];
 
-const photoUpload = document.getElementById("photoUpload");
-
-if (photoUpload) {
-
-    photoUpload.addEventListener("change", function(event) {
-
-        const file = event.target.files[0];
-
-        if (!file) return;
-
-        if (!file.type.startsWith("image/")) {
-
-            alert("Please select an image file.");
-
-            return;
-        }
-
+    if (file) {
         const reader = new FileReader();
 
         reader.onload = function(e) {
-
-            document.getElementById("profilePhoto").src =
-                e.target.result;
-
+            document.getElementById("profilePreview").innerHTML =
+                '<img src="' + e.target.result + '" alt="Profile photo">';
         };
 
         reader.readAsDataURL(file);
-
-    });
-
-}
-
-
-// ========================================
-// 3. SCROLL PROGRESS
-// ========================================
-
-window.addEventListener("scroll", function() {
-
-    const scrollTop =
-        document.documentElement.scrollTop;
-
-    const scrollHeight =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-
-    const progress =
-        scrollHeight > 0
-        ? (scrollTop / scrollHeight) * 100
-        : 0;
-
-    document.getElementById("progress").style.width =
-        progress + "%";
-
-
-    // Back to top button
-
-    const topButton = document.getElementById("topButton");
-
-    if (scrollTop > 300) {
-
-        topButton.style.display = "block";
-
-    } else {
-
-        topButton.style.display = "none";
-
     }
-
 });
 
-
-// ========================================
-// 4. REVEAL ANIMATIONS
-// ========================================
-
-const revealObserver = new IntersectionObserver(
-    function(entries) {
-
-        entries.forEach(function(entry) {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.12
-    }
-);
-
-document.querySelectorAll(".reveal").forEach(function(element) {
-
-    revealObserver.observe(element);
-
-});
-
-
-// ========================================
-// 5. SKILLS BAR ANIMATION
-// ========================================
-
-const skillObserver = new IntersectionObserver(
-    function(entries) {
-
-        entries.forEach(function(entry) {
-
-            if (entry.isIntersecting) {
-
-                const bars =
-                    entry.target.querySelectorAll(".skill-fill");
-
-                bars.forEach(function(bar) {
-
-                    const level = bar.getAttribute("data-level");
-
-                    bar.style.width = level + "%";
-
-                });
-
-                skillObserver.unobserve(entry.target);
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.3
-    }
-);
-
-const skillBars = document.getElementById("skillBars");
-
-if (skillBars) {
-
-    skillObserver.observe(skillBars);
-
-}
-
-
-// ========================================
-// 6. PROJECT DETAILS
-// ========================================
-
-const projectData = {
-
-    1: {
-        title: "Personal Portfolio Website",
-
-        description:
-            "A responsive personal portfolio website created to showcase education, technical skills, projects and certificates. It includes animations, interactive sections and a developer terminal.",
-
-        technologies:
-            ["HTML", "CSS", "JavaScript"]
-    },
-
-    2: {
-        title: "Student Information System",
-
-        description:
-            "A Python project designed to store and manage student information. It demonstrates basic programming concepts and data management.",
-
-        technologies:
-            ["Python", "Database"]
-    },
-
-    3: {
-        title: "Database Management Practice",
-
-        description:
-            "A database practice project involving creating tables, inserting records, updating information and retrieving data using SQL.",
-
-        technologies:
-            ["MySQL", "SQL"]
-    },
-
-    4: {
-        title: "Blood Bank Management System",
-
-        description:
-            "A project designed to manage donor registration, blood stock information and blood requests. It aims to make blood bank record management easier.",
-
-        technologies:
-            ["Python", "MySQL"]
-    }
-
-};
-
-
-function showProject(id) {
-
-    const project = projectData[id];
-
-    if (!project) return;
-
-    document.getElementById("projectTitle").textContent =
-        project.title;
-
-    document.getElementById("projectDescription").textContent =
-        project.description;
-
-    document.getElementById("projectTechnologies").innerHTML = "";
-
-    project.technologies.forEach(function(technology) {
-
-        const span = document.createElement("span");
-
-        span.className = "tech";
-
-        span.textContent = technology;
-
-        document.getElementById("projectTechnologies")
-            .appendChild(span);
-
-    });
-
-    document.getElementById("projectModal").style.display =
-        "flex";
-
-}
-
-
-// ========================================
-// 7. CERTIFICATE VIEWER
-// ========================================
-
-function openCertificate(imagePath) {
-
-    const modal =
-        document.getElementById("certificateModal");
-
-    const image =
-        document.getElementById("certificateImage");
-
-    const error =
-        document.getElementById("certificateError");
-
-    error.style.display = "none";
-
-    image.src = imagePath;
-
-    image.onerror = function() {
-
-        error.style.display = "block";
-
-    };
-
-    image.onload = function() {
-
-        error.style.display = "none";
-
-    };
-
-    modal.style.display = "flex";
-
-}
-
-
-// ========================================
-// 8. CLOSE MODALS
-// ========================================
-
-function closeModal(id) {
-
-    document.getElementById(id).style.display =
-        "none";
-
-}
-
-window.addEventListener("click", function(event) {
-
-    const projectModal =
-        document.getElementById("projectModal");
-
-    const certificateModal =
-        document.getElementById("certificateModal");
-
-    if (event.target === projectModal) {
-
-        projectModal.style.display = "none";
-
-    }
-
-    if (event.target === certificateModal) {
-
-        certificateModal.style.display = "none";
-
-    }
-
-});
-
-
-// ========================================
-// 9. DEVELOPER TERMINAL
-// ========================================
-
-const terminalForm =
-    document.getElementById("terminalForm");
-
-const terminalInput =
-    document.getElementById("terminalInput");
-
-const terminalOutput =
-    document.getElementById("terminalOutput");
-
-
-function terminalPrint(text) {
-
-    terminalOutput.textContent += "\n" + text;
-
-    terminalOutput.scrollTop =
-        terminalOutput.scrollHeight;
-
-}
-
-
-if (terminalForm) {
-
-    terminalForm.addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        const command =
-            terminalInput.value.trim().toLowerCase();
-
-        if (!command) return;
-
-        terminalPrint("\nvisitor@anirudh:~$ " + command);
-
-        switch (command) {
-
-            case "help":
-
-                terminalPrint(
-                    "Available commands:\n" +
-                    "help       - Show commands\n" +
-                    "about      - About Anirudh\n" +
-                    "skills     - Technical skills\n" +
-                    "education  - Education details\n" +
-                    "projects   - Project information\n" +
-                    "certificates - Certificates\n" +
-                    "contact    - Contact information\n" +
-                    "clear      - Clear terminal"
-                );
-
-                break;
-
-
-            case "about":
-
-                terminalPrint(
-                    "Name: Anirudh R\n" +
-                    "Course: BCA Data Science\n" +
-                    "Interest: Programming and Technology"
-                );
-
-                break;
-
-
-            case "skills":
-
-                terminalPrint(
-                    "Python, Java, HTML, CSS, JavaScript, SQL and C."
-                );
-
-                break;
-
-
-            case "education":
-
-                terminalPrint(
-                    "BCA Data Science\n" +
-                    "Amrita Vishwa Vidyapeetham\n" +
-                    "Mysuru Campus"
-                );
-
-                break;
-
-
-            case "projects":
-
-                terminalPrint(
-                    "1. Personal Portfolio Website\n" +
-                    "2. Student Information System\n" +
-                    "3. Database Management Practice\n" +
-                    "4. Blood Bank Management System"
-                );
-
-                break;
-
-
-            case "certificates":
-
-                terminalPrint(
-                    "Java - Scaler\n" +
-                    "Cyber Security - Simplilearn\n" +
-                    "Python Essentials 1 - Cisco\n" +
-                    "Python Essentials 2 - Cisco"
-                );
-
-                break;
-
-
-            case "contact":
-
-                terminalPrint(
-                    "LinkedIn:\n" +
-                    "linkedin.com/in/anirudh-r-869953381/"
-                );
-
-                break;
-
-
-            case "clear":
-
-                terminalOutput.textContent =
-                    "Terminal cleared.\nType help to continue.";
-
-                break;
-
-
-            case "whoami":
-
-                terminalPrint(
-                    "You are exploring Anirudh's portfolio!"
-                );
-
-                break;
-
-
-            case "hello":
-
-                terminalPrint(
-                    "Hello! Welcome to my portfolio."
-                );
-
-                break;
-
-
-            case "date":
-
-                terminalPrint(
-                    new Date().toDateString()
-                );
-
-                break;
-
-
-            default:
-
-                terminalPrint(
-                    "Command not found. Type help to see available commands."
-                );
-
+/* SCROLL REVEAL */
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
         }
-
-        terminalInput.value = "";
-
     });
+}, { threshold: 0.12 });
 
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+/* PRINT CV */
+
+function printCV() {
+    document.body.classList.add("print-cv");
+
+    window.print();
+
+    setTimeout(() => {
+        document.body.classList.remove("print-cv");
+    }, 1000);
 }
 
+/* DOWNLOAD BUSINESS CARD AS PNG */
 
-// ========================================
-// 10. DIGITAL BUSINESS CARD DOWNLOAD
-// ========================================
+function downloadCard() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1200;
+    canvas.height = 700;
 
-function downloadBusinessCard() {
+    const ctx = canvas.getContext("2d");
 
-    const cardText =
-`ANIRUDH R
+    const gradient = ctx.createLinearGradient(0, 0, 1200, 700);
+    gradient.addColorStop(0, "#07172d");
+    gradient.addColorStop(0.55, "#123b62");
+    gradient.addColorStop(1, "#087caa");
 
-BCA Data Science Student
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 1200, 700);
 
-Amrita Vishwa Vidyapeetham
-Mysuru, Karnataka
+    ctx.strokeStyle = "#5ce6ff";
+    ctx.lineWidth = 5;
+    ctx.strokeRect(15, 15, 1170, 670);
 
-LinkedIn:
-https://www.linkedin.com/in/anirudh-r-869953381/
-`;
+    ctx.fillStyle = "#72eaff";
+    ctx.font = "bold 28px Arial";
+    ctx.fillText("ANIRUDH R  |  PORTFOLIO", 70, 90);
 
-    const blob = new Blob(
-        [cardText],
-        { type: "text/plain" }
-    );
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "bold 75px Arial";
+    ctx.fillText("Anirudh R", 70, 245);
 
-    const url = URL.createObjectURL(blob);
+    ctx.fillStyle = "#72eaff";
+    ctx.font = "38px Arial";
+    ctx.fillText("BCA Data Science Student", 70, 310);
+
+    ctx.fillStyle = "#e0efff";
+    ctx.font = "28px Arial";
+    ctx.fillText("Mysuru, Karnataka, India", 70, 405);
+    ctx.fillText("YOUR_EMAIL@gmail.com", 70, 465);
+    ctx.fillText("Programming & Technology", 70, 525);
+
+    ctx.strokeStyle = "rgba(255,255,255,.4)";
+    ctx.beginPath();
+    ctx.moveTo(70, 575);
+    ctx.lineTo(1120, 575);
+    ctx.stroke();
+
+    ctx.fillStyle = "#ffffff";
+    ctx.font = "24px Arial";
+    ctx.fillText("PYTHON  |  JAVA  |  WEB DEVELOPMENT  |  DATA SCIENCE", 70, 630);
 
     const link = document.createElement("a");
-
-    link.href = url;
-
-    link.download = "Anirudh_Business_Card.txt";
-
+    link.download = "Anirudh-Business-Card.png";
+    link.href = canvas.toDataURL("image/png");
     link.click();
-
-    URL.revokeObjectURL(url);
-
 }
-
-
-// ========================================
-// 11. COPY EMAIL
-// ========================================
-
-function copyEmail() {
-
-    const email = "YOUR_EMAIL@example.com";
-
-    navigator.clipboard.writeText(email)
-        .then(function() {
-
-            alert("Email copied: " + email);
-
-        })
-        .catch(function() {
-
-            alert("Please update your email address in the code.");
-
-        });
-
-}
-
-
-// ========================================
-// 12. VISITOR COUNTER
-// ========================================
-
-let visits = Number(
-    localStorage.getItem("anirudhVisits") || 0
-);
-
-visits++;
-
-localStorage.setItem(
-    "anirudhVisits",
-    visits
-);
-
-document.getElementById("visitCount").textContent =
-    visits;
-
-document.getElementById("todayCount").textContent =
-    "1";
-
-
-// ========================================
-// 13. CURRENT YEAR
-// ========================================
-
-document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-
-// ========================================
-// 14. NAVIGATION ACTIVE LINK
-// ========================================
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-const navLinks =
-    document.querySelectorAll("nav a");
-
-window.addEventListener("scroll", function() {
-
-    let currentSection = "";
-
-    sections.forEach(function(section) {
-
-        const sectionTop = section.offsetTop - 150;
-
-        if (window.scrollY >= sectionTop) {
-
-            currentSection = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(function(link) {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + currentSection) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-// ========================================
-// 15. HIDDEN EASTER EGG
-// ========================================
-
-let secretKeys = [];
-
-const secretCode = [
-    "a", "n", "i", "r", "u", "d", "h"
-];
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key.length !== 1) return;
-
-    secretKeys.push(event.key.toLowerCase());
-
-    if (secretKeys.length > secretCode.length) {
-
-        secretKeys.shift();
-
-    }
-
-    if (secretKeys.join("") === secretCode.join("")) {
-
-        const toast =
-            document.getElementById("secretToast");
-
-        toast.textContent =
-            "🎉 You discovered Anirudh's secret Easter Egg!";
-
-        toast.classList.add("show");
-
-        setTimeout(function() {
-
-            toast.classList.remove("show");
-
-        }, 3000);
-
-        secretKeys = [];
-
-    }
-
-});
-
-
-// ========================================
-// 16. CONSOLE WELCOME MESSAGE
-// ========================================
-
-console.log(
-    "%c Welcome to Anirudh's Portfolio! ",
-    "background:#07111f;color:#72e3ff;font-size:18px;padding:10px;"
-);
-
-console.log(
-    "Thanks for exploring my website."
-);
 
 </script>
 
