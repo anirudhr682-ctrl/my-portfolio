@@ -8,538 +8,316 @@
 
 <style>
 :root {
-    --bg: #07111f;
-    --card: #101f32;
-    --blue: #168bff;
-    --cyan: #00e5ff;
-    --text: #f4f8ff;
-    --muted: #a9bbd0;
+    --bg:#07111f;
+    --card:#102238;
+    --blue:#168bff;
+    --cyan:#00e5ff;
+    --white:#f5f9ff;
+    --muted:#a9bbd0;
 }
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
-
 body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background:var(--bg);
+    color:var(--white);
+    font-family:Arial,sans-serif;
+    line-height:1.6;
 }
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button {
-    cursor: pointer;
-    font-family: inherit;
-}
-
+a {text-decoration:none;color:inherit}
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(7,17,31,.94);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,229,255,.15);
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,17,31,.96);
+    border-bottom:1px solid #16405b;
 }
-
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-    padding: 17px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav {
+    max-width:1200px;
+    margin:auto;
+    padding:16px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-
 .logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--cyan);
-    letter-spacing: 1px;
+    font-size:25px;
+    font-weight:bold;
+    color:var(--cyan);
 }
-
 .nav-links {
-    display: flex;
-    gap: 23px;
-    list-style: none;
+    display:flex;
+    gap:17px;
+    list-style:none;
 }
-
 .nav-links a {
-    font-size: 14px;
-    color: var(--muted);
-    transition: .3s;
+    color:var(--muted);
+    font-size:13px;
 }
-
-.nav-links a:hover {
-    color: var(--cyan);
+.nav-links a:hover {color:var(--cyan)}
+.menu {
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:27px;
 }
-
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 27px;
-}
-
 section {
-    padding: 100px 8%;
-    scroll-margin-top: 65px;
+    padding:100px 7%;
+    scroll-margin-top:65px;
 }
-
 .container {
-    max-width: 1150px;
-    margin: auto;
+    max-width:1150px;
+    margin:auto;
 }
-
-.section-title {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 45px;
+.heading {
+    text-align:center;
+    font-size:34px;
+    margin-bottom:40px;
 }
-
-.section-title span {
-    color: var(--cyan);
-}
-
+.heading span {color:var(--cyan)}
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 110px;
-    background:
-        radial-gradient(circle at 80% 30%, rgba(0,160,255,.16), transparent 35%),
-        var(--bg);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:radial-gradient(circle at 80% 30%,#10375a,transparent 38%);
 }
-
-.hero-content {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    align-items: center;
-    gap: 50px;
+.hero-grid {
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:45px;
+    align-items:center;
 }
-
 .hero h1 {
-    font-size: clamp(38px, 6vw, 65px);
-    line-height: 1.15;
-    margin: 15px 0;
+    font-size:clamp(38px,6vw,65px);
+    line-height:1.15;
+    margin:15px 0;
 }
-
-.hero h1 span {
-    color: var(--cyan);
+.hero h1 span {color:var(--cyan)}
+.hero h2 {color:var(--cyan);min-height:38px}
+.hero p {color:var(--muted);margin:18px 0}
+.profile {
+    width:min(320px,75vw);
+    aspect-ratio:1;
+    margin:auto;
+    border:4px solid var(--cyan);
+    padding:8px;
+    border-radius:50%;
+    box-shadow:0 0 30px #00e5ff55;
+    animation:float 4s infinite ease-in-out;
 }
-
-.hero h2 {
-    font-size: 23px;
-    color: var(--blue);
-    min-height: 38px;
+.profile img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
 }
-
-.hero p {
-    color: var(--muted);
-    margin: 20px 0;
-    max-width: 650px;
-}
-
-.profile-frame {
-    width: min(330px, 75vw);
-    aspect-ratio: 1;
-    margin: auto;
-    padding: 9px;
-    border-radius: 50%;
-    border: 3px solid var(--cyan);
-    box-shadow: 0 0 35px rgba(0,229,255,.25);
-    animation: float 4s ease-in-out infinite;
-}
-
-.profile-frame img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--bg);
-}
-
 @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-13px); }
+    50% {transform:translateY(-12px)}
 }
-
 .btn {
-    display: inline-block;
-    padding: 12px 23px;
-    margin: 7px 8px 7px 0;
-    border: 1px solid var(--cyan);
-    border-radius: 7px;
-    color: var(--cyan);
-    background: transparent;
-    font-weight: bold;
-    transition: .3s;
+    display:inline-block;
+    padding:11px 20px;
+    margin:6px 5px 6px 0;
+    border:1px solid var(--cyan);
+    color:var(--cyan);
+    background:transparent;
+    border-radius:7px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:bold;
 }
-
 .btn.primary {
-    background: var(--blue);
-    color: white;
-    border-color: var(--blue);
+    background:var(--blue);
+    border-color:var(--blue);
+    color:white;
 }
-
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 18px rgba(0,229,255,.25);
+    transform:translateY(-3px);
+    box-shadow:0 0 15px #00e5ff55;
 }
-
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 15px;
+.grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
 .card {
-    background: var(--card);
-    padding: 25px;
-    border: 1px solid rgba(0,229,255,.12);
-    border-radius: 12px;
-    transition: .3s;
+    background:var(--card);
+    padding:24px;
+    border:1px solid #1d405a;
+    border-radius:12px;
+    transition:.3s;
 }
-
 .card:hover {
-    transform: translateY(-6px);
-    border-color: var(--cyan);
-    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    transform:translateY(-5px);
+    border-color:var(--cyan);
 }
-
-.card h3 {
-    color: var(--cyan);
-    margin-bottom: 12px;
+.card h3 {color:var(--cyan);margin-bottom:10px}
+.card p {color:var(--muted)}
+.two-col {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
-
-.card p, .card li {
-    color: var(--muted);
+.skills {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
-
-.card ul {
-    padding-left: 20px;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
 .skill {
-    background: var(--card);
-    border: 1px solid rgba(0,229,255,.2);
-    padding: 18px 10px;
-    text-align: center;
-    border-radius: 9px;
-    transition: .3s;
+    background:var(--card);
+    padding:17px;
+    text-align:center;
+    border-radius:8px;
+    border:1px solid #1d405a;
 }
-
-.skill:hover {
-    color: var(--cyan);
-    transform: scale(1.04);
-}
-
-.skill-bar {
-    margin-top: 12px;
-    background: #26374b;
-    height: 7px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.skill-bar div {
-    height: 100%;
-    background: linear-gradient(90deg, var(--blue), var(--cyan));
-    border-radius: 10px;
-}
-
-.project-card {
-    min-height: 190px;
-}
-
+.skill span {color:var(--cyan)}
 .project-number {
-    font-size: 30px;
-    color: var(--cyan);
-    font-weight: bold;
+    font-size:28px;
+    color:var(--cyan);
+    font-weight:bold;
 }
-
-.certificate-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px;
+.cert-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
 }
-
-.certificate {
-    background: var(--card);
-    padding: 18px;
-    border-radius: 12px;
-    border: 1px solid rgba(0,229,255,.15);
+.cert {
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #1d405a;
 }
-
-.certificate img {
-    width: 100%;
-    height: 230px;
-    object-fit: contain;
-    background: #fff;
-    border-radius: 8px;
-    cursor: pointer;
+.cert img {
+    width:100%;
+    height:230px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:7px;
 }
-
-.certificate h3 {
-    margin: 13px 0 5px;
-    color: var(--cyan);
+.cert h3 {color:var(--cyan);margin:12px 0 4px}
+.cert p {color:var(--muted)}
+.cert button {margin-top:10px}
+.resume {
+    max-width:850px;
+    margin:auto;
+    padding:40px;
+    background:white;
+    color:#263445;
+    border-radius:8px;
 }
-
-.certificate p {
-    color: var(--muted);
+.resume h2 {color:#087eaf;font-size:30px}
+.resume h3 {
+    color:#087eaf;
+    border-bottom:1px solid #ccc;
+    margin-top:20px;
+    padding-bottom:5px;
 }
-
-.resume-box {
-    max-width: 850px;
-    margin: auto;
-    background: white;
-    color: #202b3b;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 10px 35px rgba(0,0,0,.3);
+.resume p,.resume li {color:#354052;margin-top:5px}
+.resume ul {padding-left:22px}
+.resume-actions {text-align:center;margin-bottom:20px}
+.contact {
+    max-width:750px;
+    margin:auto;
+    text-align:center;
 }
-
-.resume-box h2 {
-    color: #087eaf;
-    font-size: 30px;
+.contact p {color:var(--muted);margin:15px 0}
+textarea {
+    width:100%;
+    min-height:160px;
+    resize:vertical;
+    padding:15px;
+    margin:15px 0;
+    border:1px solid #23617d;
+    border-radius:8px;
+    outline:none;
+    background:#0c1c30;
+    color:white;
+    font:15px Arial;
 }
-
-.resume-box h3 {
-    color: #087eaf;
-    margin-top: 20px;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 5px;
+textarea:focus {border-color:var(--cyan)}
+input[type="text"] {
+    width:100%;
+    padding:13px;
+    margin:10px 0;
+    border:1px solid #23617d;
+    border-radius:7px;
+    background:#0c1c30;
+    color:white;
 }
-
-.resume-box p, .resume-box li {
-    color: #354052;
-    margin-top: 5px;
+#certificateModal {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:#000e;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
 }
-
-.resume-box ul {
-    padding-left: 22px;
+#certificateModal img {
+    max-width:95%;
+    max-height:85vh;
+    object-fit:contain;
+    background:white;
 }
-
-.resume-actions {
-    text-align: center;
-    margin-bottom: 25px;
+#certificateModal .close {
+    position:absolute;
+    top:15px;
+    right:25px;
+    background:none;
+    color:white;
+    border:0;
+    font-size:40px;
+    cursor:pointer;
 }
-
-.business-card {
-    max-width: 570px;
-    margin: auto;
-    padding: 35px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #102b4a, #075b83);
-    border: 1px solid var(--cyan);
-    box-shadow: 0 0 30px rgba(0,229,255,.15);
-    text-align: center;
-}
-
-.business-card h2 {
-    font-size: 30px;
-    color: white;
-}
-
-.business-card h3 {
-    color: var(--cyan);
-    margin: 8px 0;
-}
-
-.business-card p {
-    color: #d7e9f5;
-    margin: 7px 0;
-    overflow-wrap: anywhere;
-}
-
-.contact-card {
-    text-align: center;
-    max-width: 750px;
-    margin: auto;
-}
-
-.contact-card p {
-    color: var(--muted);
-    margin: 15px 0;
-}
-
 footer {
-    text-align: center;
-    padding: 25px;
-    color: var(--muted);
-    border-top: 1px solid rgba(0,229,255,.15);
+    text-align:center;
+    padding:25px;
+    color:var(--muted);
+    border-top:1px solid #16405b;
 }
-
-#imageModal {
-    display: none;
-    position: fixed;
-    z-index: 3000;
-    inset: 0;
-    background: rgba(0,0,0,.94);
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
+@media(max-width:850px) {
+    .hero-grid {grid-template-columns:1fr;text-align:center}
+    .grid {grid-template-columns:repeat(2,1fr)}
+    .skills {grid-template-columns:repeat(2,1fr)}
 }
-
-#imageModal img {
-    max-width: 95%;
-    max-height: 85vh;
-    object-fit: contain;
-}
-
-#imageModal button {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 35px;
-    background: none;
-    color: white;
-    border: none;
-}
-
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: .7s;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@media(max-width: 850px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 650px) {
-    .menu-btn {
-        display: block;
-    }
-
+@media(max-width:650px) {
+    .menu {display:block}
     .nav-links {
-        display: none;
-        position: absolute;
-        top: 65px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background: #0b192b;
-        flex-direction: column;
-        gap: 17px;
+        display:none;
+        position:absolute;
+        top:60px;
+        left:0;
+        width:100%;
+        padding:20px;
+        background:#0b192b;
+        flex-direction:column;
     }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    section {
-        padding: 80px 6%;
-    }
-
-    .card-grid,
-    .about-grid,
-    .certificate-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .resume-box {
-        padding: 22px;
-    }
+    .nav-links.show {display:flex}
+    .grid,.two-col,.cert-grid {grid-template-columns:1fr}
+    section {padding:80px 6%}
+    .heading {font-size:28px}
+    .resume {padding:22px}
 }
-
 @media print {
-    @page {
-        size: A4;
-        margin: 15mm;
-    }
-
-    body {
-        background: white !important;
-    }
-
-    body * {
-        visibility: hidden !important;
-    }
-
-    #resume, #resume * {
-        visibility: visible !important;
-    }
-
+    @page {size:A4;margin:15mm}
+    body * {visibility:hidden!important}
+    #resume,#resume * {visibility:visible!important}
     #resume {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        padding: 0;
-        background: white;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        padding:0;
+        background:white;
     }
-
-    .resume-box {
-        box-shadow: none;
-        border-radius: 0;
-        max-width: none;
-        padding: 0;
-    }
-
-    .resume-actions,
-    header,
-    footer {
-        display: none !important;
-    }
+    .resume-actions,header,footer {display:none!important}
+    .resume {box-shadow:none;border-radius:0}
 }
 </style>
 </head>
@@ -547,11 +325,9 @@ footer {
 <body>
 
 <header>
-<nav class="navbar">
-    <a href="#home" class="logo">ANIRUDH.</a>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
-
+<nav>
+    <a class="logo" href="#home">ANIRUDH.</a>
+    <button class="menu" id="menuBtn">☰</button>
     <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -559,417 +335,297 @@ footer {
         <li><a href="#education">Education</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#business-card">Business Card</a></li>
+        <li><a href="#resume">CV</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 </header>
 
 <!-- HOME -->
-
 <section class="hero" id="home">
-<div class="container hero-content">
-
+<div class="container hero-grid">
     <div>
         <p>WELCOME TO MY PORTFOLIO</p>
-
         <h1>Hello, I'm <span>Anirudh R</span></h1>
-
-        <h2><span id="typingText"></span></h2>
-
+        <h2 id="typing"></h2>
         <p>
             I am a BCA Data Science student interested in programming,
             technology, computer applications and data science.
-            I enjoy learning new technologies and developing practical projects.
+            I enjoy learning new technologies and building practical projects.
         </p>
-
-        <a href="#projects" class="btn primary">Explore My Work</a>
-        <a href="#resume" class="btn">Resume Now</a>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-               target="_blank" rel="noopener" class="btn">LinkedIn</a>
-
-            <a href="mailto:anirudhr682@gmail.com?subject=Portfolio%20Enquiry"
-               class="btn">Email Me</a>
-        </div>
+        <a class="btn primary" href="#projects">Explore My Work</a>
+        <a class="btn" href="#resume">View My CV</a>
+        <a class="btn" href="#contact">Contact Me</a>
     </div>
 
-    <div class="profile-frame">
-        <img src="profile.jpeg"
-             alt="Anirudh R profile photo"
-             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;height:100%;display:flex;align-items:center;justify-content:center;color:#00e5ff;font-size:28px;font-weight:bold&quot;>ANIRUDH R</div>';">
+    <div class="profile">
+        <img src="profile.jpeg" alt="Anirudh R"
+             onerror="this.onerror=null;this.src='';this.alt='Profile photo not found';">
     </div>
-
 </div>
 </section>
 
 <!-- ABOUT -->
-
 <section id="about">
 <div class="container">
-    <h2 class="section-title">About <span>Me</span></h2>
-
-    <div class="about-grid">
-        <div class="card reveal">
-            <h3>Who Am I?</h3>
-            <p>
-                I am Anirudh R, pursuing Bachelor of Computer Applications
-                with a specialization in Data Science at Amrita Vishwa
-                Vidyapeetham, Mysuru Campus.
-            </p>
-            <p>
-                I am interested in programming, computer science,
-                data science and modern technologies. I continuously
-                work to improve my technical and communication skills.
-            </p>
-        </div>
-
-        <div class="card reveal">
-            <h3>Career Objective</h3>
-            <p>
-                My objective is to build a successful career in the IT
-                industry by improving my programming knowledge,
-                gaining practical experience and developing useful
-                technology-based solutions.
-            </p>
-            <p>
-                I aim to become a skilled professional through
-                continuous learning and practical project development.
-            </p>
-        </div>
+<h2 class="heading">About <span>Me</span></h2>
+<div class="two-col">
+    <div class="card">
+        <h3>Who Am I?</h3>
+        <p>
+            I am Anirudh R, pursuing Bachelor of Computer Applications
+            with a specialization in Data Science at Amrita Vishwa
+            Vidyapeetham, Mysuru Campus.
+        </p>
     </div>
+    <div class="card">
+        <h3>Career Objective</h3>
+        <p>
+            My objective is to build a successful career in the IT industry
+            by improving my programming knowledge, gaining practical
+            experience and developing useful technology solutions.
+        </p>
+    </div>
+</div>
 </div>
 </section>
 
 <!-- SKILLS -->
-
 <section id="skills">
 <div class="container">
-    <h2 class="section-title">My <span>Skills</span></h2>
-
-    <div class="skills-grid">
-
-        <div class="skill reveal">
-            Python
-            <div class="skill-bar"><div style="width:75%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            Java
-            <div class="skill-bar"><div style="width:65%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            HTML
-            <div class="skill-bar"><div style="width:85%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            CSS
-            <div class="skill-bar"><div style="width:75%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            JavaScript
-            <div class="skill-bar"><div style="width:60%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            C Programming
-            <div class="skill-bar"><div style="width:65%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            DBMS / SQL
-            <div class="skill-bar"><div style="width:70%"></div></div>
-        </div>
-
-        <div class="skill reveal">
-            Data Science
-            <div class="skill-bar"><div style="width:60%"></div></div>
-        </div>
-
-    </div>
-
-    <h2 class="section-title" style="margin-top:55px;">Soft <span>Skills</span></h2>
-
-    <div class="card-grid">
-        <div class="card reveal"><h3>Communication</h3><p>Expressing ideas clearly and effectively.</p></div>
-        <div class="card reveal"><h3>Teamwork</h3><p>Working together to achieve common goals.</p></div>
-        <div class="card reveal"><h3>Problem Solving</h3><p>Learning to analyse and solve problems.</p></div>
-        <div class="card reveal"><h3>Time Management</h3><p>Organising tasks and completing work on time.</p></div>
-        <div class="card reveal"><h3>Adaptability</h3><p>Adjusting to new tools and technologies.</p></div>
-        <div class="card reveal"><h3>Continuous Learning</h3><p>Improving knowledge through regular practice.</p></div>
-    </div>
+<h2 class="heading">My <span>Skills</span></h2>
+<div class="skills">
+    <div class="skill"><span>Python</span></div>
+    <div class="skill"><span>Java</span></div>
+    <div class="skill"><span>C Programming</span></div>
+    <div class="skill"><span>HTML</span></div>
+    <div class="skill"><span>CSS</span></div>
+    <div class="skill"><span>JavaScript</span></div>
+    <div class="skill"><span>DBMS / SQL</span></div>
+    <div class="skill"><span>Data Science</span></div>
+</div>
+<h2 class="heading" style="margin-top:45px">Soft <span>Skills</span></h2>
+<div class="grid">
+    <div class="card"><h3>Communication</h3><p>Expressing ideas clearly.</p></div>
+    <div class="card"><h3>Teamwork</h3><p>Working together to achieve goals.</p></div>
+    <div class="card"><h3>Problem Solving</h3><p>Analysing and solving problems.</p></div>
+</div>
 </div>
 </section>
 
 <!-- EDUCATION -->
-
 <section id="education">
 <div class="container">
-    <h2 class="section-title">My <span>Education</span></h2>
-
-    <div class="card reveal">
-        <h3>Bachelor of Computer Applications (BCA)</h3>
-        <p><strong>Specialization:</strong> Data Science</p>
-        <p>
-            <a href="https://www.google.com/maps/search/?api=1&query=Amrita+Vishwa+Vidyapeetham+Mysuru+Campus"
-               target="_blank" rel="noopener" style="color:var(--cyan)">
-                Amrita Vishwa Vidyapeetham, Mysuru Campus
-            </a>
-        </p>
-        <p>Currently Pursuing</p>
-    </div>
+<h2 class="heading">My <span>Education</span></h2>
+<div class="card">
+    <h3>Bachelor of Computer Applications (BCA)</h3>
+    <p>Specialization: Data Science</p>
+    <p>
+        <a style="color:var(--cyan)"
+        href="https://www.google.com/maps/search/?api=1&query=Amrita+Vishwa+Vidyapeetham+Mysuru+Campus"
+        target="_blank" rel="noopener">
+        Amrita Vishwa Vidyapeetham, Mysuru Campus
+        </a>
+    </p>
+    <p>Currently Pursuing</p>
+</div>
 </div>
 </section>
 
 <!-- PROJECTS -->
-
 <section id="projects">
 <div class="container">
-    <h2 class="section-title">My <span>Projects</span></h2>
-
-    <div class="card-grid">
-
-        <div class="card project-card reveal">
-            <div class="project-number">01</div>
-            <h3>Personal Portfolio Website</h3>
-            <p>
-                A personal website built using HTML, CSS and JavaScript
-                to showcase my profile, skills, projects and certificates.
-            </p>
-        </div>
-
-        <div class="card project-card reveal">
-            <div class="project-number">02</div>
-            <h3>Student Information System</h3>
-            <p>
-                A programming project focused on maintaining and
-                displaying student information.
-            </p>
-        </div>
-
-        <div class="card project-card reveal">
-            <div class="project-number">03</div>
-            <h3>Blood Bank Management System</h3>
-            <p>
-                A Python and MySQL project for managing donor records,
-                blood stock and blood requests.
-            </p>
-        </div>
-
-        <div class="card project-card reveal">
-            <div class="project-number">04</div>
-            <h3>Database Management Practice</h3>
-            <p>
-                Practical database work involving SQL queries,
-                tables and database operations.
-            </p>
-        </div>
-
+<h2 class="heading">My <span>Projects</span></h2>
+<div class="grid">
+    <div class="card">
+        <div class="project-number">01</div>
+        <h3>Personal Portfolio Website</h3>
+        <p>Website created using HTML, CSS and JavaScript.</p>
     </div>
+    <div class="card">
+        <div class="project-number">02</div>
+        <h3>Student Information System</h3>
+        <p>Application concept for maintaining student information.</p>
+    </div>
+    <div class="card">
+        <div class="project-number">03</div>
+        <h3>Blood Bank Management System</h3>
+        <p>Python and MySQL project for donor, stock and request records.</p>
+    </div>
+</div>
 </div>
 </section>
 
 <!-- CERTIFICATES -->
-
 <section id="certificates">
 <div class="container">
-    <h2 class="section-title">My <span>Certificates</span></h2>
+<h2 class="heading">My <span>Certificates</span></h2>
 
-    <div class="certificate-grid">
+<div class="cert-grid">
 
-        <div class="certificate reveal">
-            <img src="java-certificate.jpeg"
-                 alt="Java certificate"
-                 onclick="openCertificate(this.src)">
-            <h3>Java – Mastering the Fundamentals</h3>
-            <p>Scaler</p>
-        </div>
-
-        <div class="certificate reveal">
-            <img src="cyber-certificate.jpeg"
-                 alt="Cyber Security certificate"
-                 onclick="openCertificate(this.src)">
-            <h3>Introduction to Cyber Security</h3>
-            <p>Simplilearn SkillUp</p>
-        </div>
-
-        <div class="certificate reveal">
-            <img src="python-essentials-1.jpeg"
-                 alt="Python Essentials 1 certificate"
-                 onclick="openCertificate(this.src)">
-            <h3>Python Essentials 1</h3>
-            <p>Cisco Networking Academy / Python Institute</p>
-        </div>
-
-        <div class="certificate reveal">
-            <img src="python-essentials-2.jpeg"
-                 alt="Python Essentials 2 certificate"
-                 onclick="openCertificate(this.src)">
-            <h3>Python Essentials 2</h3>
-            <p>Cisco Networking Academy / Python Institute</p>
-        </div>
-
+    <div class="cert">
+        <img src="java-certificate.jpeg" alt="Java certificate">
+        <h3>Java – Mastering the Fundamentals</h3>
+        <p>Scaler</p>
+        <button class="btn primary"
+        onclick="viewCertificate('java-certificate.jpeg')">
+        View Certificate
+        </button>
     </div>
+
+    <div class="cert">
+        <img src="cyber-certificate.jpeg" alt="Cyber Security certificate">
+        <h3>Introduction to Cyber Security</h3>
+        <p>Simplilearn SkillUp</p>
+        <button class="btn primary"
+        onclick="viewCertificate('cyber-certificate.jpeg')">
+        View Certificate
+        </button>
+    </div>
+
+    <div class="cert">
+        <img src="python-essentials-1.jpeg" alt="Python Essentials 1">
+        <h3>Python Essentials 1</h3>
+        <p>Cisco Networking Academy / Python Institute</p>
+        <button class="btn primary"
+        onclick="viewCertificate('python-essentials-1.jpeg')">
+        View Certificate
+        </button>
+    </div>
+
+    <div class="cert">
+        <img src="python-essentials-2.jpeg" alt="Python Essentials 2">
+        <h3>Python Essentials 2</h3>
+        <p>Cisco Networking Academy / Python Institute</p>
+        <button class="btn primary"
+        onclick="viewCertificate('python-essentials-2.jpeg')">
+        View Certificate
+        </button>
+    </div>
+
+</div>
 </div>
 </section>
 
-<!-- RESUME -->
+<!-- CERTIFICATE FULL SCREEN PREVIEW -->
+<div id="certificateModal">
+    <button class="close" onclick="closeCertificate()">×</button>
+    <img id="certificatePreview" src="" alt="Certificate full preview">
+</div>
 
+<!-- CV -->
 <section id="resume">
 <div class="container">
+<h2 class="heading">My <span>CV / Resume</span></h2>
 
-    <h2 class="section-title">My <span>Resume</span></h2>
+<div class="resume-actions">
+    <button class="btn primary" onclick="window.print()">
+        Print / Save CV as PDF
+    </button>
+</div>
 
-    <div class="resume-actions">
-        <button class="btn primary" onclick="window.print()">
-            Print / Save as PDF
-        </button>
-        <a href="mailto:anirudhr682@gmail.com?subject=Resume%20Request"
-           class="btn">Email Me</a>
-    </div>
+<div class="resume" id="resumeDocument">
+    <h2>ANIRUDH R</h2>
+    <p><strong>BCA Data Science Student</strong></p>
+    <p>Mysuru, Karnataka, India</p>
+    <p>Email: anirudhr682@gmail.com</p>
+    <p>LinkedIn: linkedin.com/in/anirudh-r-869953381/</p>
 
-    <div class="resume-box">
+    <h3>CAREER OBJECTIVE</h3>
+    <p>
+        To build a career in the IT industry by applying my knowledge
+        of programming and computer applications, gaining practical
+        experience and continuously learning new technologies.
+    </p>
 
-        <h2>ANIRUDH R</h2>
-        <p><strong>BCA Data Science Student</strong></p>
-        <p>Mysuru, Karnataka, India</p>
-        <p>Email: anirudhr682@gmail.com</p>
-        <p>
-            LinkedIn:
-            linkedin.com/in/anirudh-r-869953381/
-        </p>
+    <h3>EDUCATION</h3>
+    <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
+    <p>Specialization: Data Science</p>
+    <p>Amrita Vishwa Vidyapeetham, Mysuru Campus</p>
+    <p>Currently Pursuing</p>
 
-        <h3>CAREER OBJECTIVE</h3>
-        <p>
-            To build a career in the IT industry by applying my
-            knowledge of programming and computer applications,
-            gaining practical experience and continuously learning
-            new technologies.
-        </p>
+    <h3>TECHNICAL SKILLS</h3>
+    <ul>
+        <li>Python Programming</li>
+        <li>Java Programming</li>
+        <li>C Programming</li>
+        <li>HTML, CSS and JavaScript</li>
+        <li>DBMS and SQL</li>
+        <li>Data Science Fundamentals</li>
+    </ul>
 
-        <h3>EDUCATION</h3>
-        <p><strong>Bachelor of Computer Applications (BCA)</strong></p>
-        <p>Specialization: Data Science</p>
-        <p>Amrita Vishwa Vidyapeetham, Mysuru Campus</p>
-        <p>Currently Pursuing</p>
+    <h3>PROJECTS</h3>
+    <ul>
+        <li>Personal Portfolio Website – HTML, CSS and JavaScript</li>
+        <li>Student Information System</li>
+        <li>Blood Bank Management System – Python and MySQL</li>
+    </ul>
 
-        <h3>TECHNICAL SKILLS</h3>
-        <ul>
-            <li>Python Programming</li>
-            <li>Java Programming</li>
-            <li>C Programming</li>
-            <li>HTML, CSS and JavaScript</li>
-            <li>DBMS and SQL</li>
-            <li>Data Science Fundamentals</li>
-        </ul>
+    <h3>CERTIFICATIONS</h3>
+    <ul>
+        <li>Java – Mastering the Fundamentals – Scaler</li>
+        <li>Introduction to Cyber Security – Simplilearn SkillUp</li>
+        <li>Python Essentials 1 – Cisco Networking Academy</li>
+        <li>Python Essentials 2 – Cisco Networking Academy</li>
+    </ul>
 
-        <h3>PROJECTS</h3>
-        <ul>
-            <li>Personal Portfolio Website – HTML, CSS and JavaScript</li>
-            <li>Student Information System</li>
-            <li>Blood Bank Management System – Python and MySQL</li>
-            <li>Database Management Practice</li>
-        </ul>
-
-        <h3>CERTIFICATIONS</h3>
-        <ul>
-            <li>Java – Mastering the Fundamentals – Scaler</li>
-            <li>Introduction to Cyber Security – Simplilearn SkillUp</li>
-            <li>Python Essentials 1 – Cisco Networking Academy / Python Institute</li>
-            <li>Python Essentials 2 – Cisco Networking Academy / Python Institute</li>
-        </ul>
-
-        <h3>SOFT SKILLS</h3>
-        <ul>
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Problem Solving</li>
-            <li>Time Management</li>
-            <li>Adaptability</li>
-            <li>Continuous Learning</li>
-        </ul>
-
-        <h3>INTERESTS</h3>
-        <p>Programming, Technology, Data Science and Computer Applications.</p>
-
-    </div>
+    <h3>SOFT SKILLS</h3>
+    <ul>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Problem Solving</li>
+        <li>Time Management</li>
+        <li>Continuous Learning</li>
+    </ul>
+</div>
 </div>
 </section>
 
-<!-- BUSINESS CARD -->
-
-<section id="business-card">
-<div class="container">
-    <h2 class="section-title">Digital <span>Business Card</span></h2>
-
-    <div class="business-card" id="businessCard">
-        <h2>ANIRUDH R</h2>
-        <h3>BCA | DATA SCIENCE</h3>
-        <p>Amrita Vishwa Vidyapeetham</p>
-        <p>Mysuru Campus</p>
-        <p>anirudhr682@gmail.com</p>
-        <p>LinkedIn: anirudh-r-869953381</p>
-        <p>Programming | Technology | Data Science</p>
-    </div>
-
-    <div style="text-align:center;margin-top:25px;">
-        <button class="btn primary" onclick="downloadBusinessCard()">
-            Download Business Card
-        </button>
-    </div>
-</div>
-</section>
-
-<!-- CONTACT -->
-
+<!-- CONTACT WITH GMAIL -->
 <section id="contact">
 <div class="container">
-    <h2 class="section-title">Contact <span>Me</span></h2>
+<h2 class="heading">Contact <span>Me</span></h2>
 
-    <div class="card contact-card reveal">
-        <h3>Let's Connect!</h3>
+<div class="card contact">
+    <h3>Send Me a Message</h3>
+    <p>
+        Write your message below. When you click Send Message,
+        Gmail will open with your message ready to send.
+    </p>
 
-        <p>
-            Thank you for visiting my portfolio.
-            If you would like to contact me regarding my
-            projects, skills or professional opportunities,
-            feel free to send me an email.
-        </p>
+    <input type="text" id="visitorName"
+           placeholder="Enter your name">
 
-        <a href="mailto:anirudhr682@gmail.com?subject=Hello%20Anirudh"
-           class="btn primary">
-            Send Me an Email
-        </a>
+    <input type="text" id="visitorSubject"
+           placeholder="Enter email subject">
 
-        <a href="https://www.linkedin.com/in/anirudh-r-869953381/"
-           target="_blank" rel="noopener" class="btn">
-            Connect on LinkedIn
-        </a>
-    </div>
+    <textarea id="visitorMessage"
+              placeholder="Write your message here..."></textarea>
+
+    <button class="btn primary" onclick="sendEmail()">
+        Send Message to Gmail
+    </button>
+
+    <p id="emailStatus" aria-live="polite"></p>
+
+    <p>Email: anirudhr682@gmail.com</p>
+
+    <a class="btn"
+       href="https://www.linkedin.com/in/anirudh-r-869953381/"
+       target="_blank" rel="noopener">
+       LinkedIn
+    </a>
+</div>
 </div>
 </section>
 
 <footer>
-    <p>© <span id="year"></span> Anirudh R. All Rights Reserved.</p>
-    <p>Designed with HTML, CSS and JavaScript.</p>
+<p>© <span id="year"></span> Anirudh R. All Rights Reserved.</p>
+<p>Designed with HTML, CSS and JavaScript.</p>
 </footer>
 
-<!-- CERTIFICATE IMAGE MODAL -->
-
-<div id="imageModal" onclick="closeCertificate()">
-    <button onclick="closeCertificate()" aria-label="Close preview">×</button>
-    <img id="modalImage" src="" alt="Certificate preview">
-</div>
-
 <script>
-
-// MOBILE NAVIGATION
-
+// MOBILE MENU
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
@@ -983,9 +639,7 @@ document.querySelectorAll(".nav-links a").forEach(link => {
     });
 });
 
-
 // TYPING ANIMATION
-
 const words = [
     "BCA Data Science Student",
     "Aspiring Developer",
@@ -997,121 +651,87 @@ let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
-function typeEffect() {
-    const current = words[wordIndex];
-    const output = document.getElementById("typingText");
+function typeText() {
+    const word = words[wordIndex];
+    document.getElementById("typing").textContent =
+        word.substring(0, charIndex);
 
     if (!deleting) {
-        output.textContent = current.substring(0, charIndex + 1);
         charIndex++;
-
-        if (charIndex === current.length) {
+        if (charIndex > word.length) {
             deleting = true;
-            setTimeout(typeEffect, 1200);
+            setTimeout(typeText, 1000);
             return;
         }
     } else {
-        output.textContent = current.substring(0, charIndex - 1);
         charIndex--;
-
-        if (charIndex === 0) {
+        if (charIndex < 0) {
+            charIndex = 0;
             deleting = false;
             wordIndex = (wordIndex + 1) % words.length;
         }
     }
 
-    setTimeout(typeEffect, deleting ? 45 : 90);
+    setTimeout(typeText, deleting ? 45 : 90);
 }
-
-typeEffect();
-
+typeText();
 
 // CERTIFICATE PREVIEW
-
-function openCertificate(imageSource) {
-    document.getElementById("modalImage").src = imageSource;
-    document.getElementById("imageModal").style.display = "flex";
+function viewCertificate(imagePath) {
+    const preview = document.getElementById("certificatePreview");
+    preview.src = imagePath;
+    document.getElementById("certificateModal").style.display = "flex";
 }
 
 function closeCertificate() {
-    document.getElementById("imageModal").style.display = "none";
+    document.getElementById("certificateModal").style.display = "none";
+    document.getElementById("certificatePreview").src = "";
 }
 
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-        closeCertificate();
+document.getElementById("certificateModal").addEventListener("click", function(event) {
+    if (event.target === this) closeCertificate();
+});
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeCertificate();
+});
+
+// GMAIL MESSAGE
+function sendEmail() {
+    const name = document.getElementById("visitorName").value.trim();
+    const subject = document.getElementById("visitorSubject").value.trim();
+    const message = document.getElementById("visitorMessage").value.trim();
+    const status = document.getElementById("emailStatus");
+
+    if (!name || !message) {
+        status.textContent = "Please enter your name and message.";
+        status.style.color = "#ffb3b3";
+        return;
     }
-});
 
+    const emailSubject = subject || "Portfolio Contact Message";
 
-// REVEAL ANIMATION
+    const emailBody =
+        "Hello Anirudh,\n\n" +
+        message +
+        "\n\nRegards,\n" + name;
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.12 });
+    const gmailURL =
+        "https://mail.google.com/mail/?view=cm&fs=1" +
+        "&to=anirudhr682@gmail.com" +
+        "&su=" + encodeURIComponent(emailSubject) +
+        "&body=" + encodeURIComponent(emailBody);
 
-document.querySelectorAll(".reveal").forEach(element => {
-    observer.observe(element);
-});
+    window.open(gmailURL, "_blank");
 
+    status.textContent =
+        "Gmail compose opened. Review your message and click Send in Gmail.";
+    status.style.color = "#00e5ff";
+}
 
 // FOOTER YEAR
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-
-// DOWNLOAD DIGITAL BUSINESS CARD
-
-function downloadBusinessCard() {
-
-    const canvas = document.createElement("canvas");
-    canvas.width = 1200;
-    canvas.height = 650;
-
-    const ctx = canvas.getContext("2d");
-
-    const gradient = ctx.createLinearGradient(0, 0, 1200, 650);
-    gradient.addColorStop(0, "#102b4a");
-    gradient.addColorStop(1, "#075b83");
-
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 1200, 650);
-
-    ctx.strokeStyle = "#00e5ff";
-    ctx.lineWidth = 8;
-    ctx.strokeRect(20, 20, 1160, 610);
-
-    ctx.textAlign = "center";
-
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "bold 75px Arial";
-    ctx.fillText("ANIRUDH R", 600, 160);
-
-    ctx.fillStyle = "#00e5ff";
-    ctx.font = "bold 38px Arial";
-    ctx.fillText("BCA | DATA SCIENCE", 600, 245);
-
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "30px Arial";
-    ctx.fillText("Amrita Vishwa Vidyapeetham", 600, 340);
-    ctx.fillText("Mysuru Campus", 600, 390);
-    ctx.fillText("anirudhr682@gmail.com", 600, 455);
-
-    ctx.fillStyle = "#bcecff";
-    ctx.font = "25px Arial";
-    ctx.fillText("Programming | Technology | Data Science", 600, 535);
-
-    const link = document.createElement("a");
-    link.download = "Anirudh-Business-Card.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
-}
-
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 </script>
 
 </body>
