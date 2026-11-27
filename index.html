@@ -4,23 +4,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anirudh R | Portfolio</title>
+<title>Anirudh R | Personal Portfolio</title>
 
 <style>
+:root {
+    --bg: #07111f;
+    --panel: #102139;
+    --cyan: #45dcff;
+    --blue: #168cff;
+    --white: #f4f8ff;
+    --muted: #aabbd0;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-:root {
-    --bg: #07111f;
-    --panel: #101f33;
-    --cyan: #45dcff;
-    --blue: #168cff;
-    --white: #f4f8ff;
-    --muted: #aabbd0;
 }
 
 body {
@@ -31,21 +31,22 @@ body {
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(7,17,31,.95);
-    border-bottom: 1px solid #20334b;
-    padding: 17px 7%;
+    background: rgba(7,17,31,.97);
+    border-bottom: 1px solid #263c56;
+    padding: 16px 6%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .logo {
@@ -56,12 +57,12 @@ header {
 
 nav {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 17px;
 }
 
 nav a {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--muted);
     transition: .3s;
 }
@@ -72,6 +73,17 @@ nav a:hover {
 
 section {
     padding: 85px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.section-title span,
+.hero h1 span {
+    color: var(--cyan);
 }
 
 .hero {
@@ -88,46 +100,44 @@ section {
 }
 
 .hero h1 {
-    font-size: clamp(38px, 6vw, 65px);
+    font-size: clamp(40px, 6vw, 66px);
     line-height: 1.2;
     margin: 15px 0;
 }
 
-.hero h1 span,
-.section-title span {
+.hero h2 {
     color: var(--cyan);
+    min-height: 35px;
 }
 
 .hero p {
     color: var(--muted);
-    margin: 18px 0;
     font-size: 17px;
+    margin: 20px 0;
 }
 
 .hello {
     color: var(--cyan);
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 }
 
 .hero-image {
-    width: 260px;
-    height: 260px;
+    width: 270px;
+    height: 270px;
     border-radius: 50%;
     border: 4px solid var(--cyan);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 65px;
-    color: var(--cyan);
+    padding: 7px;
     background: var(--panel);
-    box-shadow: 0 0 35px rgba(69,220,255,.25);
+    box-shadow: 0 0 35px rgba(69,220,255,.3);
     overflow: hidden;
 }
 
 .hero-image img {
     width: 100%;
     height: 100%;
+    border-radius: 50%;
     object-fit: cover;
+    display: block;
 }
 
 .btn {
@@ -145,7 +155,7 @@ section {
 
 .btn.primary {
     background: var(--cyan);
-    color: #06111f;
+    color: #07111f;
     font-weight: bold;
 }
 
@@ -154,15 +164,9 @@ section {
     box-shadow: 0 0 18px rgba(69,220,255,.3);
 }
 
-.section-title {
-    text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
-}
-
 .panel {
     background: var(--panel);
-    border: 1px solid #243c58;
+    border: 1px solid #263e5b;
     border-radius: 14px;
     padding: 25px;
     margin-bottom: 20px;
@@ -197,9 +201,9 @@ section {
 
 .skill {
     background: var(--panel);
+    border: 1px solid #263e5b;
     padding: 17px;
-    border-radius: 9px;
-    border: 1px solid #243c58;
+    border-radius: 10px;
 }
 
 .skill span {
@@ -231,18 +235,6 @@ ul {
     text-decoration: underline;
 }
 
-.contact {
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #050c16;
-    color: var(--muted);
-    border-top: 1px solid #20334b;
-}
-
 .reveal {
     opacity: 0;
     transform: translateY(25px);
@@ -254,14 +246,14 @@ footer {
     transform: translateY(0);
 }
 
-/* CV DESIGN */
+/* CV */
 
 .cv-sheet {
     max-width: 850px;
     margin: auto;
-    background: white;
+    background: #ffffff;
     color: #172337;
-    padding: 40px;
+    padding: 42px;
     border-radius: 12px;
 }
 
@@ -273,7 +265,7 @@ footer {
 
 .cv-header h2 {
     color: #0878c9;
-    font-size: 32px;
+    font-size: 34px;
 }
 
 .cv-header p,
@@ -283,7 +275,7 @@ footer {
 }
 
 .cv-section {
-    margin: 22px 0;
+    margin: 23px 0;
 }
 
 .cv-section h3 {
@@ -293,34 +285,19 @@ footer {
     padding-bottom: 5px;
 }
 
-.cv-section ul {
-    color: #40516a;
-}
-
-/* BUSINESS CARD DESIGN */
+/* BUSINESS CARD */
 
 .business-card {
     max-width: 650px;
-    min-height: 340px;
+    min-height: 350px;
     margin: 25px auto;
     padding: 35px;
     border-radius: 20px;
-    background: linear-gradient(135deg, #07172d, #123b62, #087caa);
+    background: linear-gradient(135deg,#07172d,#123b62,#087caa);
     border: 1px solid #5ce6ff;
     box-shadow: 0 15px 40px rgba(0,0,0,.35);
     position: relative;
     overflow: hidden;
-}
-
-.business-card::after {
-    content: "";
-    position: absolute;
-    width: 230px;
-    height: 230px;
-    border: 2px solid rgba(255,255,255,.15);
-    border-radius: 50%;
-    right: -70px;
-    bottom: -100px;
 }
 
 .card-brand {
@@ -331,7 +308,7 @@ footer {
 }
 
 .business-card h2 {
-    font-size: 32px;
+    font-size: 35px;
     margin-top: 35px;
 }
 
@@ -354,7 +331,17 @@ footer {
     font-size: 13px;
 }
 
-/* PRINT ONLY CV */
+.contact {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050c16;
+    color: var(--muted);
+    border-top: 1px solid #20334b;
+}
 
 @media print {
     body.print-cv * {
@@ -372,13 +359,11 @@ footer {
         top: 0;
         width: 100%;
         padding: 0;
-        background: white;
     }
 
     body.print-cv .cv-sheet {
-        box-shadow: none;
-        border-radius: 0;
         max-width: 100%;
+        border-radius: 0;
     }
 
     body.print-cv .no-print {
@@ -386,10 +371,9 @@ footer {
     }
 }
 
-@media(max-width: 700px) {
+@media(max-width:700px) {
     header {
         justify-content: center;
-        gap: 15px;
     }
 
     nav {
@@ -402,13 +386,13 @@ footer {
     }
 
     .hero {
-        text-align: center;
         justify-content: center;
+        text-align: center;
     }
 
     .hero-image {
-        width: 210px;
-        height: 210px;
+        width: 220px;
+        height: 220px;
     }
 
     .cv-sheet {
@@ -443,14 +427,13 @@ footer {
 <!-- HOME -->
 
 <section class="hero" id="home">
+
     <div class="hero-content">
         <div class="hello">WELCOME TO MY PORTFOLIO</div>
 
         <h1>Hello, I'm <span>Anirudh R</span></h1>
 
-        <h2 id="typing" style="color:#45dcff;">
-            BCA Data Science Student
-        </h2>
+        <h2 id="typing">BCA Data Science Student</h2>
 
         <p>
             I am interested in programming, technology,
@@ -464,13 +447,13 @@ footer {
     </div>
 
     <div>
-        <div class="hero-image" id="profilePreview">
-            AR
+        <div class="hero-image">
+            <img src="profile.jpg"
+                 alt="Anirudh R profile photo"
+                 onerror="this.style.display='none';this.parentElement.innerHTML='AR';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#45dcff';this.parentElement.style.fontSize='65px';">
         </div>
-
-        <label class="btn" for="photoInput">Change Profile Photo</label>
-        <input type="file" id="photoInput" accept="image/*" hidden>
     </div>
+
 </section>
 
 <!-- ABOUT -->
@@ -480,7 +463,6 @@ footer {
 
     <div class="panel reveal">
         <h3>Who Am I?</h3>
-
         <p>
             I am Anirudh R, pursuing Bachelor of Computer
             Applications with a specialization in Data Science
@@ -516,6 +498,7 @@ footer {
     <h2 class="section-title">My <span>Skills</span></h2>
 
     <div class="skills reveal">
+
         <div class="skill">
             <span>Python</span>
             <div class="skill-bar"><div style="width:75%"></div></div>
@@ -555,6 +538,7 @@ footer {
             <span>Data Science</span>
             <div class="skill-bar"><div style="width:55%"></div></div>
         </div>
+
     </div>
 
     <div class="panel reveal" style="margin-top:25px;">
@@ -573,7 +557,6 @@ footer {
 
     <div class="panel reveal">
         <h3>Bachelor of Computer Applications (BCA)</h3>
-
         <p>Specialization: Data Science</p>
 
         <p>
@@ -594,6 +577,7 @@ footer {
     <h2 class="section-title">My <span>Projects</span></h2>
 
     <div class="grid">
+
         <div class="panel reveal">
             <h3>Personal Portfolio Website</h3>
             <p>
@@ -626,6 +610,7 @@ footer {
                 creation, SQL queries and data management.
             </p>
         </div>
+
     </div>
 </section>
 
@@ -635,6 +620,7 @@ footer {
     <h2 class="section-title">My <span>Certificates</span></h2>
 
     <div class="grid">
+
         <div class="panel reveal">
             <h3>Java – Mastering the Fundamentals</h3>
             <p>Scaler</p>
@@ -654,6 +640,7 @@ footer {
             <h3>Python Essentials 2</h3>
             <p>Cisco Networking Academy / Python Institute</p>
         </div>
+
     </div>
 </section>
 
@@ -690,11 +677,12 @@ footer {
 <!-- CV -->
 
 <section id="cv">
+
     <h2 class="section-title">My <span>CV</span></h2>
 
     <div class="no-print" style="text-align:center;margin-bottom:25px;">
         <p style="color:#aabbd0;">
-            View my professional profile and save it as a PDF.
+            View my professional CV and save it as a PDF.
         </p>
 
         <button class="btn primary" onclick="printCV()">
@@ -708,7 +696,7 @@ footer {
             <h2>Anirudh R</h2>
             <p>BCA Data Science Student</p>
             <p>Mysuru, Karnataka, India</p>
-            <p>Email: YOUR_EMAIL@gmail.com</p>
+            <p>Email: anirudhr682@gmail.com</p>
             <p>LinkedIn: linkedin.com/in/anirudh-r-869953381/</p>
         </div>
 
@@ -767,19 +755,22 @@ footer {
                 Time Management, Adaptability and Continuous Learning.
             </p>
         </div>
+
     </div>
 </section>
 
 <!-- BUSINESS CARD -->
 
 <section id="business-card">
+
     <h2 class="section-title">My Digital <span>Business Card</span></h2>
 
     <p style="text-align:center;color:#aabbd0;">
-        A professional digital identity you can share.
+        My professional digital identity.
     </p>
 
     <div class="business-card" id="businessCard">
+
         <div class="card-brand">ANIRUDH R · PORTFOLIO</div>
 
         <h2>Anirudh R</h2>
@@ -787,15 +778,16 @@ footer {
         <div class="role">BCA Data Science Student</div>
 
         <div class="details">
-            <div>📍 Mysuru, Karnataka, India</div>
-            <div>✉ YOUR_EMAIL@gmail.com</div>
-            <div>💻 Programming & Technology</div>
-            <div>🔗 LinkedIn: Anirudh R</div>
+            <div>Mysuru, Karnataka, India</div>
+            <div>Email: anirudhr682@gmail.com</div>
+            <div>Programming & Technology</div>
+            <div>LinkedIn: Anirudh R</div>
         </div>
 
         <div class="card-bottom">
             PYTHON · JAVA · WEB DEVELOPMENT · DATA SCIENCE
         </div>
+
     </div>
 
     <div style="text-align:center;">
@@ -803,14 +795,17 @@ footer {
             Download Business Card
         </button>
     </div>
+
 </section>
 
 <!-- CONTACT -->
 
 <section id="contact">
+
     <h2 class="section-title">Contact <span>Me</span></h2>
 
     <div class="panel contact reveal">
+
         <h3>Let's Connect!</h3>
 
         <p>
@@ -818,7 +813,7 @@ footer {
             or learning together? Feel free to email me.
         </p>
 
-        <a href="mailto:YOUR_EMAIL@gmail.com"
+        <a href="mailto:anirudhr682@gmail.com"
            class="btn primary">
             Send Me an Email
         </a>
@@ -830,6 +825,7 @@ footer {
            class="btn">
             Visit My LinkedIn
         </a>
+
     </div>
 </section>
 
@@ -879,25 +875,6 @@ function typingEffect() {
     setTimeout(typingEffect, deleting ? 45 : 85);
 }
 
-typingEffect();
-
-/* PROFILE PHOTO */
-
-document.getElementById("photoInput").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            document.getElementById("profilePreview").innerHTML =
-                '<img src="' + e.target.result + '" alt="Profile photo">';
-        };
-
-        reader.readAsDataURL(file);
-    }
-});
-
 /* SCROLL REVEAL */
 
 const observer = new IntersectionObserver(entries => {
@@ -916,7 +893,6 @@ document.querySelectorAll(".reveal").forEach(element => {
 
 function printCV() {
     document.body.classList.add("print-cv");
-
     window.print();
 
     setTimeout(() => {
@@ -924,7 +900,7 @@ function printCV() {
     }, 1000);
 }
 
-/* DOWNLOAD BUSINESS CARD AS PNG */
+/* DOWNLOAD BUSINESS CARD */
 
 function downloadCard() {
     const canvas = document.createElement("canvas");
@@ -935,7 +911,7 @@ function downloadCard() {
 
     const gradient = ctx.createLinearGradient(0, 0, 1200, 700);
     gradient.addColorStop(0, "#07172d");
-    gradient.addColorStop(0.55, "#123b62");
+    gradient.addColorStop(.55, "#123b62");
     gradient.addColorStop(1, "#087caa");
 
     ctx.fillStyle = gradient;
@@ -947,7 +923,7 @@ function downloadCard() {
 
     ctx.fillStyle = "#72eaff";
     ctx.font = "bold 28px Arial";
-    ctx.fillText("ANIRUDH R  |  PORTFOLIO", 70, 90);
+    ctx.fillText("ANIRUDH R | PORTFOLIO", 70, 90);
 
     ctx.fillStyle = "#ffffff";
     ctx.font = "bold 75px Arial";
@@ -960,7 +936,7 @@ function downloadCard() {
     ctx.fillStyle = "#e0efff";
     ctx.font = "28px Arial";
     ctx.fillText("Mysuru, Karnataka, India", 70, 405);
-    ctx.fillText("YOUR_EMAIL@gmail.com", 70, 465);
+    ctx.fillText("anirudhr682@gmail.com", 70, 465);
     ctx.fillText("Programming & Technology", 70, 525);
 
     ctx.strokeStyle = "rgba(255,255,255,.4)";
@@ -971,13 +947,18 @@ function downloadCard() {
 
     ctx.fillStyle = "#ffffff";
     ctx.font = "24px Arial";
-    ctx.fillText("PYTHON  |  JAVA  |  WEB DEVELOPMENT  |  DATA SCIENCE", 70, 630);
+    ctx.fillText(
+        "PYTHON | JAVA | WEB DEVELOPMENT | DATA SCIENCE",
+        70, 630
+    );
 
     const link = document.createElement("a");
     link.download = "Anirudh-Business-Card.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
 }
+
+typingEffect();
 
 </script>
 
