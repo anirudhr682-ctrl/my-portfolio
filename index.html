@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Anirudh R | Personal Portfolio</title>
 
 <style>
@@ -230,20 +231,57 @@ ul {
     color: var(--muted);
 }
 
-.certificate-link {
-    color: var(--cyan);
-    text-decoration: underline;
+/* CERTIFICATE IMAGES */
+
+.certificate-image {
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+    background: white;
+    border-radius: 9px;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: .3s;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: .7s;
+.certificate-image:hover {
+    transform: scale(1.03);
 }
 
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
+.certificate-card {
+    text-align: center;
+}
+
+/* CERTIFICATE VIEWER */
+
+#imageViewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(0,0,0,.93);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#imageViewer img {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+}
+
+#imageViewer button {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* CV */
@@ -251,7 +289,7 @@ ul {
 .cv-sheet {
     max-width: 850px;
     margin: auto;
-    background: #ffffff;
+    background: white;
     color: #172337;
     padding: 42px;
     border-radius: 12px;
@@ -335,6 +373,17 @@ ul {
     text-align: center;
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 footer {
     text-align: center;
     padding: 25px;
@@ -342,6 +391,8 @@ footer {
     color: var(--muted);
     border-top: 1px solid #20334b;
 }
+
+/* PRINT CV */
 
 @media print {
     body.print-cv * {
@@ -446,12 +497,10 @@ footer {
         <a href="#contact" class="btn">Contact Me</a>
     </div>
 
-    <div>
-        <div class="hero-image">
-            <img src="profile.jpg"
-                 alt="Anirudh R profile photo"
-                 onerror="this.style.display='none';this.parentElement.innerHTML='AR';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';this.parentElement.style.color='#45dcff';this.parentElement.style.fontSize='65px';">
-        </div>
+    <div class="hero-image">
+        <img src="profile.jpg"
+             alt="Anirudh R profile photo"
+             onerror="this.parentElement.innerHTML='<span style=&quot;display:flex;height:100%;align-items:center;justify-content:center;color:#45dcff;font-size:65px;&quot;>AR</span>';">
     </div>
 
 </section>
@@ -614,35 +663,63 @@ footer {
     </div>
 </section>
 
-<!-- CERTIFICATES -->
+<!-- CERTIFICATES WITH ACTUAL IMAGE FILES -->
 
 <section id="certificates">
+
     <h2 class="section-title">My <span>Certificates</span></h2>
 
     <div class="grid">
 
-        <div class="panel reveal">
+        <div class="panel certificate-card reveal">
             <h3>Java – Mastering the Fundamentals</h3>
             <p>Scaler</p>
+
+            <img class="certificate-image"
+                 src="certificates/java.jpg"
+                 alt="Java certificate"
+                 onclick="openCertificate(this.src)">
         </div>
 
-        <div class="panel reveal">
+        <div class="panel certificate-card reveal">
             <h3>Introduction to Cyber Security</h3>
             <p>Simplilearn SkillUp</p>
+
+            <img class="certificate-image"
+                 src="certificates/cybersecurity.jpg"
+                 alt="Cyber security certificate"
+                 onclick="openCertificate(this.src)">
         </div>
 
-        <div class="panel reveal">
+        <div class="panel certificate-card reveal">
             <h3>Python Essentials 1</h3>
-            <p>Cisco Networking Academy / Python Institute</p>
+            <p>Cisco Networking Academy</p>
+
+            <img class="certificate-image"
+                 src="certificates/python1.jpg"
+                 alt="Python Essentials 1 certificate"
+                 onclick="openCertificate(this.src)">
         </div>
 
-        <div class="panel reveal">
+        <div class="panel certificate-card reveal">
             <h3>Python Essentials 2</h3>
-            <p>Cisco Networking Academy / Python Institute</p>
+            <p>Cisco Networking Academy</p>
+
+            <img class="certificate-image"
+                 src="certificates/python2.jpg"
+                 alt="Python Essentials 2 certificate"
+                 onclick="openCertificate(this.src)">
         </div>
 
     </div>
 </section>
+
+<!-- CERTIFICATE IMAGE VIEWER -->
+
+<div id="imageViewer" onclick="closeCertificate()">
+    <button onclick="closeCertificate()">×</button>
+    <img id="largeCertificate" src="" alt="Certificate preview">
+</div>
 
 <!-- LEARNING JOURNEY -->
 
@@ -888,6 +965,18 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(element => {
     observer.observe(element);
 });
+
+/* CERTIFICATE VIEWER */
+
+function openCertificate(imageSource) {
+    document.getElementById("largeCertificate").src = imageSource;
+    document.getElementById("imageViewer").style.display = "flex";
+}
+
+function closeCertificate() {
+    document.getElementById("imageViewer").style.display = "none";
+    document.getElementById("largeCertificate").src = "";
+}
 
 /* PRINT CV */
 
